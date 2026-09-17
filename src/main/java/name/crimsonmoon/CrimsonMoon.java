@@ -1,5 +1,7 @@
 package name.crimsonmoon;
 
+import name.crimsonmoon.block.ModBlocks;
+import name.crimsonmoon.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.util.Identifier;
@@ -13,10 +15,8 @@ public class CrimsonMoon implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
-	}
 
-	public static Identifier id(String path) {
-		return new Identifier(MOD_ID, path);
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }
