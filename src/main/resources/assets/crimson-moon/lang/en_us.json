@@ -1,6 +1,8 @@
 {
   "item.crimson-moon.crimson_ingot": "Crimson Ingot",
   "item.crimson-moon.crimson_upgrade_smithing_template": "Crimson Upgrade Smithing Template",
+  "item.crimson-moon.crimson_plate": "Crimson Plate",
 
-  "block.crimson-moon.crimson_block": "Crimson Block"
+  "block.crimson-moon.crimson_block": "Crimson Block",
+  "itemgroup.crimson_moon_group": "Crimson Moon"
 }

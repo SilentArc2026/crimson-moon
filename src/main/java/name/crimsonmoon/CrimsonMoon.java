@@ -1,6 +1,7 @@
 package name.crimsonmoon;
 
 import name.crimsonmoon.block.ModBlocks;
+import name.crimsonmoon.item.ModItemGroup;
 import name.crimsonmoon.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -15,6 +16,7 @@ public class CrimsonMoon implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItemGroup.registerItemGroups();
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();

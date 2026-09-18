@@ -13,8 +13,10 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     public static final Item Crimson_Ingot = registerItem("crimson_ingot",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().fireproof()));
     public static final Item Crimson_upgrade_smithing_template = registerItem("crimson_upgrade_smithing_template",
+            new Item(new FabricItemSettings().fireproof()));
+    public static final Item Crimson_Plate = registerItem("crimson_plate",
             new Item(new FabricItemSettings().fireproof()));
 
     private static Item registerItem(String name, Item item) {
@@ -22,10 +24,7 @@ public class ModItems {
     }
 
     private static void itemGroupIngredients(FabricItemGroupEntries entries) {
-        entries.add(Crimson_Ingot);
-        entries.add(Crimson_upgrade_smithing_template);
 
-        entries.add(ModBlocks.Crimson_Block);
     }
 
     public static void registerModItems() {
