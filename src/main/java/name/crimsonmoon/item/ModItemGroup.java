@@ -18,6 +18,11 @@ public class ModItemGroup {
                         entries.add(ModItems.Crimson_Ingot);
                         entries.add(ModItems.Crimson_upgrade_smithing_template);
                         entries.add(ModItems.Crimson_Plate);
+                        entries.add(ModItems.Crimson_Axe);
+                        entries.add(ModItems.Crimson_Shovel);
+                        entries.add(ModItems.Blood_Blade);
+                        entries.add(ModItems.Crimson_Hoe);
+                        entries.add(ModItems.Crimson_Pickaxe);
 
                         entries.add(ModBlocks.Crimson_Block);
                     }).build());

@@ -23,6 +23,11 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.Crimson_Ingot, Models.GENERATED);
         itemModelGenerator.register(ModItems.Crimson_Plate, Models.GENERATED);
+        itemModelGenerator.register(ModItems.Blood_Blade, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.Crimson_Pickaxe, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.Crimson_Axe, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.Crimson_Shovel, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.Crimson_Hoe, Models.HANDHELD);
         itemModelGenerator.register(ModItems.Crimson_upgrade_smithing_template, Models.GENERATED);
 
     }
