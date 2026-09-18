@@ -1,4 +1,29 @@
 package name.crimsonmoon.datagen;
 
-public class ModModelProvider {
+import name.crimsonmoon.block.ModBlocks;
+import name.crimsonmoon.item.ModItems;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.data.client.BlockStateModelGenerator;
+import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Models;
+
+public class ModModelProvider extends FabricModelProvider {
+    public ModModelProvider(FabricDataOutput output) {
+        super(output);
+    }
+
+    @Override
+    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Crimson_Block);
+
+    }
+
+    @Override
+    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(ModItems.Crimson_Ingot, Models.GENERATED);
+        itemModelGenerator.register(ModItems.Crimson_Plate, Models.GENERATED);
+        itemModelGenerator.register(ModItems.Crimson_upgrade_smithing_template, Models.GENERATED);
+
+    }
 }
