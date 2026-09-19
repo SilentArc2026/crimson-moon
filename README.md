@@ -17,6 +17,6 @@ Valentine!! - Music Production, Artist, and General Planning
 
 AutumnFalls - General Planning
 
-YeetMaster - General Planning
+YeetMaster - Lore Writing, General Planning
 
 MountainSon - Artist, General Planning
