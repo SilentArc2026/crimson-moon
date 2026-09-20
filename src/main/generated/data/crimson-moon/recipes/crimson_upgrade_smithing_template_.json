@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "crimson-moon:crimson_plate"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "N": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CNC",
+    "CDC"
+  ],
+  "result": {
+    "item": "crimson-moon:crimson_upgrade_smithing_template"
+  },
+  "show_notification": true
+}
