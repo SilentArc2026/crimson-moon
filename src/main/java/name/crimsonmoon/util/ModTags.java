@@ -11,6 +11,8 @@ public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> BLOOD_MOON_BLOCKS =
                 createBlockTag("blood_moon_blocks");
+        public static final TagKey<Block> PAXEL_MINEABLE =
+                createBlockTag("mineable/paxel");
 
         private static TagKey<Block> createBlockTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, new Identifier(CrimsonMoon.MOD_ID, name));

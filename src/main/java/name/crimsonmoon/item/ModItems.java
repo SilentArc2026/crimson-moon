@@ -27,6 +27,14 @@ public class ModItems {
             new ShovelItem(ModToolMaterial.CRIMSON, 1, 1, new FabricItemSettings().fireproof()));
     public static final Item Crimson_Hoe = registerItem("crimson_hoe",
             new HoeItem(ModToolMaterial.CRIMSON, 0, 1, new FabricItemSettings().fireproof()));
+    public static final Item CRIMSON_HELMET = registerItem("crimson_helmet",
+            new ArmorItem(ModArmorMaterials.CRIMSON,ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item CRIMSON_CHESTPLATE = registerItem("crimson_chestplate",
+            new ArmorItem(ModArmorMaterials.CRIMSON,ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item CRIMSON_LEGGINGS = registerItem("crimson_leggings",
+            new ArmorItem(ModArmorMaterials.CRIMSON,ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item CRIMSON_BOOTS = registerItem("crimson_boots",
+            new ArmorItem(ModArmorMaterials.CRIMSON,ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(CrimsonMoon.MOD_ID, name), item);

@@ -23,6 +23,10 @@ public class ModItemGroup {
                         entries.add(ModItems.Blood_Blade);
                         entries.add(ModItems.Crimson_Hoe);
                         entries.add(ModItems.Crimson_Pickaxe);
+                        entries.add(ModItems.CRIMSON_HELMET);
+                        entries.add(ModItems.CRIMSON_CHESTPLATE);
+                        entries.add(ModItems.CRIMSON_LEGGINGS);
+                        entries.add(ModItems.CRIMSON_BOOTS);
 
                         entries.add(ModBlocks.Crimson_Block);
                     }).build());
