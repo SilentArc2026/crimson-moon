@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "vampyrite_ingot",
+  "ingredient": {
+    "item": "crimson-moon:raw_vampyrite"
+  },
+  "result": "crimson-moon:vampyrite_ingot"
+}

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "crimson-moon:crimson_block"
+    "crimson-moon:crimson_block",
+    "crimson-moon:solarium_block"
   ]
 }

@@ -11,7 +11,16 @@
   "item.crimson-moon.crimson_chestplate": "Crimson Chestplate",
   "item.crimson-moon.crimson_leggings": "Crimson Leggings",
   "item.crimson-moon.crimson_boots": "Crimson Boots",
+  "item.crimson-moon.crimson_sword": "Crimson Sword",
+  "item.crimson-moon.raw_vampyrite": "Raw Vampyrite",
+  "item.crimson-moon.vampyrite_ingot": "Vampyrite Ingot",
+  "item.crimson-moon.solarium_ingot": "Solarium Ingot",
 
   "block.crimson-moon.crimson_block": "Crimson Block",
+  "block.crimson-moon.vampyrite_block": "Vampyrite Block",
+  "block.crimson-moon.vampyrite_ore": "Vampyrite Ore",
+  "block.crimson-moon.deepslate_vampyrite_ore": "Deepslate Vampyrite Ore",
+  "block.crimson-moon.raw_vampyrite_block": "Raw Vampyrite Block",
+  "block.crimson-moon.solarium_block": "Solarium Block",
   "itemgroup.crimson_moon_group": "Crimson Moon"
 }

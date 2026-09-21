@@ -27,8 +27,17 @@ public class ModItemGroup {
                         entries.add(ModItems.CRIMSON_CHESTPLATE);
                         entries.add(ModItems.CRIMSON_LEGGINGS);
                         entries.add(ModItems.CRIMSON_BOOTS);
+                        entries.add(ModItems.CRIMSON_SWORD);
+                        entries.add(ModItems.VAMPYRITE_INGOT);
+                        entries.add(ModItems.RAW_VAMPYRITE);
+                        entries.add(ModItems.SOLARIUM_INGOT);
 
                         entries.add(ModBlocks.Crimson_Block);
+                        entries.add(ModBlocks.Raw_Vampyrite_Block);
+                        entries.add(ModBlocks.Vampyrite_Block);
+                        entries.add(ModBlocks.Vampyrite_Ore);
+                        entries.add(ModBlocks.Deepslate_Vampyrite_Ore);
+                        entries.add(ModBlocks.Solarium_Block);
                     }).build());
 
 

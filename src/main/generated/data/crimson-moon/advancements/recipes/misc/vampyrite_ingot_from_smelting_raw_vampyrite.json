@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_vampyrite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crimson-moon:raw_vampyrite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:vampyrite_ingot_from_smelting_raw_vampyrite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_vampyrite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:vampyrite_ingot_from_smelting_raw_vampyrite"
+    ]
+  },
+  "sends_telemetry_event": false
+}

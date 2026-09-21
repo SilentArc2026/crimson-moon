@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "crimson-moon:crimson_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_sword"
+  },
+  "result": {
+    "item": "crimson-moon:crimson_sword"
+  },
+  "template": {
+    "item": "crimson-moon:crimson_upgrade_smithing_template"
+  }
+}

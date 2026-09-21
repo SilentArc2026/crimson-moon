@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "crimson-moon:vampyrite_ore",
+    "crimson-moon:vampyrite_block",
+    "crimson-moon:raw_vampyrite_block",
+    "crimson-moon:deepslate_vampyrite_ore"
+  ]
+}

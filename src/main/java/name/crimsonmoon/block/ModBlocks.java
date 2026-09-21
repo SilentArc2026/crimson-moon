@@ -15,6 +15,16 @@ public class ModBlocks {
 
     public static final Block Crimson_Block = registerBlock("crimson_block",
             new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
+    public static final Block Deepslate_Vampyrite_Ore = registerBlock("deepslate_vampyrite_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_IRON_ORE)));
+    public static final Block Raw_Vampyrite_Block = registerBlock("raw_vampyrite_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK)));
+    public static final Block Solarium_Block = registerBlock("solarium_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
+    public static final Block Vampyrite_Block = registerBlock("vampyrite_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
+    public static final Block Vampyrite_Ore = registerBlock("vampyrite_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE)));
 
 
     private static Block registerBlock(String name, Block block) {

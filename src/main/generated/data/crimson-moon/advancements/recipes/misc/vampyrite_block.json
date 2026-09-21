@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:vampyrite_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vampyrite_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crimson-moon:vampyrite_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vampyrite_ingot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:vampyrite_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}
