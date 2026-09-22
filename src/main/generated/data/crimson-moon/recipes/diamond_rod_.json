@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "DSD",
+    "DSD",
+    "DSD"
+  ],
+  "result": {
+    "item": "crimson-moon:diamond_rod"
+  },
+  "show_notification": true
+}

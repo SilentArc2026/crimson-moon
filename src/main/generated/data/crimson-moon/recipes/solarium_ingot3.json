@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_rod"
+    },
+    "N": {
+      "item": "minecraft:netherite_block"
+    },
+    "S": {
+      "item": "crimson-moon:solar_star"
+    }
+  },
+  "pattern": [
+    "BNB",
+    "NSN",
+    "BNB"
+  ],
+  "result": {
+    "item": "crimson-moon:solarium_ingot"
+  },
+  "show_notification": true
+}

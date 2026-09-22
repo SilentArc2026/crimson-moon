@@ -38,11 +38,32 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CRIMSON_SWORD, Models.GENERATED);
         itemModelGenerator.register(ModItems.VAMPYRITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_VAMPYRITE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOLARIUM_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOLARIUM_PICKAXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOLARIUM_SHOVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOLARIUM_AXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOLARIUM_HOE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VAMPYRITE_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VAMPYRITE_PICKAXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VAMPYRITE_AXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VAMPYRITE_SHOVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VAMPYRITE_HOE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DIAMOND_ROD, Models.GENERATED);
         itemModelGenerator.register(ModItems.SOLARIUM_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOLAR_STAR, Models.GENERATED);
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.CRIMSON_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.CRIMSON_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.CRIMSON_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.CRIMSON_BOOTS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.SOLARIUM_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.SOLARIUM_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.SOLARIUM_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.SOLARIUM_BOOTS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.VAMPYRITE_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.VAMPYRITE_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.VAMPYRITE_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.VAMPYRITE_BOOTS));
 
     }
 }

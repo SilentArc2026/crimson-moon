@@ -17,11 +17,23 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
     CRIMSON("crimson", 40, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+        map.put(ArmorItem.Type.BOOTS, 4);
+        map.put(ArmorItem.Type.LEGGINGS, 7);
+        map.put(ArmorItem.Type.CHESTPLATE, 9);
+        map.put(ArmorItem.Type.HELMET, 4);
+    }), 24, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.0F, 0.2F, () -> Ingredient.ofItems(ModItems.Crimson_Ingot)),
+    SOLARIUM("solarium", 60, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+        map.put(ArmorItem.Type.BOOTS, 5);
+        map.put(ArmorItem.Type.LEGGINGS, 8);
+        map.put(ArmorItem.Type.CHESTPLATE, 10);
+        map.put(ArmorItem.Type.HELMET, 5);
+    }), 48, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 5.0F, 0.5F, () -> Ingredient.ofItems(ModItems.SOLARIUM_INGOT)),
+    VAMPYRITE("vampyrite", 35, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 3);
-        map.put(ArmorItem.Type.LEGGINGS, 6);
-        map.put(ArmorItem.Type.CHESTPLATE, 8);
-        map.put(ArmorItem.Type.HELMET, 3);
-    }), 24, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.0F, 0.2F, () -> Ingredient.ofItems(ModItems.Crimson_Ingot));
+        map.put(ArmorItem.Type.LEGGINGS, 5);
+        map.put(ArmorItem.Type.CHESTPLATE, 7);
+        map.put(ArmorItem.Type.HELMET, 2);
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.5F, 0.1F, () -> Ingredient.ofItems(ModItems.VAMPYRITE_INGOT));
 
     public static final StringIdentifiable.Codec<ArmorMaterials> CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY = Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {

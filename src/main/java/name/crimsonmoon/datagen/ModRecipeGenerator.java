@@ -69,6 +69,100 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('C', ModItems.RAW_VAMPYRITE)
                 .criterion(hasItem(ModItems.RAW_VAMPYRITE), conditionsFromItem(ModItems.RAW_VAMPYRITE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.Raw_Vampyrite_Block) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_HELMET)
+                .pattern("   ")
+                .pattern("VVV")
+                .pattern("V V")
+                .input('V', ModItems.VAMPYRITE_INGOT)
+                .criterion(hasItem(ModItems.VAMPYRITE_INGOT), conditionsFromItem(ModItems.VAMPYRITE_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_HELMET) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_CHESTPLATE)
+                .pattern("V V")
+                .pattern("VVV")
+                .pattern("VVV")
+                .input('V', ModItems.VAMPYRITE_INGOT)
+                .criterion(hasItem(ModItems.VAMPYRITE_INGOT), conditionsFromItem(ModItems.VAMPYRITE_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_CHESTPLATE) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_LEGGINGS)
+                .pattern("VVV")
+                .pattern("V V")
+                .pattern("V V")
+                .input('V', ModItems.VAMPYRITE_INGOT)
+                .criterion(hasItem(ModItems.VAMPYRITE_INGOT), conditionsFromItem(ModItems.VAMPYRITE_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_LEGGINGS) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_BOOTS)
+                .pattern("   ")
+                .pattern("V V")
+                .pattern("V V")
+                .input('V', ModItems.VAMPYRITE_INGOT)
+                .criterion(hasItem(ModItems.VAMPYRITE_INGOT), conditionsFromItem(ModItems.VAMPYRITE_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_BOOTS) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DIAMOND_ROD)
+                .pattern("DSD")
+                .pattern("DSD")
+                .pattern("DSD")
+                .input('D', Items.DIAMOND)
+                .input('S', Items.STICK)
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DIAMOND_ROD) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_SWORD)
+                .pattern(" V ")
+                .pattern(" V ")
+                .pattern(" D ")
+                .input('D', ModItems.DIAMOND_ROD)
+                .input('V', ModItems.VAMPYRITE_INGOT)
+                .criterion(hasItem(ModItems.DIAMOND_ROD), conditionsFromItem(ModItems.DIAMOND_ROD))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_SWORD) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_SHOVEL)
+                .pattern(" V ")
+                .pattern(" D ")
+                .pattern(" D ")
+                .input('D', ModItems.DIAMOND_ROD)
+                .input('V', ModItems.VAMPYRITE_INGOT)
+                .criterion(hasItem(ModItems.DIAMOND_ROD), conditionsFromItem(ModItems.DIAMOND_ROD))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_SHOVEL) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_PICKAXE)
+                .pattern("VVV")
+                .pattern(" D ")
+                .pattern(" D ")
+                .input('D', ModItems.DIAMOND_ROD)
+                .input('V', ModItems.VAMPYRITE_INGOT)
+                .criterion(hasItem(ModItems.DIAMOND_ROD), conditionsFromItem(ModItems.DIAMOND_ROD))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_PICKAXE) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_AXE)
+                .pattern("VV ")
+                .pattern("VD ")
+                .pattern(" D ")
+                .input('D', ModItems.DIAMOND_ROD)
+                .input('V', ModItems.VAMPYRITE_INGOT)
+                .criterion(hasItem(ModItems.DIAMOND_ROD), conditionsFromItem(ModItems.DIAMOND_ROD))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_AXE) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_HOE)
+                .pattern("VV ")
+                .pattern(" D ")
+                .pattern(" D ")
+                .input('D', ModItems.DIAMOND_ROD)
+                .input('V', ModItems.VAMPYRITE_INGOT)
+                .criterion(hasItem(ModItems.DIAMOND_ROD), conditionsFromItem(ModItems.DIAMOND_ROD))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_HOE) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SOLARIUM_INGOT)
+                .pattern("BNB")
+                .pattern("NSN")
+                .pattern("BNB")
+                .input('N', Items.NETHERITE_BLOCK)
+                .input('B', Items.BLAZE_ROD)
+                .input('S', ModItems.SOLAR_STAR)
+                .criterion(hasItem(ModItems.SOLAR_STAR), conditionsFromItem(ModItems.SOLAR_STAR))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_INGOT) + "3"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SOLAR_STAR)
+                .pattern("BGB")
+                .pattern("GSG")
+                .pattern("BGB")
+                .input('G', Items.GOLD_INGOT)
+                .input('B', Items.BLAZE_ROD)
+                .input('S', Items.NETHER_STAR)
+                .criterion(hasItem(Items.NETHER_STAR), conditionsFromItem(Items.NETHER_STAR))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLAR_STAR) + "1"));
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.Crimson_Ingot, RecipeCategory.MISC, ModBlocks.Crimson_Block);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.SOLARIUM_INGOT, RecipeCategory.MISC, ModBlocks.Solarium_Block);
@@ -150,6 +244,78 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 ModItems.CRIMSON_BOOTS
         ).criterion(hasItem(ModItems.Crimson_Ingot), conditionsFromItem(ModItems.Crimson_Ingot))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.CRIMSON_BOOTS) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.CRIMSON_HELMET),
+                Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.SOLARIUM_HELMET
+        ).criterion(hasItem(ModItems.SOLARIUM_INGOT), conditionsFromItem(ModItems.SOLARIUM_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_HELMET) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.CRIMSON_CHESTPLATE),
+                Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.SOLARIUM_CHESTPLATE
+        ).criterion(hasItem(ModItems.SOLARIUM_INGOT), conditionsFromItem(ModItems.SOLARIUM_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_CHESTPLATE) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.CRIMSON_LEGGINGS),
+                Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.SOLARIUM_LEGGINGS
+        ).criterion(hasItem(ModItems.SOLARIUM_INGOT), conditionsFromItem(ModItems.SOLARIUM_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_LEGGINGS) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.CRIMSON_BOOTS),
+                Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.SOLARIUM_BOOTS
+        ).criterion(hasItem(ModItems.SOLARIUM_INGOT), conditionsFromItem(ModItems.SOLARIUM_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_BOOTS) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.CRIMSON_SWORD),
+                Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.SOLARIUM_SWORD
+        ).criterion(hasItem(ModItems.SOLARIUM_INGOT), conditionsFromItem(ModItems.SOLARIUM_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_SWORD) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.Crimson_Pickaxe),
+                Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
+                RecipeCategory.TOOLS,
+                ModItems.SOLARIUM_PICKAXE
+        ).criterion(hasItem(ModItems.SOLARIUM_INGOT), conditionsFromItem(ModItems.SOLARIUM_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_PICKAXE) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.Crimson_Axe),
+                Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
+                RecipeCategory.TOOLS,
+                ModItems.SOLARIUM_AXE
+        ).criterion(hasItem(ModItems.SOLARIUM_INGOT), conditionsFromItem(ModItems.SOLARIUM_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_AXE) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.Crimson_Shovel),
+                Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
+                RecipeCategory.TOOLS,
+                ModItems.SOLARIUM_SHOVEL
+        ).criterion(hasItem(ModItems.SOLARIUM_INGOT), conditionsFromItem(ModItems.SOLARIUM_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_SHOVEL) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.Crimson_Hoe),
+                Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
+                RecipeCategory.TOOLS,
+                ModItems.SOLARIUM_HOE
+        ).criterion(hasItem(ModItems.SOLARIUM_INGOT), conditionsFromItem(ModItems.SOLARIUM_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_HOE) + "_"));
 
     }
 }

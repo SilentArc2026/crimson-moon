@@ -19,7 +19,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
-                .add(ModItems.CRIMSON_HELMET, ModItems.CRIMSON_CHESTPLATE, ModItems.CRIMSON_LEGGINGS, ModItems.CRIMSON_BOOTS);
+                .add(ModItems.CRIMSON_HELMET, ModItems.CRIMSON_CHESTPLATE, ModItems.CRIMSON_LEGGINGS, ModItems.CRIMSON_BOOTS, ModItems.VAMPYRITE_BOOTS, ModItems.VAMPYRITE_LEGGINGS, ModItems.VAMPYRITE_CHESTPLATE, ModItems.VAMPYRITE_HELMET, ModItems.SOLARIUM_BOOTS, ModItems.SOLARIUM_LEGGINGS, ModItems.SOLARIUM_CHESTPLATE, ModItems.SOLARIUM_HELMET);
 
     }
 }

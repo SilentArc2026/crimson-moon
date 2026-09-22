@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "crimson-moon:diamond_rod"
+    },
+    "V": {
+      "item": "crimson-moon:vampyrite_ingot"
+    }
+  },
+  "pattern": [
+    " V ",
+    " V ",
+    " D "
+  ],
+  "result": {
+    "item": "crimson-moon:vampyrite_sword"
+  },
+  "show_notification": true
+}

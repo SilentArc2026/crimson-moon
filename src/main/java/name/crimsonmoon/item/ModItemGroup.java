@@ -30,7 +30,28 @@ public class ModItemGroup {
                         entries.add(ModItems.CRIMSON_SWORD);
                         entries.add(ModItems.VAMPYRITE_INGOT);
                         entries.add(ModItems.RAW_VAMPYRITE);
+                        entries.add(ModItems.SOLARIUM_HELMET);
+                        entries.add(ModItems.SOLARIUM_CHESTPLATE);
+                        entries.add(ModItems.SOLARIUM_LEGGINGS);
+                        entries.add(ModItems.SOLARIUM_BOOTS);
+                        entries.add(ModItems.VAMPYRITE_HELMET);
+                        entries.add(ModItems.VAMPYRITE_CHESTPLATE);
+                        entries.add(ModItems.VAMPYRITE_LEGGINGS);
+                        entries.add(ModItems.VAMPYRITE_BOOTS);
                         entries.add(ModItems.SOLARIUM_INGOT);
+                        entries.add(ModItems.SOLARIUM_SWORD);
+                        entries.add(ModItems.SOLARIUM_PICKAXE);
+                        entries.add(ModItems.SOLARIUM_AXE);
+                        entries.add(ModItems.SOLARIUM_SHOVEL);
+                        entries.add(ModItems.SOLARIUM_HOE);
+                        entries.add(ModItems.VAMPYRITE_AXE);
+                        entries.add(ModItems.VAMPYRITE_SHOVEL);
+                        entries.add(ModItems.VAMPYRITE_PICKAXE);
+                        entries.add(ModItems.VAMPYRITE_SWORD);
+                        entries.add(ModItems.VAMPYRITE_HOE);
+                        entries.add(ModItems.DIAMOND_ROD);
+                        entries.add(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE);
+                        entries.add(ModItems.SOLAR_STAR);
 
                         entries.add(ModBlocks.Crimson_Block);
                         entries.add(ModBlocks.Raw_Vampyrite_Block);

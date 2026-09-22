@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "crimson-moon:solarium_ingot"
+  },
+  "base": {
+    "item": "crimson-moon:crimson_axe"
+  },
+  "result": {
+    "item": "crimson-moon:solarium_axe"
+  },
+  "template": {
+    "item": "crimson-moon:solarium_upgrade_smithing_template"
+  }
+}

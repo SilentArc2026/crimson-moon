@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_rod"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "S": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "BGB",
+    "GSG",
+    "BGB"
+  ],
+  "result": {
+    "item": "crimson-moon:solar_star"
+  },
+  "show_notification": true
+}
