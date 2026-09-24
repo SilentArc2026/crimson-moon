@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "crimson-moon:crimson_block"
+      "item": "crimson-moon:crimsonite_block"
     }
   ],
   "result": {
     "count": 9,
-    "item": "crimson-moon:crimson_ingot"
+    "item": "crimson-moon:crimsonite_ingot"
   }
 }

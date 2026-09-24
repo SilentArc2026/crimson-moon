@@ -14,10 +14,10 @@ public class ModItemGroup {
     public static final ItemGroup Crimson_Moon_Group = Registry.register(Registries.ITEM_GROUP,
             new Identifier(CrimsonMoon.MOD_ID, "crimson_moon_group"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.crimson_moon_group"))
-                    .icon(() -> new ItemStack(ModBlocks.Crimson_Block)).entries((displayContext, entries) -> {
-                        entries.add(ModItems.Crimson_Ingot);
-                        entries.add(ModItems.Crimson_upgrade_smithing_template);
-                        entries.add(ModItems.Crimson_Plate);
+                    .icon(() -> new ItemStack(ModBlocks.Crimsonite_Block)).entries((displayContext, entries) -> {
+                        entries.add(ModItems.Crimsonite_Ingot);
+                        entries.add(ModItems.Crimsonite_upgrade_smithing_template);
+                        entries.add(ModItems.Crimsonite_Plate);
                         entries.add(ModItems.Crimson_Axe);
                         entries.add(ModItems.Crimson_Shovel);
                         entries.add(ModItems.Blood_Blade);
@@ -53,7 +53,7 @@ public class ModItemGroup {
                         entries.add(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(ModItems.SOLAR_STAR);
 
-                        entries.add(ModBlocks.Crimson_Block);
+                        entries.add(ModBlocks.Crimsonite_Block);
                         entries.add(ModBlocks.Raw_Vampyrite_Block);
                         entries.add(ModBlocks.Vampyrite_Block);
                         entries.add(ModBlocks.Vampyrite_Ore);

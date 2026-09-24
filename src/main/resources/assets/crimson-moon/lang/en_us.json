@@ -1,7 +1,7 @@
 {
-  "item.crimson-moon.crimson_ingot": "Crimson Ingot",
-  "item.crimson-moon.crimson_upgrade_smithing_template": "Crimson Upgrade Smithing Template",
-  "item.crimson-moon.crimson_plate": "Crimson Plate",
+  "item.crimson-moon.crimsonite_ingot": "Crimsonite Ingot",
+  "item.crimson-moon.crimsonite_upgrade_smithing_template": "Crimsonite Upgrade Smithing Template",
+  "item.crimson-moon.crimsonite_plate": "Crimsonite Plate",
   "item.crimson-moon.blood_blade": "Blood Blade",
   "item.crimson-moon.crimson_pickaxe": "Crimson Pickaxe",
   "item.crimson-moon.crimson_axe": "Crimson Axe",
@@ -37,7 +37,7 @@
   "item.crimson-moon.solar_star": "Solar Star",
   "item.crimson-moon.solarium_upgrade_smithing_template": "Solarium Upgrade Smithing Template",
 
-  "block.crimson-moon.crimson_block": "Crimson Block",
+  "block.crimson-moon.crimsonite_block": "Crimsonite Block",
   "block.crimson-moon.vampyrite_block": "Vampyrite Block",
   "block.crimson-moon.vampyrite_ore": "Vampyrite Ore",
   "block.crimson-moon.deepslate_vampyrite_ore": "Deepslate Vampyrite Ore",

@@ -11,11 +11,11 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item Crimson_Ingot = registerItem("crimson_ingot",
+    public static final Item Crimsonite_Ingot = registerItem("crimsonite_ingot",
             new Item(new FabricItemSettings().fireproof()));
-    public static final Item Crimson_upgrade_smithing_template = registerItem("crimson_upgrade_smithing_template",
+    public static final Item Crimsonite_upgrade_smithing_template = registerItem("crimsonite_upgrade_smithing_template",
             new Item(new FabricItemSettings().fireproof()));
-    public static final Item Crimson_Plate = registerItem("crimson_plate",
+    public static final Item Crimsonite_Plate = registerItem("crimsonite_plate",
             new Item(new FabricItemSettings().fireproof()));
     public static final Item SOLAR_STAR = registerItem("solar_star",
             new Item(new FabricItemSettings().fireproof()));

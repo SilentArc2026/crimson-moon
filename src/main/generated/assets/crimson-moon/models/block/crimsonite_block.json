@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "crimson-moon:block/crimson_block"
+    "all": "crimson-moon:block/crimsonite_block"
   }
 }

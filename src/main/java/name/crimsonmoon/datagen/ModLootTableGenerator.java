@@ -12,7 +12,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(ModBlocks.Crimson_Block);
+        addDrop(ModBlocks.Crimsonite_Block);
         addDrop(ModBlocks.Solarium_Block);
         addDrop(ModBlocks.Vampyrite_Block);
         addDrop(ModBlocks.Raw_Vampyrite_Block);

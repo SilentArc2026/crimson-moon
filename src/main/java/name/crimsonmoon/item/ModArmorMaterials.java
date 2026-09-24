@@ -21,7 +21,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
         map.put(ArmorItem.Type.LEGGINGS, 7);
         map.put(ArmorItem.Type.CHESTPLATE, 9);
         map.put(ArmorItem.Type.HELMET, 4);
-    }), 24, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.0F, 0.2F, () -> Ingredient.ofItems(ModItems.Crimson_Ingot)),
+    }), 24, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.0F, 0.2F, () -> Ingredient.ofItems(ModItems.Crimsonite_Ingot)),
     SOLARIUM("solarium", 60, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 5);
         map.put(ArmorItem.Type.LEGGINGS, 8);

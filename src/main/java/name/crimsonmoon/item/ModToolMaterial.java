@@ -10,7 +10,7 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum ModToolMaterial implements ToolMaterial {
-    CRIMSON(5, 2600, 11.0F, 5.0F, 28, () -> Ingredient.ofItems(ModItems.Crimson_Ingot)),
+    CRIMSON(5, 2600, 11.0F, 5.0F, 28, () -> Ingredient.ofItems(ModItems.Crimsonite_Ingot)),
     SOLARIUM(6, 3800, 13.0F, 6.0F, 40, () -> Ingredient.ofItems(ModItems.SOLARIUM_INGOT)),
     VAMPYRITE(3, 2000, 9.0F, 4.0F, 20, () -> Ingredient.ofItems(ModItems.VAMPYRITE_INGOT));
 

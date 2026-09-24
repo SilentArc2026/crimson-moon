@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_crimson_ingot": {
+    "has_crimsonite_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "crimson-moon:crimson_ingot"
+              "crimson-moon:crimsonite_ingot"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_crimson_ingot",
+      "has_crimsonite_ingot",
       "has_the_recipe"
     ]
   ],

@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "crimson-moon:crimson_ingot"
+    "C": {
+      "item": "crimson-moon:crimsonite_ingot"
     }
   },
   "pattern": [
-    "###",
-    "###",
-    "###"
+    "CCC",
+    "CCC",
+    "CCC"
   ],
   "result": {
-    "item": "crimson-moon:crimson_block"
+    "item": "crimson-moon:crimsonite_block"
   },
   "show_notification": true
 }

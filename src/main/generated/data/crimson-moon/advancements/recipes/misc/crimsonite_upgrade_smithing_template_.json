@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_crimson_ingot": {
+    "has_crimsonite_plate": {
       "conditions": {
         "items": [
           {
             "items": [
-              "crimson-moon:crimson_ingot"
+              "crimson-moon:crimsonite_plate"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:crimson_block_"
+        "recipe": "minecraft:crimsonite_upgrade_smithing_template_"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_crimson_ingot",
+      "has_crimsonite_plate",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:crimson_block_"
+      "minecraft:crimsonite_upgrade_smithing_template_"
     ]
   },
   "sends_telemetry_event": false

@@ -16,7 +16,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Crimson_Block);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Crimsonite_Block);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Raw_Vampyrite_Block);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Vampyrite_Block);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Vampyrite_Ore);
@@ -27,14 +27,14 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.Crimson_Ingot, Models.GENERATED);
-        itemModelGenerator.register(ModItems.Crimson_Plate, Models.GENERATED);
+        itemModelGenerator.register(ModItems.Crimsonite_Ingot, Models.GENERATED);
+        itemModelGenerator.register(ModItems.Crimsonite_Plate, Models.GENERATED);
         itemModelGenerator.register(ModItems.Blood_Blade, Models.HANDHELD);
         itemModelGenerator.register(ModItems.Crimson_Pickaxe, Models.HANDHELD);
         itemModelGenerator.register(ModItems.Crimson_Axe, Models.HANDHELD);
         itemModelGenerator.register(ModItems.Crimson_Shovel, Models.HANDHELD);
         itemModelGenerator.register(ModItems.Crimson_Hoe, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.Crimson_upgrade_smithing_template, Models.GENERATED);
+        itemModelGenerator.register(ModItems.Crimsonite_upgrade_smithing_template, Models.GENERATED);
         itemModelGenerator.register(ModItems.CRIMSON_SWORD, Models.GENERATED);
         itemModelGenerator.register(ModItems.VAMPYRITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_VAMPYRITE, Models.GENERATED);

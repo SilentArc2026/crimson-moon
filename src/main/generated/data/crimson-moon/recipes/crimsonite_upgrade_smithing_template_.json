@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "C": {
-      "item": "crimson-moon:crimson_plate"
+      "item": "crimson-moon:crimsonite_plate"
     },
     "D": {
       "item": "minecraft:diamond"
@@ -18,7 +18,7 @@
     "CDC"
   ],
   "result": {
-    "item": "crimson-moon:crimson_upgrade_smithing_template"
+    "item": "crimson-moon:crimsonite_upgrade_smithing_template"
   },
   "show_notification": true
 }

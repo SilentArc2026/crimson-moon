@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
-    public static final Block Crimson_Block = registerBlock("crimson_block",
+    public static final Block Crimsonite_Block = registerBlock("crimsonite_block",
             new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
     public static final Block Deepslate_Vampyrite_Ore = registerBlock("deepslate_vampyrite_ore",
             new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_IRON_ORE)));

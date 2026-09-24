@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "crimson-moon:item/crimson_ingot"
+    "layer0": "crimson-moon:item/crimsonite_ingot"
   }
 }

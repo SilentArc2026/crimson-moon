@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "crimson-moon:item/crimson_plate"
+    "layer0": "crimson-moon:item/crimsonite_plate"
   }
 }

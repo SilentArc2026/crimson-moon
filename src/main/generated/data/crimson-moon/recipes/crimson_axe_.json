@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "crimson-moon:crimson_ingot"
+    "item": "crimson-moon:crimsonite_ingot"
   },
   "base": {
     "item": "minecraft:netherite_axe"
@@ -10,6 +10,6 @@
     "item": "crimson-moon:crimson_axe"
   },
   "template": {
-    "item": "crimson-moon:crimson_upgrade_smithing_template"
+    "item": "crimson-moon:crimsonite_upgrade_smithing_template"
   }
 }
