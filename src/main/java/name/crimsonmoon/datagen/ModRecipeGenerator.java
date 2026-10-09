@@ -41,6 +41,15 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('N', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
                 .criterion(hasItem(ModItems.Crimsonite_Plate), conditionsFromItem(ModItems.Crimsonite_Plate))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.Crimsonite_upgrade_smithing_template) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE)
+                .pattern("CCC")
+                .pattern("CNC")
+                .pattern("CDC")
+                .input('C', ModItems.REFINED_TURQITE)
+                .input('D', Items.DIAMOND)
+                .input('N', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
+                .criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE) + "_"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.Crimsonite_Block)
                 .pattern("CCC")
                 .pattern("CCC")
@@ -172,6 +181,10 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 RecipeCategory.MISC, ModItems.VAMPYRITE_INGOT, .25f, 200, "vampyrite_ingot");
         offerBlasting(exporter, List.of(ModItems.RAW_VAMPYRITE, ModBlocks.Vampyrite_Ore, ModBlocks.Deepslate_Vampyrite_Ore),
                 RecipeCategory.MISC, ModItems.VAMPYRITE_INGOT, .25f, 200, "vampyrite_ingot");
+        offerSmelting(exporter, List.of(ModItems.TURQITE_CRYSTAL),
+                RecipeCategory.MISC, ModItems.REFINED_TURQITE, .25f, 200, "refined_turqite");
+        offerBlasting(exporter, List.of(ModItems.TURQITE_CRYSTAL),
+                RecipeCategory.MISC, ModItems.REFINED_TURQITE, .25f, 200, "refined_turqite");
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
                 Ingredient.ofItems(Items.NETHERITE_SWORD),
@@ -316,6 +329,86 @@ SmithingTransformRecipeJsonBuilder.create(
                 ModItems.SOLARIUM_HOE
         ).criterion(hasItem(ModItems.SOLARIUM_INGOT), conditionsFromItem(ModItems.SOLARIUM_INGOT))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_HOE) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.VAMPYRITE_HELMET),
+                Ingredient.ofItems(ModItems.REFINED_TURQITE),
+                RecipeCategory.COMBAT,
+                ModItems.TURQITE_HELMET
+        ).criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_HELMET) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.VAMPYRITE_CHESTPLATE),
+                Ingredient.ofItems(ModItems.REFINED_TURQITE),
+                RecipeCategory.COMBAT,
+                ModItems.TURQITE_CHESTPLATE
+        ).criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_CHESTPLATE) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.VAMPYRITE_LEGGINGS),
+                Ingredient.ofItems(ModItems.REFINED_TURQITE),
+                RecipeCategory.COMBAT,
+                ModItems.TURQITE_LEGGINGS
+        ).criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_LEGGINGS) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.VAMPYRITE_BOOTS),
+                Ingredient.ofItems(ModItems.REFINED_TURQITE),
+                RecipeCategory.COMBAT,
+                ModItems.TURQITE_BOOTS
+        ).criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_BOOTS) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.VAMPYRITE_SWORD),
+                Ingredient.ofItems(ModItems.REFINED_TURQITE),
+                RecipeCategory.COMBAT,
+                ModItems.TURQITE_SWORD
+        ).criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_SWORD) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.VAMPYRITE_PICKAXE),
+                Ingredient.ofItems(ModItems.REFINED_TURQITE),
+                RecipeCategory.TOOLS,
+                ModItems.TURQITE_PICKAXE
+        ).criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_PICKAXE) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.VAMPYRITE_AXE),
+                Ingredient.ofItems(ModItems.REFINED_TURQITE),
+                RecipeCategory.TOOLS,
+                ModItems.TURQITE_AXE
+        ).criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_AXE) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.VAMPYRITE_SHOVEL),
+                Ingredient.ofItems(ModItems.REFINED_TURQITE),
+                RecipeCategory.TOOLS    ,
+                ModItems.TURQITE_SHOVEL
+        ).criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_SHOVEL) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.VAMPYRITE_HOE),
+                Ingredient.ofItems(ModItems.REFINED_TURQITE),
+                RecipeCategory.TOOLS,
+                ModItems.TURQITE_HOE
+        ).criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_HOE) + "_"));
+SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.SOLARIUM_SWORD),
+                Ingredient.ofItems(ModItems.SOLAR_STAR),
+                RecipeCategory.COMBAT,
+                ModItems.HEAVENLY_BLADE
+        ).criterion(hasItem(ModItems.SOLARIUM_SWORD), conditionsFromItem(ModItems.SOLARIUM_SWORD))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HEAVENLY_BLADE) + "_"));
 
     }
 }

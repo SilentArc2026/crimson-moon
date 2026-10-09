@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "crimson-moon:solar_star"
+  },
+  "base": {
+    "item": "crimson-moon:solarium_sword"
+  },
+  "result": {
+    "item": "crimson-moon:heavenly_blade"
+  },
+  "template": {
+    "item": "crimson-moon:solarium_upgrade_smithing_template"
+  }
+}

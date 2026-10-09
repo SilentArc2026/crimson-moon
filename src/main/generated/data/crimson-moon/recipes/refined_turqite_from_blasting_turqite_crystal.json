@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "refined_turqite",
+  "ingredient": {
+    "item": "crimson-moon:turqite_crystal"
+  },
+  "result": "crimson-moon:refined_turqite"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "crimson-moon:refined_turqite"
+  },
+  "base": {
+    "item": "crimson-moon:vampyrite_leggings"
+  },
+  "result": {
+    "item": "crimson-moon:turqite_leggings"
+  },
+  "template": {
+    "item": "crimson-moon:turqite_upgrade_smithing_template"
+  }
+}

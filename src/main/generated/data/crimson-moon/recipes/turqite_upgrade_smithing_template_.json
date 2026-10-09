@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "crimson-moon:refined_turqite"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "N": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CNC",
+    "CDC"
+  ],
+  "result": {
+    "item": "crimson-moon:turqite_upgrade_smithing_template"
+  },
+  "show_notification": true
+}

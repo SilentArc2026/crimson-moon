@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:refined_turqite_from_smelting_turqite_crystal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_turqite_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crimson-moon:turqite_crystal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_turqite_crystal",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:refined_turqite_from_smelting_turqite_crystal"
+    ]
+  },
+  "sends_telemetry_event": false
+}

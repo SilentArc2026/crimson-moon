@@ -52,6 +52,19 @@ public class ModItemGroup {
                         entries.add(ModItems.DIAMOND_ROD);
                         entries.add(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(ModItems.SOLAR_STAR);
+                        entries.add(ModItems.TURQITE_CRYSTAL);
+                        entries.add(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE);
+                        entries.add(ModItems.REFINED_TURQITE);
+                        entries.add(ModItems.TURQITE_AXE);
+                        entries.add(ModItems.TURQITE_PICKAXE);
+                        entries.add(ModItems.TURQITE_SHOVEL);
+                        entries.add(ModItems.TURQITE_HOE);
+                        entries.add(ModItems.TURQITE_SWORD);
+                        entries.add(ModItems.TURQITE_HELMET);
+                        entries.add(ModItems.TURQITE_CHESTPLATE);
+                        entries.add(ModItems.TURQITE_LEGGINGS);
+                        entries.add(ModItems.TURQITE_BOOTS);
+                        entries.add(ModItems.HEAVENLY_BLADE);
 
                         entries.add(ModBlocks.Crimsonite_Block);
                         entries.add(ModBlocks.Raw_Vampyrite_Block);
@@ -59,6 +72,16 @@ public class ModItemGroup {
                         entries.add(ModBlocks.Vampyrite_Ore);
                         entries.add(ModBlocks.Deepslate_Vampyrite_Ore);
                         entries.add(ModBlocks.Solarium_Block);
+                        entries.add(ModBlocks.Refined_Turqite_Block);
+                        entries.add(ModBlocks.Turqite_Bricks);
+                        entries.add(ModBlocks.Turqite_Crystal_Block);
+                        entries.add(ModBlocks.Budding_Crystalized_Turqite_Block);
+                        entries.add(ModBlocks.Crystalized_Turqite_Block);
+                        entries.add(ModBlocks.Smooth_Basalt_Turqite_Ore);
+                        entries.add(ModBlocks.Turqite_Cluster);
+                        entries.add(ModBlocks.SMALL_TURQITE_BUD);
+                        entries.add(ModBlocks.MEDIUM_TURQITE_BUD);
+                        entries.add(ModBlocks.LARGE_TURQITE_BUD);
                     }).build());
 
 

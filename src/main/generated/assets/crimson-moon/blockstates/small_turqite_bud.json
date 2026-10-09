@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "crimson-moon:block/small_turqite_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "crimson-moon:block/small_turqite_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "crimson-moon:block/small_turqite_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "crimson-moon:block/small_turqite_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "crimson-moon:block/small_turqite_bud"
+    },
+    "facing=west": {
+      "model": "crimson-moon:block/small_turqite_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

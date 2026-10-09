@@ -20,16 +20,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Vampyrite_Block, ModBlocks.Vampyrite_Ore);
+                .add(ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Vampyrite_Block, ModBlocks.Vampyrite_Ore, ModBlocks.Budding_Crystalized_Turqite_Block, ModBlocks.Crystalized_Turqite_Block, ModBlocks.Refined_Turqite_Block, ModBlocks.Smooth_Basalt_Turqite_Ore, ModBlocks.Turqite_Bricks, ModBlocks.Turqite_Crystal_Block, ModBlocks.Turqite_Cluster);
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block);
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.Vampyrite_Ore, ModBlocks.Vampyrite_Block, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Deepslate_Vampyrite_Ore);
+                .add(ModBlocks.Vampyrite_Ore, ModBlocks.Vampyrite_Block, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Budding_Crystalized_Turqite_Block, ModBlocks.Crystalized_Turqite_Block, ModBlocks.Refined_Turqite_Block, ModBlocks.Smooth_Basalt_Turqite_Ore, ModBlocks.Turqite_Bricks, ModBlocks.Turqite_Crystal_Block, ModBlocks.Turqite_Cluster);
 
        //Tag for Custom Tool Material for Crimson
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric","needs_tool_level_5")))
                 .add(ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block);
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric","needs_iron_tool")))
-                .add(ModBlocks.Vampyrite_Block, ModBlocks.Vampyrite_Ore, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Deepslate_Vampyrite_Ore);
+                .add(ModBlocks.Vampyrite_Block, ModBlocks.Vampyrite_Ore, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Budding_Crystalized_Turqite_Block, ModBlocks.Crystalized_Turqite_Block, ModBlocks.Refined_Turqite_Block, ModBlocks.Smooth_Basalt_Turqite_Ore, ModBlocks.Turqite_Bricks, ModBlocks.Turqite_Crystal_Block);
     }
 }

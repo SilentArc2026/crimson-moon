@@ -33,7 +33,13 @@ public enum ModArmorMaterials implements ArmorMaterial {
         map.put(ArmorItem.Type.LEGGINGS, 5);
         map.put(ArmorItem.Type.CHESTPLATE, 7);
         map.put(ArmorItem.Type.HELMET, 2);
-    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.5F, 0.1F, () -> Ingredient.ofItems(ModItems.VAMPYRITE_INGOT));
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.5F, 0.1F, () -> Ingredient.ofItems(ModItems.VAMPYRITE_INGOT)),
+    TURQITE("turqite", 38, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+        map.put(ArmorItem.Type.BOOTS, 3);
+        map.put(ArmorItem.Type.LEGGINGS, 6);
+        map.put(ArmorItem.Type.CHESTPLATE, 8);
+        map.put(ArmorItem.Type.HELMET, 3);
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.ofItems(ModItems.REFINED_TURQITE));
 
     public static final StringIdentifiable.Codec<ArmorMaterials> CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY = Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {

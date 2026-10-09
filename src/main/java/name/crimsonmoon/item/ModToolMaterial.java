@@ -12,7 +12,9 @@ import java.util.function.Supplier;
 public enum ModToolMaterial implements ToolMaterial {
     CRIMSON(5, 2600, 11.0F, 5.0F, 28, () -> Ingredient.ofItems(ModItems.Crimsonite_Ingot)),
     SOLARIUM(6, 3800, 13.0F, 6.0F, 40, () -> Ingredient.ofItems(ModItems.SOLARIUM_INGOT)),
-    VAMPYRITE(3, 2000, 9.0F, 4.0F, 20, () -> Ingredient.ofItems(ModItems.VAMPYRITE_INGOT));
+    HEAVENLY(7, 4000, 14.0F, 7.0F, 50, () -> Ingredient.ofItems(ModItems.SOLAR_STAR)),
+    VAMPYRITE(3, 2000, 9.0F, 4.0F, 20, () -> Ingredient.ofItems(ModItems.VAMPYRITE_INGOT)),
+    TURQITE(4, 2200, 10.0F, 5.0F, 25, () -> Ingredient.ofItems(ModItems.REFINED_TURQITE));
 
     private final int miningLevel;
     private final int itemDurability;

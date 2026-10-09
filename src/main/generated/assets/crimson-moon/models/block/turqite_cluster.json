@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "crimson-moon:block/turqite_cluster"
+  }
+}
