@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "crimson-moon:block/stripped_corrupted_log_top",
+    "side": "crimson-moon:block/stripped_corrupted_log"
+  }
+}

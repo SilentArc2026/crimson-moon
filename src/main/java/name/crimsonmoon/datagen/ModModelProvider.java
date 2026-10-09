@@ -29,6 +29,12 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Turqite_Bricks);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Turqite_Crystal_Block);
 
+        blockStateModelGenerator.registerLog(ModBlocks.CORRUPTED_LOG).log(ModBlocks.CORRUPTED_LOG).wood(ModBlocks.CORRUPTED_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_CORRUPTED_LOG).log(ModBlocks.STRIPPED_CORRUPTED_LOG).wood(ModBlocks.STRIPPED_CORRUPTED_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_PLANKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_LEAVES);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.CORRUPTED_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
         // === 1. TURQITE CLUSTER ===
         Identifier clusterModel = Models.CROSS.upload(
                 ModBlocks.Turqite_Cluster,

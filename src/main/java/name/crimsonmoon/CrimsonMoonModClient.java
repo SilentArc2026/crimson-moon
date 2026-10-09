@@ -12,6 +12,7 @@ public class CrimsonMoonModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SMALL_TURQITE_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MEDIUM_TURQITE_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LARGE_TURQITE_BUD, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORRUPTED_SAPLING, RenderLayer.getCutout());
 
     }
 }

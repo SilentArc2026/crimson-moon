@@ -81,7 +81,13 @@ public class ModItemGroup {
                         entries.add(ModBlocks.Turqite_Cluster);
                         entries.add(ModBlocks.SMALL_TURQITE_BUD);
                         entries.add(ModBlocks.MEDIUM_TURQITE_BUD);
-                        entries.add(ModBlocks.LARGE_TURQITE_BUD);
+                        entries.add(ModBlocks.CORRUPTED_LEAVES);
+                        entries.add(ModBlocks.CORRUPTED_LOG);
+                        entries.add(ModBlocks.CORRUPTED_PLANKS);
+                        entries.add(ModBlocks.CORRUPTED_SAPLING);
+                        entries.add(ModBlocks.CORRUPTED_WOOD);
+                        entries.add(ModBlocks.STRIPPED_CORRUPTED_LOG);
+                        entries.add(ModBlocks.STRIPPED_CORRUPTED_WOOD);
                     }).build());
 
 

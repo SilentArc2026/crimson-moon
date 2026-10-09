@@ -1,4 +1,4 @@
-// 1.20.1	2026-10-09T07:36:27.8272734	Crimson Moon/Block Loot Tables
+// 1.20.1	2026-10-09T13:05:06.5997028	Crimson Moon/Block Loot Tables
 2d6674827acc47dc2d0a518e800a4f6762835108 data\crimson-moon\loot_tables\blocks\deepslate_vampyrite_ore.json
 1baf21e85e467cbd20d6f65e060d127456445c76 data\crimson-moon\loot_tables\blocks\raw_vampyrite_block.json
 81f62882f90d0ce15678b1ccf80ebec501e9f788 data\crimson-moon\loot_tables\blocks\refined_turqite_block.json
@@ -8,7 +8,7 @@ fc516f411d572a74229d3b4c4313a063ef6d3c1d data\crimson-moon\loot_tables\blocks\cr
 d0c5b61946f36c6b308189711b44bcddf0b19949 data\crimson-moon\loot_tables\blocks\smooth_basalt_turqite_ore.json
 11f889a20acc8fbdd99c18930899ffbafca037b8 data\crimson-moon\loot_tables\blocks\crimsonite_block.json
 73823e7e771c35b018ae6a872d98daf6e6ffc70a data\crimson-moon\loot_tables\blocks\turqite_crystal_block.json
-818f5e9d879061e6bc2bf034dd669f6093312c12 data\crimson-moon\loot_tables\blocks\vampyrite_ore.json
 55d92316f0eadf5b27bbc22c97c46a3b17432faa data\crimson-moon\loot_tables\blocks\budding_crystalized_turqite_block.json
+818f5e9d879061e6bc2bf034dd669f6093312c12 data\crimson-moon\loot_tables\blocks\vampyrite_ore.json
 a1210919d3a61ec473b62d65233552fcd298412a data\crimson-moon\loot_tables\blocks\solarium_block.json
 41f1add7a3d7b781658130792f55cdee4c5a2bcc data\crimson-moon\loot_tables\blocks\vampyrite_block.json

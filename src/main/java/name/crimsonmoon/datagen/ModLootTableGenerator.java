@@ -21,7 +21,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.Refined_Turqite_Block);
         addDrop(ModBlocks.Turqite_Bricks);
         addDrop(ModBlocks.Turqite_Crystal_Block);
-        this.addDrop(ModBlocks.Turqite_Cluster, drops(ModItems.TURQITE_CRYSTAL));
+        addDrop(ModBlocks.Turqite_Cluster, drops(ModItems.TURQITE_CRYSTAL));
 
         addDrop(ModBlocks.Vampyrite_Ore, oreDrops(ModBlocks.Vampyrite_Ore, ModItems.RAW_VAMPYRITE));
         addDrop(ModBlocks.Deepslate_Vampyrite_Ore, oreDrops(ModBlocks.Deepslate_Vampyrite_Ore, ModItems.RAW_VAMPYRITE));

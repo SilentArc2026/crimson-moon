@@ -1,13 +1,10 @@
 package name.crimsonmoon.block;
 
 import name.crimsonmoon.CrimsonMoon;
+import name.crimsonmoon.world.tree.CorruptedSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.AmethystClusterBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FacingBlock;
-import net.minecraft.datafixer.fix.ChunkPalettedStorageFix;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -48,6 +45,20 @@ public class ModBlocks {
             new AmethystClusterBlock(5, 3, FabricBlockSettings.copyOf(Blocks.LARGE_AMETHYST_BUD)));
     public static final Block Turqite_Cluster = registerBlock("turqite_cluster",
             new AmethystClusterBlock(7, 3, FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)));
+    public static final Block CORRUPTED_LOG = registerBlock("corrupted_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block CORRUPTED_WOOD = registerBlock("corrupted_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block STRIPPED_CORRUPTED_LOG = registerBlock("stripped_corrupted_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block STRIPPED_CORRUPTED_WOOD = registerBlock("stripped_corrupted_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block CORRUPTED_PLANKS  = registerBlock("corrupted_planks",
+            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+    public static final Block CORRUPTED_LEAVES  = registerBlock("corrupted_leaves",
+            new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
+    public static final Block CORRUPTED_SAPLING  = registerBlock("corrupted_sapling",
+            new SaplingBlock(new CorruptedSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
 
 
     private static Block registerBlock(String name, Block block) {

@@ -1,5 +1,6 @@
 package name.crimsonmoon.datagen;
 
+import name.crimsonmoon.block.ModBlocks;
 import name.crimsonmoon.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -20,6 +21,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.CRIMSON_HELMET, ModItems.CRIMSON_CHESTPLATE, ModItems.CRIMSON_LEGGINGS, ModItems.CRIMSON_BOOTS, ModItems.VAMPYRITE_BOOTS, ModItems.VAMPYRITE_LEGGINGS, ModItems.VAMPYRITE_CHESTPLATE, ModItems.VAMPYRITE_HELMET, ModItems.SOLARIUM_BOOTS, ModItems.SOLARIUM_LEGGINGS, ModItems.SOLARIUM_CHESTPLATE, ModItems.SOLARIUM_HELMET);
+        getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.CORRUPTED_LOG.asItem(), ModBlocks.CORRUPTED_WOOD.asItem(), ModBlocks.STRIPPED_CORRUPTED_LOG.asItem(), ModBlocks.STRIPPED_CORRUPTED_WOOD.asItem());
+        getOrCreateTagBuilder(ItemTags.PLANKS)
+                .add(ModBlocks.CORRUPTED_PLANKS.asItem());
 
     }
 }
