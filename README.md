@@ -20,3 +20,5 @@ AutumnFalls - General Planning
 YeetMaster - Lore Writing, General Planning
 
 MountainSon - Artist, General Planning
+
+Acer6822 - Lore, General Planning, Financial Support
