@@ -1,7 +1,8 @@
-// 1.20.1	2026-10-09T13:05:06.5804525	Crimson Moon/Tags for minecraft:block
+// 1.20.1	2026-11-05T01:01:43.9891045	Crimson Moon/Tags for minecraft:block
+1bf3b2d1763d255914735c0d2edc525efe6c7ed6 data\minecraft\tags\blocks\needs_stone_tool.json
 453bdbeee3ed810765b4460cb53873215156328f data\fabric\tags\blocks\needs_tool_level_5.json
-649f088a0317fecfa4487e132b3ef6ab96bff6e4 data\minecraft\tags\blocks\mineable\pickaxe.json
 6b55be92447e7716ac9f8ebefcd8dec0a2473f81 data\minecraft\tags\blocks\needs_iron_tool.json
 3c57b3fc7d80e26d37f31dcee450c4f005affb5d data\fabric\tags\blocks\needs_iron_tool.json
 453bdbeee3ed810765b4460cb53873215156328f data\minecraft\tags\blocks\needs_diamond_tool.json
-17a86aa06ddee7d2516057b0eb9b7309760a3800 data\minecraft\tags\blocks\logs_that_burn.json
+e95c7c043c5bc5f81d196da671c78a7a13eaccb1 data\minecraft\tags\blocks\logs_that_burn.json
+649f088a0317fecfa4487e132b3ef6ab96bff6e4 data\minecraft\tags\blocks\mineable\pickaxe.json

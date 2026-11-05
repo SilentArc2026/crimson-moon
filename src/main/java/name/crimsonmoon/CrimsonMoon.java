@@ -3,6 +3,7 @@ package name.crimsonmoon;
 import name.crimsonmoon.block.ModBlocks;
 import name.crimsonmoon.item.ModItemGroup;
 import name.crimsonmoon.item.ModItems;
+import name.crimsonmoon.painting.ModPaintings;
 import name.crimsonmoon.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -23,5 +24,7 @@ public class CrimsonMoon implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 		ModWorldGeneration.generateModWorldGeneration();
+
+		ModPaintings.registerPaintings();
 	}
 }

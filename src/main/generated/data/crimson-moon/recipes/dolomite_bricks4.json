@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "crimson-moon:polished_dolomite"
+    }
+  },
+  "pattern": [
+    "   ",
+    "PP ",
+    "PP "
+  ],
+  "result": {
+    "item": "crimson-moon:dolomite_bricks"
+  },
+  "show_notification": true
+}

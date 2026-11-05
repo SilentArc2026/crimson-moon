@@ -88,6 +88,16 @@ public class ModItemGroup {
                         entries.add(ModBlocks.CORRUPTED_WOOD);
                         entries.add(ModBlocks.STRIPPED_CORRUPTED_LOG);
                         entries.add(ModBlocks.STRIPPED_CORRUPTED_WOOD);
+                        entries.add(ModBlocks.ACIDIC_LEAVES);
+                        entries.add(ModBlocks.ACIDIC_LOG);
+                        entries.add(ModBlocks.ACIDIC_PLANKS);
+                        entries.add(ModBlocks.ACIDIC_SAPLING);
+                        entries.add(ModBlocks.ACIDIC_WOOD);
+                        entries.add(ModBlocks.STRIPPED_ACIDIC_LOG);
+                        entries.add(ModBlocks.STRIPPED_ACIDIC_WOOD);
+                        entries.add(ModBlocks.DOLOMITE);
+                        entries.add(ModBlocks.DOLOMITE_BRICKS);
+                        entries.add(ModBlocks.POLISHED_DOLOMITE);
                     }).build());
 
 

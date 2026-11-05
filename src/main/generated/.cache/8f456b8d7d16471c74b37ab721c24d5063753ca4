@@ -1,3 +1,5 @@
-// 1.20.1	2026-10-09T13:05:06.6203116	Crimson Moon/
-9418d800bf11da5edf01ed34c0c4c242bd6be59b data\crimson-moon\worldgen\configured_feature\corrupted.json
+// 1.20.1	2026-11-05T01:01:44.0004042	Crimson Moon/
 cd64526d107ba4c1339f5908f981090eb312fb15 data\crimson-moon\worldgen\placed_feature\corrupted_placed.json
+9418d800bf11da5edf01ed34c0c4c242bd6be59b data\crimson-moon\worldgen\configured_feature\corrupted.json
+8a88e7d83b6f7d26970699fe7474155328cb584f data\crimson-moon\worldgen\configured_feature\acidic.json
+ff38aab68957137fd96c97e0337e5a07a7a32fde data\crimson-moon\worldgen\placed_feature\acidic_placed.json

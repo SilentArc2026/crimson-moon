@@ -20,6 +20,9 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.Crystalized_Turqite_Block);
         addDrop(ModBlocks.Refined_Turqite_Block);
         addDrop(ModBlocks.Turqite_Bricks);
+        addDrop(ModBlocks.DOLOMITE_BRICKS);
+        addDrop(ModBlocks.DOLOMITE);
+        addDrop(ModBlocks.POLISHED_DOLOMITE);
         addDrop(ModBlocks.Turqite_Crystal_Block);
         addDrop(ModBlocks.Turqite_Cluster, drops(ModItems.TURQITE_CRYSTAL));
 

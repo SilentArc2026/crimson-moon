@@ -28,12 +28,20 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Smooth_Basalt_Turqite_Ore);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Turqite_Bricks);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Turqite_Crystal_Block);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DOLOMITE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DOLOMITE_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.POLISHED_DOLOMITE);
 
         blockStateModelGenerator.registerLog(ModBlocks.CORRUPTED_LOG).log(ModBlocks.CORRUPTED_LOG).wood(ModBlocks.CORRUPTED_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_CORRUPTED_LOG).log(ModBlocks.STRIPPED_CORRUPTED_LOG).wood(ModBlocks.STRIPPED_CORRUPTED_WOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_LEAVES);
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.CORRUPTED_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerLog(ModBlocks.ACIDIC_LOG).log(ModBlocks.ACIDIC_LOG).wood(ModBlocks.ACIDIC_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ACIDIC_LOG).log(ModBlocks.STRIPPED_ACIDIC_LOG).wood(ModBlocks.STRIPPED_ACIDIC_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ACIDIC_LEAVES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ACIDIC_PLANKS);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.ACIDIC_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         // === 1. TURQITE CLUSTER ===
         Identifier clusterModel = Models.CROSS.upload(

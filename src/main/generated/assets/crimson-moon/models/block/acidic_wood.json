@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "crimson-moon:block/acidic_log",
+    "side": "crimson-moon:block/acidic_log"
+  }
+}

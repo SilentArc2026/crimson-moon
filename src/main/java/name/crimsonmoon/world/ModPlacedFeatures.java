@@ -16,6 +16,7 @@ public class ModPlacedFeatures {
 
 
     public static final RegistryKey<PlacedFeature> CORRUPTED_PLACED_KEY = registerKey("corrupted_placed");
+    public static final RegistryKey<PlacedFeature> ACIDIC_PLACED_KEY = registerKey("acidic_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -23,6 +24,9 @@ public class ModPlacedFeatures {
         register(context, CORRUPTED_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CORRUPTED_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.CORRUPTED_SAPLING));
+        register(context, ACIDIC_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ACIDIC_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                    PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.ACIDIC_SAPLING));
     }
 
 

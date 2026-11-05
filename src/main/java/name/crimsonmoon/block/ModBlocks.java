@@ -5,6 +5,7 @@ import name.crimsonmoon.world.tree.CorruptedSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -59,6 +60,31 @@ public class ModBlocks {
             new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
     public static final Block CORRUPTED_SAPLING  = registerBlock("corrupted_sapling",
             new SaplingBlock(new CorruptedSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+    public static final Block ACIDIC_LOG = registerBlock("acidic_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block ACIDIC_WOOD = registerBlock("acidic_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block STRIPPED_ACIDIC_LOG = registerBlock("stripped_acidic_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block STRIPPED_ACIDIC_WOOD = registerBlock("stripped_acidic_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block ACIDIC_PLANKS  = registerBlock("acidic_planks",
+            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+    public static final Block ACIDIC_LEAVES  = registerBlock("acidic_leaves",
+            new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
+    public static final Block ACIDIC_SAPLING  = registerBlock("acidic_sapling",
+            new SaplingBlock(new CorruptedSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+    public static final Block DOLOMITE = registerBlock("dolomite",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block DOLOMITE_BRICKS = registerBlock("dolomite_bricks",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+    public static final Block POLISHED_DOLOMITE = registerBlock("polished_dolomite",
+            new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE)));
+
+    //public static final Block ACID_FLOWER = registerBlock("acid_flower",
+            //new FlowerBlock(StatusEffects.POISON, 5, FabricBlockSettings.copyOf(Blocks.ALLIUM)));
+    //public static final Block POTTED_ACID_FLOWER = registerBlockWithoutBlockItem("potted_acid_flower",
+            //new FlowerPotBlock(ACID_FLOWER, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));
 
 
     private static Block registerBlock(String name, Block block) {

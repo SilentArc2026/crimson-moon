@@ -16,6 +16,7 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> CORRUPTED_KEY = registerKey("corrupted");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ACIDIC_KEY = registerKey("acidic");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, CORRUPTED_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
@@ -24,9 +25,14 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(ModBlocks.CORRUPTED_LEAVES),
                 new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(1), 8),
                 new TwoLayersFeatureSize(1, 5, 8)).build());
+        register(context, ACIDIC_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.ACIDIC_LOG),
+                new StraightTrunkPlacer(5, 6, 3),
+                BlockStateProvider.of(ModBlocks.ACIDIC_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(1), 8),
+                new TwoLayersFeatureSize(1, 5, 8)).build());
 
     }
-
 
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -25,6 +25,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block);
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.Vampyrite_Ore, ModBlocks.Vampyrite_Block, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Budding_Crystalized_Turqite_Block, ModBlocks.Crystalized_Turqite_Block, ModBlocks.Refined_Turqite_Block, ModBlocks.Smooth_Basalt_Turqite_Ore, ModBlocks.Turqite_Bricks, ModBlocks.Turqite_Crystal_Block, ModBlocks.Turqite_Cluster);
+        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.DOLOMITE, ModBlocks.POLISHED_DOLOMITE, ModBlocks.DOLOMITE_BRICKS);
 
        //Tag for Custom Tool Material for Crimson
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric","needs_tool_level_5")))
@@ -32,6 +34,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric","needs_iron_tool")))
                 .add(ModBlocks.Vampyrite_Block, ModBlocks.Vampyrite_Ore, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Budding_Crystalized_Turqite_Block, ModBlocks.Crystalized_Turqite_Block, ModBlocks.Refined_Turqite_Block, ModBlocks.Smooth_Basalt_Turqite_Ore, ModBlocks.Turqite_Bricks, ModBlocks.Turqite_Crystal_Block);
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
-                .add(ModBlocks.CORRUPTED_LOG, ModBlocks.CORRUPTED_WOOD, ModBlocks.STRIPPED_CORRUPTED_LOG, ModBlocks.STRIPPED_CORRUPTED_WOOD);
+                .add(ModBlocks.CORRUPTED_LOG, ModBlocks.CORRUPTED_WOOD, ModBlocks.STRIPPED_CORRUPTED_LOG, ModBlocks.STRIPPED_CORRUPTED_WOOD, ModBlocks.ACIDIC_LOG, ModBlocks.ACIDIC_WOOD, ModBlocks.STRIPPED_ACIDIC_LOG, ModBlocks.STRIPPED_ACIDIC_WOOD);
     }
 }

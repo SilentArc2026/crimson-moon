@@ -1,0 +1,45 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "crimson-moon:a_forgotten_tool",
+      "required": false
+    },
+    {
+      "id": "crimson-moon:blub",
+      "required": false
+    },
+    {
+      "id": "crimson-moon:the_final_rise_of_the_crimson_moon",
+      "required": false
+    },
+    {
+      "id": "crimson-moon:the_first_crimson_moon",
+      "required": false
+    },
+    {
+      "id": "crimson-moon:the_forgotten_legend",
+      "required": false
+    },
+    {
+      "id": "crimson-moon:the_seven_flowers",
+      "required": false
+    },
+    {
+      "id": "crimson-moon:the_seven_souls",
+      "required": false
+    },
+    {
+      "id": "crimson-moon:the_true_hero",
+      "required": false
+    },
+    {
+      "id": "crimson-moon:the_wither_storm",
+      "required": false
+    },
+    {
+      "id": "crimson-moon:torque_dawg_death",
+      "required": false
+    }
+  ]
+}

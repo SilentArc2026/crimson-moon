@@ -4,6 +4,10 @@
     "crimson-moon:corrupted_log",
     "crimson-moon:corrupted_wood",
     "crimson-moon:stripped_corrupted_log",
-    "crimson-moon:stripped_corrupted_wood"
+    "crimson-moon:stripped_corrupted_wood",
+    "crimson-moon:stripped_acidic_wood",
+    "crimson-moon:stripped_acidic_log",
+    "crimson-moon:acidic_log",
+    "crimson-moon:acidic_wood"
   ]
 }

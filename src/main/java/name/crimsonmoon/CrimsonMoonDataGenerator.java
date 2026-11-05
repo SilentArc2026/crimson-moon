@@ -19,6 +19,7 @@ public class CrimsonMoonDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeGenerator::new);
 		pack.addProvider(ModWorldGenerator::new);
+		pack.addProvider(ModPaintingVariantTagProvider::new);
 	}
 
 	@Override

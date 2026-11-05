@@ -22,9 +22,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.CRIMSON_HELMET, ModItems.CRIMSON_CHESTPLATE, ModItems.CRIMSON_LEGGINGS, ModItems.CRIMSON_BOOTS, ModItems.VAMPYRITE_BOOTS, ModItems.VAMPYRITE_LEGGINGS, ModItems.VAMPYRITE_CHESTPLATE, ModItems.VAMPYRITE_HELMET, ModItems.SOLARIUM_BOOTS, ModItems.SOLARIUM_LEGGINGS, ModItems.SOLARIUM_CHESTPLATE, ModItems.SOLARIUM_HELMET);
         getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
-                .add(ModBlocks.CORRUPTED_LOG.asItem(), ModBlocks.CORRUPTED_WOOD.asItem(), ModBlocks.STRIPPED_CORRUPTED_LOG.asItem(), ModBlocks.STRIPPED_CORRUPTED_WOOD.asItem());
+                .add(ModBlocks.CORRUPTED_LOG.asItem(), ModBlocks.CORRUPTED_WOOD.asItem(), ModBlocks.STRIPPED_CORRUPTED_LOG.asItem(), ModBlocks.STRIPPED_CORRUPTED_WOOD.asItem(), ModBlocks.STRIPPED_ACIDIC_WOOD.asItem(), ModBlocks.STRIPPED_ACIDIC_LOG.asItem(), ModBlocks.ACIDIC_LOG.asItem(), ModBlocks.ACIDIC_WOOD.asItem());
         getOrCreateTagBuilder(ItemTags.PLANKS)
-                .add(ModBlocks.CORRUPTED_PLANKS.asItem());
+                .add(ModBlocks.CORRUPTED_PLANKS.asItem(), ModBlocks.ACIDIC_PLANKS.asItem());
 
     }
 }

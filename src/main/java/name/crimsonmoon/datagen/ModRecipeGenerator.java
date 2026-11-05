@@ -172,6 +172,20 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('S', Items.NETHER_STAR)
                 .criterion(hasItem(Items.NETHER_STAR), conditionsFromItem(Items.NETHER_STAR))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLAR_STAR) + "1"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.POLISHED_DOLOMITE)
+                .pattern("   ")
+                .pattern("DD ")
+                .pattern("DD ")
+                .input('D', ModBlocks.DOLOMITE)
+                .criterion(hasItem(ModBlocks.DOLOMITE), conditionsFromItem(ModBlocks.DOLOMITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.POLISHED_DOLOMITE) + "4"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DOLOMITE_BRICKS)
+                .pattern("   ")
+                .pattern("PP ")
+                .pattern("PP ")
+                .input('P', ModBlocks.POLISHED_DOLOMITE)
+                .criterion(hasItem(ModBlocks.POLISHED_DOLOMITE), conditionsFromItem(ModBlocks.POLISHED_DOLOMITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DOLOMITE_BRICKS) + "4"));
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.Crimsonite_Ingot, RecipeCategory.MISC, ModBlocks.Crimsonite_Block);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.SOLARIUM_INGOT, RecipeCategory.MISC, ModBlocks.Solarium_Block);
