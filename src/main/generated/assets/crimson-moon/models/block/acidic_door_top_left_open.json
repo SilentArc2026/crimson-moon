@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "textures": {
+    "bottom": "crimson-moon:block/acidic_door_bottom",
+    "top": "crimson-moon:block/acidic_door_top"
+  }
+}

@@ -23,7 +23,25 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.DOLOMITE_BRICKS);
         addDrop(ModBlocks.DOLOMITE);
         addDrop(ModBlocks.POLISHED_DOLOMITE);
+        addDrop(ModBlocks.ACIDIC_SAPLING);
+        addDrop(ModBlocks.CORRUPTED_SAPLING);
         addDrop(ModBlocks.Turqite_Crystal_Block);
+        addDrop(ModBlocks.ACIDIC_STAIRS);
+        addDrop(ModBlocks.CORRUPTED_STAIRS);
+        addDrop(ModBlocks.CORRUPTED_BUTTON);
+        addDrop(ModBlocks.CORRUPTED_PRESSURE_PLATE);
+        addDrop(ModBlocks.ACIDIC_BUTTON);
+        addDrop(ModBlocks.ACIDIC_PRESSURE_PLATE);
+        addDrop(ModBlocks.ACIDIC_FENCE);
+        addDrop(ModBlocks.ACIDIC_FENCE_GATE);
+        addDrop(ModBlocks.CORRUPTED_FENCE);
+        addDrop(ModBlocks.CORRUPTED_FENCE_GATE);
+        addDrop(ModBlocks.ACIDIC_TRAPDOOR);
+        addDrop(ModBlocks.CORRUPTED_TRAPDOOR);
+        addDrop(ModBlocks.ACIDIC_DOOR, doorDrops(ModBlocks.ACIDIC_DOOR));
+        addDrop(ModBlocks.CORRUPTED_DOOR, doorDrops(ModBlocks.CORRUPTED_DOOR));
+        addDrop(ModBlocks.CORRUPTED_SLAB, slabDrops(ModBlocks.CORRUPTED_SLAB));
+        addDrop(ModBlocks.ACIDIC_SLAB, slabDrops(ModBlocks.ACIDIC_SLAB));
         addDrop(ModBlocks.Turqite_Cluster, drops(ModItems.TURQITE_CRYSTAL));
 
         addDrop(ModBlocks.Vampyrite_Ore, oreDrops(ModBlocks.Vampyrite_Ore, ModItems.RAW_VAMPYRITE));

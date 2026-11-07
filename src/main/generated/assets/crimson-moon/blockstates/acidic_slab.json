@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crimson-moon:block/acidic_slab"
+    },
+    "type=double": {
+      "model": "crimson-moon:block/acidic_planks"
+    },
+    "type=top": {
+      "model": "crimson-moon:block/acidic_slab_top"
+    }
+  }
+}

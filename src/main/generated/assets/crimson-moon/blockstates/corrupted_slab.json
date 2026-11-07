@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crimson-moon:block/corrupted_slab"
+    },
+    "type=double": {
+      "model": "crimson-moon:block/corrupted_planks"
+    },
+    "type=top": {
+      "model": "crimson-moon:block/corrupted_slab_top"
+    }
+  }
+}

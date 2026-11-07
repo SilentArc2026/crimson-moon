@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "crimson-moon:block/acidic_planks",
+    "side": "crimson-moon:block/acidic_planks",
+    "top": "crimson-moon:block/acidic_planks"
+  }
+}

@@ -4,6 +4,7 @@ import name.crimsonmoon.block.ModBlocks;
 import name.crimsonmoon.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Block;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.SmithingTransformRecipeJsonBuilder;
@@ -186,6 +187,8 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('P', ModBlocks.POLISHED_DOLOMITE)
                 .criterion(hasItem(ModBlocks.POLISHED_DOLOMITE), conditionsFromItem(ModBlocks.POLISHED_DOLOMITE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DOLOMITE_BRICKS) + "4"));
+        offerPressurePlateRecipe(exporter, RecipeCategory.MISC, ModBlocks.CORRUPTED_PLANKS, RecipeCategory.MISC, ModBlocks.CORRUPTED_PRESSURE_PLATE);
+        offerPressurePlateRecipe(exporter, RecipeCategory.MISC, ModBlocks.ACIDIC_PLANKS, RecipeCategory.MISC, ModBlocks.ACIDIC_PRESSURE_PLATE);
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.Crimsonite_Ingot, RecipeCategory.MISC, ModBlocks.Crimsonite_Block);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.SOLARIUM_INGOT, RecipeCategory.MISC, ModBlocks.Solarium_Block);
@@ -423,6 +426,10 @@ SmithingTransformRecipeJsonBuilder.create(
                 ModItems.HEAVENLY_BLADE
         ).criterion(hasItem(ModItems.SOLARIUM_SWORD), conditionsFromItem(ModItems.SOLARIUM_SWORD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HEAVENLY_BLADE) + "_"));
+
+    }
+
+    private void offerPressurePlateRecipe(Consumer<RecipeJsonProvider> exporter, RecipeCategory recipeCategory, Block corruptedPlanks, RecipeCategory recipeCategory1, Block corruptedPressurePlate) {
 
     }
 }

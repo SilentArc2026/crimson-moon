@@ -1,6 +1,7 @@
 package name.crimsonmoon.block;
 
 import name.crimsonmoon.CrimsonMoon;
+import name.crimsonmoon.world.tree.AcidicSaplingGenerator;
 import name.crimsonmoon.world.tree.CorruptedSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -73,13 +74,48 @@ public class ModBlocks {
     public static final Block ACIDIC_LEAVES  = registerBlock("acidic_leaves",
             new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
     public static final Block ACIDIC_SAPLING  = registerBlock("acidic_sapling",
-            new SaplingBlock(new CorruptedSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+            new SaplingBlock(new AcidicSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
     public static final Block DOLOMITE = registerBlock("dolomite",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block DOLOMITE_BRICKS = registerBlock("dolomite_bricks",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
     public static final Block POLISHED_DOLOMITE = registerBlock("polished_dolomite",
             new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE)));
+
+    public static final Block CORRUPTED_STAIRS = registerBlock("corrupted_stairs",
+            new StairsBlock(ModBlocks.CORRUPTED_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+    public static final Block CORRUPTED_SLAB = registerBlock("corrupted_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+    public static final Block ACIDIC_STAIRS = registerBlock("acidic_stairs",
+            new StairsBlock(ModBlocks.ACIDIC_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+    public static final Block ACIDIC_SLAB = registerBlock("acidic_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+    public static final Block CORRUPTED_BUTTON = registerBlock("corrupted_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 10, true));
+    public static final Block CORRUPTED_PRESSURE_PLATE = registerBlock("corrupted_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+    public static final Block ACIDIC_BUTTON = registerBlock("acidic_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 10, true));
+    public static final Block ACIDIC_FENCE = registerBlock("acidic_fence",
+            new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
+    public static final Block ACIDIC_FENCE_GATE = registerBlock("acidic_fence_gate",
+            new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
+    public static final Block CORRUPTED_FENCE = registerBlock("corrupted_fence",
+            new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
+    public static final Block CORRUPTED_FENCE_GATE = registerBlock("corrupted_fence_gate",
+            new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
+    public static final Block ACIDIC_PRESSURE_PLATE = registerBlock("acidic_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+    public static final Block CORRUPTED_DOOR = registerBlock("corrupted_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK));
+    public static final Block CORRUPTED_TRAPDOOR = registerBlock("corrupted_trapdoor",
+            new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
+    public static final Block ACIDIC_DOOR = registerBlock("acidic_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK));
+    public static final Block ACIDIC_TRAPDOOR = registerBlock("acidic_trapdoor",
+            new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
+
+
 
     //public static final Block ACID_FLOWER = registerBlock("acid_flower",
             //new FlowerBlock(StatusEffects.POISON, 5, FabricBlockSettings.copyOf(Blocks.ALLIUM)));

@@ -34,14 +34,32 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerLog(ModBlocks.CORRUPTED_LOG).log(ModBlocks.CORRUPTED_LOG).wood(ModBlocks.CORRUPTED_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_CORRUPTED_LOG).log(ModBlocks.STRIPPED_CORRUPTED_LOG).wood(ModBlocks.STRIPPED_CORRUPTED_WOOD);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_PLANKS);
+        BlockStateModelGenerator.BlockTexturePool corruptedTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CORRUPTED_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_LEAVES);
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.CORRUPTED_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerLog(ModBlocks.ACIDIC_LOG).log(ModBlocks.ACIDIC_LOG).wood(ModBlocks.ACIDIC_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ACIDIC_LOG).log(ModBlocks.STRIPPED_ACIDIC_LOG).wood(ModBlocks.STRIPPED_ACIDIC_WOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ACIDIC_LEAVES);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ACIDIC_PLANKS);
+        BlockStateModelGenerator.BlockTexturePool acidicTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.ACIDIC_PLANKS);
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.ACIDIC_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        corruptedTexturePool.stairs(ModBlocks.CORRUPTED_STAIRS);
+        corruptedTexturePool.slab(ModBlocks.CORRUPTED_SLAB);
+        acidicTexturePool.stairs(ModBlocks.ACIDIC_STAIRS);
+        acidicTexturePool.slab(ModBlocks.ACIDIC_SLAB);
+        corruptedTexturePool.button(ModBlocks.CORRUPTED_BUTTON);
+        corruptedTexturePool.pressurePlate(ModBlocks.CORRUPTED_PRESSURE_PLATE);
+        acidicTexturePool.button(ModBlocks.ACIDIC_BUTTON);
+        acidicTexturePool.pressurePlate(ModBlocks.ACIDIC_PRESSURE_PLATE);
+        corruptedTexturePool.fence(ModBlocks.CORRUPTED_FENCE);
+        corruptedTexturePool.fenceGate(ModBlocks.CORRUPTED_FENCE_GATE);
+        acidicTexturePool.fence(ModBlocks.ACIDIC_FENCE);
+        acidicTexturePool.fenceGate(ModBlocks.ACIDIC_FENCE_GATE);
+
+        blockStateModelGenerator.registerDoor(ModBlocks.ACIDIC_DOOR);
+        blockStateModelGenerator.registerDoor(ModBlocks.CORRUPTED_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.ACIDIC_TRAPDOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.CORRUPTED_TRAPDOOR);
 
         // === 1. TURQITE CLUSTER ===
         Identifier clusterModel = Models.CROSS.upload(

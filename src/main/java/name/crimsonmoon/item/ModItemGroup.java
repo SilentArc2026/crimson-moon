@@ -98,6 +98,22 @@ public class ModItemGroup {
                         entries.add(ModBlocks.DOLOMITE);
                         entries.add(ModBlocks.DOLOMITE_BRICKS);
                         entries.add(ModBlocks.POLISHED_DOLOMITE);
+                        entries.add(ModBlocks.ACIDIC_SLAB);
+                        entries.add(ModBlocks.ACIDIC_STAIRS);
+                        entries.add(ModBlocks.CORRUPTED_SLAB);
+                        entries.add(ModBlocks.CORRUPTED_STAIRS);
+                        entries.add(ModBlocks.ACIDIC_BUTTON);
+                        entries.add(ModBlocks.ACIDIC_PRESSURE_PLATE);
+                        entries.add(ModBlocks.CORRUPTED_BUTTON);
+                        entries.add(ModBlocks.CORRUPTED_PRESSURE_PLATE);
+                        entries.add(ModBlocks.CORRUPTED_FENCE);
+                        entries.add(ModBlocks.CORRUPTED_FENCE_GATE);
+                        entries.add(ModBlocks.ACIDIC_FENCE);
+                        entries.add(ModBlocks.ACIDIC_FENCE_GATE);
+                        entries.add(ModBlocks.CORRUPTED_DOOR);
+                        entries.add(ModBlocks.CORRUPTED_TRAPDOOR);
+                        entries.add(ModBlocks.ACIDIC_DOOR);
+                        entries.add(ModBlocks.ACIDIC_TRAPDOOR);
                     }).build());
 
 

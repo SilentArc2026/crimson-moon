@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "crimson-moon:corrupted_slab",
+    "crimson-moon:corrupted_stairs",
+    "crimson-moon:acidic_slab",
+    "crimson-moon:acidic_stairs",
+    "crimson-moon:acidic_fence",
+    "crimson-moon:acidic_fence_gate",
+    "crimson-moon:corrupted_fence",
+    "crimson-moon:corrupted_fence_gate",
+    "crimson-moon:acidic_door",
+    "crimson-moon:corrupted_door",
+    "crimson-moon:acidic_trapdoor",
+    "crimson-moon:corrupted_trapdoor"
+  ]
+}
