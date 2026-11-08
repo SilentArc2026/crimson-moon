@@ -134,5 +134,13 @@
   "block.crimson-moon.acidic_trapdoor": "Acidic Trapdoor",
   "block.crimson-moon.corrupted_door": "Corrupted Door",
   "block.crimson-moon.corrupted_trapdoor": "Corrupted Trapdoor",
+  "block.crimson-moon.corrupted_dirt": "Corrupted Dirt",
+  "block.crimson-moon.corrupted_grass_block": "Corrupted Grass Block",
+  "block.crimson-moon.acidic_dirt": "Acidic Dirt",
+  "block.crimson-moon.acidic_grass_block": "Acidic Grass Block",
+  "block.crimson-moon.corrupted_grass": "Corrupted Grass",
+  "block.crimson-moon.corrupted_tall_grass": "Corrupted Tall Grass",
+  "block.crimson-moon.acidic_tall_grass": "Acidic Tall Grass",
+  "block.crimson-moon.acidic_grass": "Acidic Grass",
   "itemgroup.crimson_moon_group": "Crimson Moon"
 }

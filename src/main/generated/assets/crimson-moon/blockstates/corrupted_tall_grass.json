@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "crimson-moon:block/corrupted_tall_grass_bottom"
+    },
+    "half=upper": {
+      "model": "crimson-moon:block/corrupted_tall_grass_top"
+    }
+  }
+}

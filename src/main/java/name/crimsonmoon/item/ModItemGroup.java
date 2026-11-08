@@ -114,6 +114,14 @@ public class ModItemGroup {
                         entries.add(ModBlocks.CORRUPTED_TRAPDOOR);
                         entries.add(ModBlocks.ACIDIC_DOOR);
                         entries.add(ModBlocks.ACIDIC_TRAPDOOR);
+                        entries.add(ModBlocks.CORRUPTED_DIRT);
+                        entries.add(ModBlocks.CORRUPTED_GRASS_BLOCK);
+                        entries.add(ModBlocks.ACIDIC_DIRT);
+                        entries.add(ModBlocks.ACIDIC_GRASS_BLOCK);
+                        entries.add(ModBlocks.CORRUPTED_GRASS);
+                        entries.add(ModBlocks.CORRUPTED_TALL_GRASS);
+                        entries.add(ModBlocks.ACIDIC_TALL_GRASS);
+                        entries.add(ModBlocks.ACIDIC_GRASS);
                     }).build());
 
 

@@ -34,6 +34,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.CORRUPTED_FENCE, ModBlocks.ACIDIC_FENCE);
         getOrCreateTagBuilder(BlockTags.FENCE_GATES)
                 .add(ModBlocks.CORRUPTED_FENCE_GATE, ModBlocks.ACIDIC_FENCE_GATE);
+        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+                .add(ModBlocks.CORRUPTED_DIRT, ModBlocks.CORRUPTED_GRASS_BLOCK, ModBlocks.ACIDIC_DIRT, ModBlocks.ACIDIC_GRASS_BLOCK);
+        getOrCreateTagBuilder(BlockTags.DIRT)
+                .add(ModBlocks.CORRUPTED_DIRT, ModBlocks.CORRUPTED_GRASS_BLOCK, ModBlocks.ACIDIC_GRASS_BLOCK, ModBlocks.ACIDIC_DIRT);
+        getOrCreateTagBuilder(BlockTags.REPLACEABLE_BY_TREES)
+                .add(ModBlocks.CORRUPTED_TALL_GRASS, ModBlocks.CORRUPTED_GRASS, ModBlocks.ACIDIC_TALL_GRASS, ModBlocks.ACIDIC_GRASS);
+        getOrCreateTagBuilder(BlockTags.TALL_FLOWERS)
+                .add(ModBlocks.CORRUPTED_TALL_GRASS, ModBlocks.ACIDIC_TALL_GRASS);
 
        //Tag for Custom Tool Material for Crimson
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric","needs_tool_level_5")))

@@ -4,6 +4,10 @@ import name.crimsonmoon.block.ModBlocks;
 import name.crimsonmoon.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Blocks;
+import net.minecraft.data.server.loottable.BlockLootTableGenerator;
+import net.minecraft.item.Items;
+import net.minecraft.loot.entry.ItemEntry;
 
 public class ModLootTableGenerator extends FabricBlockLootTableProvider {
     public ModLootTableGenerator(FabricDataOutput dataOutput) {
@@ -38,15 +42,22 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CORRUPTED_FENCE_GATE);
         addDrop(ModBlocks.ACIDIC_TRAPDOOR);
         addDrop(ModBlocks.CORRUPTED_TRAPDOOR);
+        addDrop(ModBlocks.CORRUPTED_DIRT);
+        addDrop(ModBlocks.ACIDIC_DIRT);
         addDrop(ModBlocks.ACIDIC_DOOR, doorDrops(ModBlocks.ACIDIC_DOOR));
         addDrop(ModBlocks.CORRUPTED_DOOR, doorDrops(ModBlocks.CORRUPTED_DOOR));
         addDrop(ModBlocks.CORRUPTED_SLAB, slabDrops(ModBlocks.CORRUPTED_SLAB));
         addDrop(ModBlocks.ACIDIC_SLAB, slabDrops(ModBlocks.ACIDIC_SLAB));
         addDrop(ModBlocks.Turqite_Cluster, drops(ModItems.TURQITE_CRYSTAL));
+        addDrop(ModBlocks.CORRUPTED_GRASS_BLOCK, dropsWithSilkTouch(ModBlocks.CORRUPTED_GRASS_BLOCK, ItemEntry.builder(ModBlocks.CORRUPTED_DIRT)));
+        addDrop(ModBlocks.ACIDIC_GRASS_BLOCK, dropsWithSilkTouch(ModBlocks.ACIDIC_GRASS_BLOCK, ItemEntry.builder(ModBlocks.ACIDIC_DIRT)));
+        addDrop(ModBlocks.ACIDIC_GRASS, grassDrops(ModBlocks.ACIDIC_GRASS));
+        addDrop(ModBlocks.ACIDIC_TALL_GRASS, block -> tallGrassDrops(block, Blocks.AIR));
 
         addDrop(ModBlocks.Vampyrite_Ore, oreDrops(ModBlocks.Vampyrite_Ore, ModItems.RAW_VAMPYRITE));
         addDrop(ModBlocks.Deepslate_Vampyrite_Ore, oreDrops(ModBlocks.Deepslate_Vampyrite_Ore, ModItems.RAW_VAMPYRITE));
         addDrop(ModBlocks.Smooth_Basalt_Turqite_Ore, oreDrops(ModBlocks.Smooth_Basalt_Turqite_Ore, ModItems.TURQITE_CRYSTAL));
+
 
     }
 }

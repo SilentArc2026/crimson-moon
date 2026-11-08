@@ -6,7 +6,9 @@ import name.crimsonmoon.item.ModItems;
 import name.crimsonmoon.painting.ModPaintings;
 import name.crimsonmoon.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
-
+import net.fabricmc.fabric.api.registry.TillableBlockRegistry;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.HoeItem;
 import net.minecraft.util.Identifier;
 
 import org.slf4j.Logger;
@@ -26,5 +28,10 @@ public class CrimsonMoon implements ModInitializer {
 		ModWorldGeneration.generateModWorldGeneration();
 
 		ModPaintings.registerPaintings();
+
+		TillableBlockRegistry.register(ModBlocks.CORRUPTED_GRASS_BLOCK, HoeItem::canTillFarmland, HoeItem.createTillAction(Blocks.FARMLAND.getDefaultState()));
+		TillableBlockRegistry.register(ModBlocks.CORRUPTED_DIRT, HoeItem::canTillFarmland, HoeItem.createTillAction(Blocks.FARMLAND.getDefaultState()));
+		TillableBlockRegistry.register(ModBlocks.ACIDIC_GRASS_BLOCK, HoeItem::canTillFarmland, HoeItem.createTillAction(Blocks.FARMLAND.getDefaultState()));
+		TillableBlockRegistry.register(ModBlocks.ACIDIC_DIRT, HoeItem::canTillFarmland, HoeItem.createTillAction(Blocks.FARMLAND.getDefaultState()));
 	}
 }

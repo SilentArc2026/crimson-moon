@@ -1,6 +1,7 @@
 package name.crimsonmoon.block;
 
 import name.crimsonmoon.CrimsonMoon;
+import name.crimsonmoon.block.custom.CustomGrassBlock;
 import name.crimsonmoon.world.tree.AcidicSaplingGenerator;
 import name.crimsonmoon.world.tree.CorruptedSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -11,6 +12,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
@@ -114,6 +116,22 @@ public class ModBlocks {
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK));
     public static final Block ACIDIC_TRAPDOOR = registerBlock("acidic_trapdoor",
             new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
+    public static final Block CORRUPTED_GRASS_BLOCK = registerBlock("corrupted_grass_block",
+            new CustomGrassBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.GRASS).strength(0.5f).ticksRandomly()));
+    public static final Block CORRUPTED_DIRT = registerBlock("corrupted_dirt",
+            new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
+    public static final Block ACIDIC_GRASS_BLOCK = registerBlock("acidic_grass_block",
+            new CustomGrassBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.GRASS).strength(0.5f).ticksRandomly()));
+    public static final Block ACIDIC_DIRT = registerBlock("acidic_dirt",
+            new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
+    public static final Block ACIDIC_GRASS = registerBlock("acidic_grass",
+            new PlantBlock(FabricBlockSettings.create().noCollision().replaceable().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static final Block CORRUPTED_GRASS = registerBlock("corrupted_grass",
+            new PlantBlock(FabricBlockSettings.create().noCollision().replaceable().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static final Block ACIDIC_TALL_GRASS = registerBlock("acidic_tall_grass",
+            new TallPlantBlock(FabricBlockSettings.create().noCollision().replaceable().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static final Block CORRUPTED_TALL_GRASS = registerBlock("corrupted_tall_grass",
+            new TallPlantBlock(FabricBlockSettings.create().noCollision().replaceable().breakInstantly().sounds(BlockSoundGroup.GRASS)));
 
 
 

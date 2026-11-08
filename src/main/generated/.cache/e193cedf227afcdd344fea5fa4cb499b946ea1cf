@@ -1,8 +1,10 @@
-// 1.20.1	2026-11-07T18:24:31.4055474	Crimson Moon/Block Loot Tables
+// 1.20.1	2026-11-07T21:37:28.715659	Crimson Moon/Block Loot Tables
 6a10f6382721c21ec341228e908c7a0eafe6f0cf data\crimson-moon\loot_tables\blocks\corrupted_sapling.json
 55d92316f0eadf5b27bbc22c97c46a3b17432faa data\crimson-moon\loot_tables\blocks\budding_crystalized_turqite_block.json
 36d39d453614bf220e342044593f7e379ae59e64 data\crimson-moon\loot_tables\blocks\corrupted_trapdoor.json
+4d1f841272c9fdc7519c7c10455a38f1411a6e22 data\crimson-moon\loot_tables\blocks\acidic_tall_grass.json
 099ad7c0d3df494a1d254b7005ee2497e6bdc484 data\crimson-moon\loot_tables\blocks\acidic_slab.json
+bbbedf9abc9bccd6043102a13d5668aa22e9b278 data\crimson-moon\loot_tables\blocks\acidic_dirt.json
 ef10e7f7469b9cf70765834eae952aef8fe9d041 data\crimson-moon\loot_tables\blocks\corrupted_stairs.json
 f5b378ea83a739775198602476e8faa92429dbd1 data\crimson-moon\loot_tables\blocks\corrupted_fence_gate.json
 d0c5b61946f36c6b308189711b44bcddf0b19949 data\crimson-moon\loot_tables\blocks\smooth_basalt_turqite_ore.json
@@ -17,11 +19,15 @@ a8707dbd6a7cc34fccbee91d43535de422be2ac7 data\crimson-moon\loot_tables\blocks\co
 818f5e9d879061e6bc2bf034dd669f6093312c12 data\crimson-moon\loot_tables\blocks\vampyrite_ore.json
 e41ab8e414807e24bd44f5268bd29850490375f7 data\crimson-moon\loot_tables\blocks\dolomite.json
 1256263f9519f2732d80277630129626269cf893 data\crimson-moon\loot_tables\blocks\acidic_fence_gate.json
+dcd115c6e147fa49e52733c47af794bb6615822e data\crimson-moon\loot_tables\blocks\corrupted_dirt.json
 a705974cc7d33fa2d4c9767927a26dc25ad5d4c0 data\crimson-moon\loot_tables\blocks\acidic_button.json
 e0b0e2af66aed2c5db04bdc85a7b8d4875fff942 data\crimson-moon\loot_tables\blocks\polished_dolomite.json
 6592c1f69b34a4435f10f5585ce6be93dc5e7105 data\crimson-moon\loot_tables\blocks\turqite_bricks.json
 06cfa62cfb0b3c4d14220ebcf3e761bf4096a3ba data\crimson-moon\loot_tables\blocks\corrupted_door.json
 84a02ff7f7ecb54253249f045ff3a4407628c677 data\crimson-moon\loot_tables\blocks\corrupted_fence.json
+fc5665ac9566da58a4fb6dc72d461c1ea9291486 data\crimson-moon\loot_tables\blocks\acidic_grass.json
+e49f919511d054e29beb4ff2d9f54f1cdaab7e70 data\crimson-moon\loot_tables\blocks\acidic_grass_block.json
+073cbbf49e0ba55fd2f6856c63ab64af696ffb34 data\crimson-moon\loot_tables\blocks\corrupted_grass_block.json
 8555f0f28054186432a08ac9fef6fde3565f1fb0 data\crimson-moon\loot_tables\blocks\dolomite_bricks.json
 1baf21e85e467cbd20d6f65e060d127456445c76 data\crimson-moon\loot_tables\blocks\raw_vampyrite_block.json
 81f62882f90d0ce15678b1ccf80ebec501e9f788 data\crimson-moon\loot_tables\blocks\refined_turqite_block.json
