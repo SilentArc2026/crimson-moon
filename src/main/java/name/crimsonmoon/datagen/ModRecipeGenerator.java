@@ -429,7 +429,21 @@ SmithingTransformRecipeJsonBuilder.create(
 
     }
 
-    private void offerPressurePlateRecipe(Consumer<RecipeJsonProvider> exporter, RecipeCategory recipeCategory, Block corruptedPlanks, RecipeCategory recipeCategory1, Block corruptedPressurePlate) {
-
+    private void offerPressurePlateRecipe(Consumer<RecipeJsonProvider> exporter, RecipeCategory recipeCategory, Block acidicPlanks, RecipeCategory recipeCategory1, Block acidicPressurePlate) {
+        
     }
+
+    public record WoodFamily(
+            net.minecraft.block.Block planks,
+            net.minecraft.block.Block strippedLog, // Required for hanging signs
+            net.minecraft.block.Block door,
+            net.minecraft.block.Block trapdoor,
+            net.minecraft.block.Block fence,
+            net.minecraft.block.Block fenceGate,
+            net.minecraft.block.Block sign,
+            net.minecraft.block.Block hangingSign,
+            net.minecraft.item.Item boat,
+            net.minecraft.item.Item chestBoat
+    ) {}
+
 }

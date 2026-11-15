@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
+import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
 
@@ -17,6 +18,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_REDSTONE_HEART);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Crimsonite_Block);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Raw_Vampyrite_Block);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Vampyrite_Block);
@@ -41,17 +43,36 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModBlocks.ACIDIC_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.ACIDIC_TALL_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
 
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.ACID_FLOWER, ModBlocks.POTTED_ACID_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_POPPY, ModBlocks.POTTED_CORRUPTED_POPPY, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_CLOSED_EYEBLOSSOM, ModBlocks.POTTED_CORRUPTED_CLOSED_EYEBLOSSOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM, ModBlocks.POTTED_CORRUPTED_OPEN_EYEBLOSSOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerDoubleBlock(ModBlocks.ACIDIC_LILAC, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         blockStateModelGenerator.registerLog(ModBlocks.CORRUPTED_LOG).log(ModBlocks.CORRUPTED_LOG).wood(ModBlocks.CORRUPTED_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_CORRUPTED_LOG).log(ModBlocks.STRIPPED_CORRUPTED_LOG).wood(ModBlocks.STRIPPED_CORRUPTED_WOOD);
         BlockStateModelGenerator.BlockTexturePool corruptedTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CORRUPTED_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_LEAVES);
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.CORRUPTED_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.ACIDIC_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerLog(ModBlocks.ACIDIC_LOG).log(ModBlocks.ACIDIC_LOG).wood(ModBlocks.ACIDIC_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ACIDIC_LOG).log(ModBlocks.STRIPPED_ACIDIC_LOG).wood(ModBlocks.STRIPPED_ACIDIC_WOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ACIDIC_LEAVES);
+        blockStateModelGenerator.registerLog(ModBlocks.CHARRED_LOG).log(ModBlocks.CHARRED_LOG).wood(ModBlocks.CHARRED_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_CHARRED_LOG).log(ModBlocks.STRIPPED_CHARRED_LOG).wood(ModBlocks.STRIPPED_CHARRED_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHARRED_WART_BLOCK);
         BlockStateModelGenerator.BlockTexturePool acidicTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.ACIDIC_PLANKS);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.ACIDIC_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        BlockStateModelGenerator.BlockTexturePool charredTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CHARRED_PLANKS);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.CHARRED_FUNGUS, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_CORRUPTED_LOG, ModBlocks.CORRUPTED_HANGING_SIGN, ModBlocks.CORRUPTED_HANGING_WALL_SIGN);
+        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_ACIDIC_LOG, ModBlocks.ACIDIC_HANGING_SIGN, ModBlocks.ACIDIC_HANGING_WALL_SIGN);
+        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_CHARRED_LOG, ModBlocks.CHARRED_HANGING_SIGN, ModBlocks.CHARRED_HANGING_WALL_SIGN);
+
+        corruptedTexturePool.family(BlockFamilies.register(ModBlocks.CORRUPTED_PLANKS).sign(ModBlocks.CORRUPTED_SIGN, ModBlocks.CORRUPTED_WALL_SIGN).build());
+        acidicTexturePool.family(BlockFamilies.register(ModBlocks.ACIDIC_PLANKS).sign(ModBlocks.ACIDIC_SIGN, ModBlocks.ACIDIC_WALL_SIGN).build());
+        charredTexturePool.family(BlockFamilies.register(ModBlocks.CHARRED_PLANKS).sign(ModBlocks.CHARRED_SIGN, ModBlocks.CHARRED_WALL_SIGN).build());
+
 
         corruptedTexturePool.stairs(ModBlocks.CORRUPTED_STAIRS);
         corruptedTexturePool.slab(ModBlocks.CORRUPTED_SLAB);
@@ -65,11 +86,19 @@ public class ModModelProvider extends FabricModelProvider {
         corruptedTexturePool.fenceGate(ModBlocks.CORRUPTED_FENCE_GATE);
         acidicTexturePool.fence(ModBlocks.ACIDIC_FENCE);
         acidicTexturePool.fenceGate(ModBlocks.ACIDIC_FENCE_GATE);
+        charredTexturePool.stairs(ModBlocks.CHARRED_STAIRS);
+        charredTexturePool.slab(ModBlocks.CHARRED_SLAB);
+        charredTexturePool.button(ModBlocks.CHARRED_BUTTON);
+        charredTexturePool.pressurePlate(ModBlocks.CHARRED_PRESSURE_PLATE);
+        charredTexturePool.fence(ModBlocks.CHARRED_FENCE);
+        charredTexturePool.fenceGate(ModBlocks.CHARRED_FENCE_GATE);
 
         blockStateModelGenerator.registerDoor(ModBlocks.ACIDIC_DOOR);
         blockStateModelGenerator.registerDoor(ModBlocks.CORRUPTED_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.ACIDIC_TRAPDOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.CORRUPTED_TRAPDOOR);
+        blockStateModelGenerator.registerDoor(ModBlocks.CHARRED_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.CHARRED_TRAPDOOR);
 
         // === 1. TURQITE CLUSTER ===
         Identifier clusterModel = Models.CROSS.upload(
@@ -167,5 +196,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.TURQITE_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.TURQITE_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.TURQITE_BOOTS));
+
+        itemModelGenerator.register(ModItems.CORRUPTED_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CORRUPTED_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ACIDIC_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ACIDIC_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHARRED_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHARRED_CHEST_BOAT, Models.GENERATED);
     }
 }

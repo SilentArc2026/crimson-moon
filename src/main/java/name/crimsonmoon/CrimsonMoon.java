@@ -1,6 +1,8 @@
 package name.crimsonmoon;
 
 import name.crimsonmoon.block.ModBlocks;
+import name.crimsonmoon.block.entity.ModBlockEntities;
+import name.crimsonmoon.entity.ModBoats;
 import name.crimsonmoon.item.ModItemGroup;
 import name.crimsonmoon.item.ModItems;
 import name.crimsonmoon.painting.ModPaintings;
@@ -28,6 +30,10 @@ public class CrimsonMoon implements ModInitializer {
 		ModWorldGeneration.generateModWorldGeneration();
 
 		ModPaintings.registerPaintings();
+
+		ModBlockEntities.registerBlockEntities();
+
+		ModBoats.registerBoats();
 
 		TillableBlockRegistry.register(ModBlocks.CORRUPTED_GRASS_BLOCK, HoeItem::canTillFarmland, HoeItem.createTillAction(Blocks.FARMLAND.getDefaultState()));
 		TillableBlockRegistry.register(ModBlocks.CORRUPTED_DIRT, HoeItem::canTillFarmland, HoeItem.createTillAction(Blocks.FARMLAND.getDefaultState()));

@@ -22,6 +22,7 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> CORRUPTED_KEY = registerKey("corrupted");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ACIDIC_KEY = registerKey("acidic");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> CHARRED_KEY = registerKey("charred");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, CORRUPTED_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
@@ -36,7 +37,11 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(ModBlocks.ACIDIC_LEAVES),
                 new CherryFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0), ConstantIntProvider.create(5), 0.25f, 0.25f, 0.16666667f, 0.33333334f),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
-
+        register(context, CHARRED_KEY, Feature.HUGE_RED_MUSHROOM, new HugeMushroomFeatureConfig(
+                BlockStateProvider.of(ModBlocks.CHARRED_WART_BLOCK),
+                BlockStateProvider.of(ModBlocks.CHARRED_LOG),
+                3
+        ));
     }
 
 

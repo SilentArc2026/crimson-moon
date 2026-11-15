@@ -1,7 +1,9 @@
 package name.crimsonmoon.item;
 
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import name.crimsonmoon.CrimsonMoon;
 import name.crimsonmoon.block.ModBlocks;
+import name.crimsonmoon.entity.ModBoats;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -111,6 +113,26 @@ public class ModItems {
             new SwordItem(ModToolMaterial.SOLARIUM, 9, 3, new FabricItemSettings().fireproof()));
     public static final Item HEAVENLY_BLADE = registerItem("heavenly_blade",
             new SwordItem(ModToolMaterial.SOLARIUM, 10, 3, new FabricItemSettings().fireproof()));
+
+    public static final Item ACIDIC_SIGN = registerItem("acidic_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.ACIDIC_SIGN, ModBlocks.ACIDIC_WALL_SIGN));
+    public static final Item ACIDIC_HANGING_SIGN = registerItem("acidic_hanging_sign",
+            new HangingSignItem(ModBlocks.ACIDIC_HANGING_SIGN, ModBlocks.ACIDIC_HANGING_WALL_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item CORRUPTED_SIGN = registerItem("corrupted_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.CORRUPTED_SIGN, ModBlocks.CORRUPTED_WALL_SIGN));
+    public static final Item CORRUPTED_HANGING_SIGN = registerItem("corrupted_hanging_sign",
+            new HangingSignItem(ModBlocks.CORRUPTED_HANGING_SIGN, ModBlocks.CORRUPTED_HANGING_WALL_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item CHARRED_SIGN = registerItem("charred_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.CHARRED_SIGN, ModBlocks.CHARRED_WALL_SIGN));
+    public static final Item CHARRED_HANGING_SIGN = registerItem("charred_hanging_sign",
+            new HangingSignItem(ModBlocks.CHARRED_HANGING_SIGN, ModBlocks.CHARRED_HANGING_WALL_SIGN, new FabricItemSettings().maxCount(16)));
+
+    public static final Item CORRUPTED_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.CORRUPTED_BOAT_ID, ModBoats.CORRUPTED_BOAT_KEY, false);
+    public static final Item CORRUPTED_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.CORRUPTED_CHEST_BOAT_ID, ModBoats.CORRUPTED_BOAT_KEY, true);
+    public static final Item ACIDIC_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.ACIDIC_CHEST_BOAT_ID, ModBoats.ACIDIC_BOAT_KEY, false);
+    public static final Item ACIDIC_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.ACIDIC_BOAT_ID, ModBoats.ACIDIC_BOAT_KEY, true);
+    public static final Item CHARRED_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.CHARRED_BOAT_ID, ModBoats.CHARRED_BOAT_KEY, false);
+    public static final Item CHARRED_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.CHARRED_CHEST_BOAT_ID, ModBoats.CHARRED_BOAT_KEY, true);
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(CrimsonMoon.MOD_ID, name), item);

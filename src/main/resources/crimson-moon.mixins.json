@@ -3,7 +3,9 @@
 	"package": "name.crimsonmoon.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"HangingSignEditScreenMixin",
+		"BeeEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -65,6 +65,12 @@ public class ModItemGroup {
                         entries.add(ModItems.TURQITE_LEGGINGS);
                         entries.add(ModItems.TURQITE_BOOTS);
                         entries.add(ModItems.HEAVENLY_BLADE);
+                        entries.add(ModItems.ACIDIC_BOAT);
+                        entries.add(ModItems.ACIDIC_CHEST_BOAT);
+                        entries.add(ModItems.CORRUPTED_BOAT);
+                        entries.add(ModItems.CORRUPTED_CHEST_BOAT);
+                        entries.add(ModItems.CHARRED_BOAT);
+                        entries.add(ModItems.CHARRED_CHEST_BOAT);
 
                         entries.add(ModBlocks.Crimsonite_Block);
                         entries.add(ModBlocks.Raw_Vampyrite_Block);
@@ -81,6 +87,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.Turqite_Cluster);
                         entries.add(ModBlocks.SMALL_TURQITE_BUD);
                         entries.add(ModBlocks.MEDIUM_TURQITE_BUD);
+                        entries.add(ModBlocks.LARGE_TURQITE_BUD);
                         entries.add(ModBlocks.CORRUPTED_LEAVES);
                         entries.add(ModBlocks.CORRUPTED_LOG);
                         entries.add(ModBlocks.CORRUPTED_PLANKS);
@@ -121,7 +128,34 @@ public class ModItemGroup {
                         entries.add(ModBlocks.CORRUPTED_GRASS);
                         entries.add(ModBlocks.CORRUPTED_TALL_GRASS);
                         entries.add(ModBlocks.ACIDIC_TALL_GRASS);
+                        entries.add(ModBlocks.CHARRED_LOG);
+                        entries.add(ModBlocks.CHARRED_PLANKS);
+                        entries.add(ModBlocks.CHARRED_WOOD);
+                        entries.add(ModBlocks.STRIPPED_CHARRED_LOG);
+                        entries.add(ModBlocks.STRIPPED_CHARRED_WOOD);
                         entries.add(ModBlocks.ACIDIC_GRASS);
+                        entries.add(ModBlocks.CHARRED_STAIRS);
+                        entries.add(ModBlocks.CHARRED_SLAB);
+                        entries.add(ModBlocks.CHARRED_FENCE);
+                        entries.add(ModBlocks.CHARRED_FENCE_GATE);
+                        entries.add(ModBlocks.CHARRED_DOOR);
+                        entries.add(ModBlocks.CHARRED_TRAPDOOR);
+                        entries.add(ModBlocks.CHARRED_BUTTON);
+                        entries.add(ModBlocks.CHARRED_PRESSURE_PLATE);
+                        entries.add(ModBlocks.CHARRED_SIGN);
+                        entries.add(ModBlocks.CHARRED_HANGING_SIGN);
+                        entries.add(ModBlocks.CORRUPTED_SIGN);
+                        entries.add(ModBlocks.CORRUPTED_HANGING_SIGN);
+                        entries.add(ModBlocks.ACIDIC_SIGN);
+                        entries.add(ModBlocks.ACIDIC_HANGING_SIGN);
+                        entries.add(ModBlocks.CHARRED_WART_BLOCK);
+                        entries.add(ModBlocks.CHARRED_FUNGUS);
+                        entries.add(ModBlocks.ACID_FLOWER);
+                        entries.add(ModBlocks.CORRUPTED_POPPY);
+                        entries.add(ModBlocks.ACIDIC_LILAC);
+                        entries.add(ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM);
+                        entries.add(ModBlocks.CORRUPTED_CLOSED_EYEBLOSSOM);
+                        entries.add(ModBlocks.CORRUPTED_REDSTONE_HEART);
                     }).build());
 
 

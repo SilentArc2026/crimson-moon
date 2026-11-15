@@ -1,8 +1,10 @@
 package name.crimsonmoon.block;
 
 import name.crimsonmoon.CrimsonMoon;
-import name.crimsonmoon.block.custom.CustomGrassBlock;
+import name.crimsonmoon.block.custom.*;
+import name.crimsonmoon.util.ModWoodTypes;
 import name.crimsonmoon.world.tree.AcidicSaplingGenerator;
+import name.crimsonmoon.world.tree.CharredSaplingGenerator;
 import name.crimsonmoon.world.tree.CorruptedSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -16,6 +18,8 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
+    public static final Block CORRUPTED_REDSTONE_HEART = registerBlock("corrupted_redstone_heart",
+            new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
 
     public static final Block Crimsonite_Block = registerBlock("crimsonite_block",
             new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
@@ -63,6 +67,8 @@ public class ModBlocks {
             new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
     public static final Block CORRUPTED_SAPLING  = registerBlock("corrupted_sapling",
             new SaplingBlock(new CorruptedSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+    public static final Block CHARRED_FUNGUS  = registerBlock("charred_fungus",
+            new SaplingBlock(new CharredSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS)));
     public static final Block ACIDIC_LOG = registerBlock("acidic_log",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
     public static final Block ACIDIC_WOOD = registerBlock("acidic_wood",
@@ -71,6 +77,16 @@ public class ModBlocks {
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
     public static final Block STRIPPED_ACIDIC_WOOD = registerBlock("stripped_acidic_wood",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block CHARRED_LOG = registerBlock("charred_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block CHARRED_WOOD = registerBlock("charred_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block STRIPPED_CHARRED_LOG = registerBlock("stripped_charred_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block STRIPPED_CHARRED_WOOD = registerBlock("stripped_charred_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block CHARRED_PLANKS = registerBlock("charred_planks",
+            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block ACIDIC_PLANKS  = registerBlock("acidic_planks",
             new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block ACIDIC_LEAVES  = registerBlock("acidic_leaves",
@@ -83,6 +99,36 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
     public static final Block POLISHED_DOLOMITE = registerBlock("polished_dolomite",
             new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE)));
+    public static final Block CHARRED_WART_BLOCK = registerBlock("charred_wart_block",
+            new MushroomBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block CHARRED_SIGN = registerBlockWithoutBlockItem("charred_sign",
+            new ModStandingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), ModWoodTypes.CHARRED));
+    public static final Block CHARRED_WALL_SIGN = registerBlockWithoutBlockItem("charred_wall_sign",
+            new ModWallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), ModWoodTypes.CHARRED));
+    public static final Block CHARRED_HANGING_SIGN = registerBlockWithoutBlockItem("charred_hanging_sign",
+            new ModHangingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_HANGING_SIGN), ModWoodTypes.CHARRED));
+    public static final Block CHARRED_HANGING_WALL_SIGN = registerBlockWithoutBlockItem("charred_hanging_wall_sign",
+            new ModWallHangingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_HANGING_SIGN), ModWoodTypes.CHARRED));
+    public static final Block CORRUPTED_SIGN = registerBlockWithoutBlockItem("corrupted_sign",
+            new ModStandingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), ModWoodTypes.CORRUPTED));
+    public static final Block CORRUPTED_WALL_SIGN = registerBlockWithoutBlockItem("corrupted_wall_sign",
+            new ModWallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), ModWoodTypes.CORRUPTED));
+    public static final Block CORRUPTED_HANGING_SIGN = registerBlockWithoutBlockItem("corrupted_hanging_sign",
+            new ModHangingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_HANGING_SIGN), ModWoodTypes.CORRUPTED));
+    public static final Block CORRUPTED_HANGING_WALL_SIGN = registerBlockWithoutBlockItem("corrupted_hanging_wall_sign",
+            new ModWallHangingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_HANGING_SIGN), ModWoodTypes.CORRUPTED));
+    public static final Block ACIDIC_SIGN = registerBlockWithoutBlockItem("acidic_sign",
+            new ModStandingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), ModWoodTypes.ACIDIC));
+    public static final Block ACIDIC_WALL_SIGN = registerBlockWithoutBlockItem("acidic_wall_sign",
+            new ModWallSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN), ModWoodTypes.ACIDIC));
+    public static final Block ACIDIC_HANGING_SIGN = registerBlockWithoutBlockItem("acidic_hanging_sign",
+            new ModHangingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_HANGING_SIGN), ModWoodTypes.ACIDIC));
+    public static final Block ACIDIC_HANGING_WALL_SIGN = registerBlockWithoutBlockItem("acidic_hanging_wall_sign",
+            new ModWallHangingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_HANGING_SIGN), ModWoodTypes.ACIDIC));
+
+    private static Block registerBlockWithoutBlockItem(String name, Block block) {
+        return Registry.register(Registries.BLOCK, new Identifier(CrimsonMoon.MOD_ID, name), block);
+    }
 
     public static final Block CORRUPTED_STAIRS = registerBlock("corrupted_stairs",
             new StairsBlock(ModBlocks.CORRUPTED_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
@@ -92,9 +138,17 @@ public class ModBlocks {
             new StairsBlock(ModBlocks.ACIDIC_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block ACIDIC_SLAB = registerBlock("acidic_slab",
             new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+    public static final Block CHARRED_STAIRS = registerBlock("charred_stairs",
+            new StairsBlock(ModBlocks.ACIDIC_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+    public static final Block CHARRED_SLAB = registerBlock("charred_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block CORRUPTED_BUTTON = registerBlock("corrupted_button",
             new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 10, true));
     public static final Block CORRUPTED_PRESSURE_PLATE = registerBlock("corrupted_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+    public static final Block CHARRED_BUTTON = registerBlock("charred_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 10, true));
+    public static final Block CHARRED_PRESSURE_PLATE = registerBlock("charred_pressure_plate",
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
     public static final Block ACIDIC_BUTTON = registerBlock("acidic_button",
             new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 10, true));
@@ -106,6 +160,10 @@ public class ModBlocks {
             new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
     public static final Block CORRUPTED_FENCE_GATE = registerBlock("corrupted_fence_gate",
             new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
+    public static final Block CHARRED_FENCE = registerBlock("charred_fence",
+            new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
+    public static final Block CHARRED_FENCE_GATE = registerBlock("charred_fence_gate",
+            new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
     public static final Block ACIDIC_PRESSURE_PLATE = registerBlock("acidic_pressure_plate",
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
     public static final Block CORRUPTED_DOOR = registerBlock("corrupted_door",
@@ -115,6 +173,10 @@ public class ModBlocks {
     public static final Block ACIDIC_DOOR = registerBlock("acidic_door",
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK));
     public static final Block ACIDIC_TRAPDOOR = registerBlock("acidic_trapdoor",
+            new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
+    public static final Block CHARRED_DOOR = registerBlock("charred_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK));
+    public static final Block CHARRED_TRAPDOOR = registerBlock("charred_trapdoor",
             new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
     public static final Block CORRUPTED_GRASS_BLOCK = registerBlock("corrupted_grass_block",
             new CustomGrassBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.GRASS).strength(0.5f).ticksRandomly()));
@@ -135,11 +197,24 @@ public class ModBlocks {
 
 
 
-    //public static final Block ACID_FLOWER = registerBlock("acid_flower",
-            //new FlowerBlock(StatusEffects.POISON, 5, FabricBlockSettings.copyOf(Blocks.ALLIUM)));
-    //public static final Block POTTED_ACID_FLOWER = registerBlockWithoutBlockItem("potted_acid_flower",
-            //new FlowerPotBlock(ACID_FLOWER, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));
-
+    public static final Block ACID_FLOWER = registerBlock("acid_flower",
+            new FlowerBlock(StatusEffects.POISON, 5, FabricBlockSettings.copyOf(Blocks.ALLIUM)));
+    public static final Block POTTED_ACID_FLOWER = registerBlockWithoutBlockItem("potted_acid_flower",
+            new FlowerPotBlock(ACID_FLOWER, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));
+    public static final Block CORRUPTED_POPPY = registerBlock("corrupted_poppy",
+            new FlowerBlock(StatusEffects.WITHER, 4, FabricBlockSettings.copyOf(Blocks.ALLIUM)));
+    public static final Block POTTED_CORRUPTED_POPPY = registerBlockWithoutBlockItem("potted_corrupted_poppy",
+            new FlowerPotBlock(CORRUPTED_POPPY, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));
+    public static final Block ACIDIC_LILAC = registerBlock("acidic_lilac",
+            new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.LILAC)));
+    public static final Block CORRUPTED_CLOSED_EYEBLOSSOM = registerBlock("corrupted_closed_eyeblossom",
+            new ModEyeBlossomBlock(false, () -> ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM, StatusEffects.NAUSEA, 7, FabricBlockSettings.copyOf(Blocks.POPPY)));
+    public static final Block CORRUPTED_OPEN_EYEBLOSSOM = registerBlock("corrupted_open_eyeblossom",
+            new ModEyeBlossomBlock(true, () -> ModBlocks.CORRUPTED_CLOSED_EYEBLOSSOM, StatusEffects.BLINDNESS, 11, FabricBlockSettings.copyOf(Blocks.POPPY)));
+    public static final Block POTTED_CORRUPTED_CLOSED_EYEBLOSSOM = registerBlockWithoutBlockItem("potted_corrupted_closed_eyeblossom",
+            new FlowerPotBlock(CORRUPTED_CLOSED_EYEBLOSSOM, FabricBlockSettings.copyOf(Blocks.POPPY)));
+    public static final Block POTTED_CORRUPTED_OPEN_EYEBLOSSOM = registerBlockWithoutBlockItem("potted_corrupted_open_eyeblossom",
+            new FlowerPotBlock(CORRUPTED_OPEN_EYEBLOSSOM, FabricBlockSettings.copyOf(Blocks.POPPY)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

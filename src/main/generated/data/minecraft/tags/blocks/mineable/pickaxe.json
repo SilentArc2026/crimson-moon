@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "crimson-moon:corrupted_redstone_heart",
     "crimson-moon:crimsonite_block",
     "crimson-moon:solarium_block",
     "crimson-moon:deepslate_vampyrite_ore",

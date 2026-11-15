@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
+    "crimson-moon:charred_wood",
+    "crimson-moon:stripped_charred_log",
+    "crimson-moon:stripped_charred_wood",
+    "crimson-moon:charred_log",
     "crimson-moon:corrupted_log",
     "crimson-moon:corrupted_wood",
     "crimson-moon:stripped_corrupted_log",

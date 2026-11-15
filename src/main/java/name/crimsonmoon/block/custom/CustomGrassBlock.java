@@ -20,6 +20,7 @@ public class CustomGrassBlock extends GrassBlock {
         // 1. Check if this grass block should decay into dirt due to lack of light
         if (!canSurvive(state, world, pos)) {
             world.setBlockState(pos, ModBlocks.CORRUPTED_DIRT.getDefaultState());
+            world.setBlockState(pos, ModBlocks.ACIDIC_DIRT.getDefaultState());
             return;
         }
 
@@ -34,6 +35,7 @@ public class CustomGrassBlock extends GrassBlock {
                 if (targetState.isOf(ModBlocks.CORRUPTED_DIRT) && canSpread(targetState, world, targetPos)) {
                     // Turn that custom dirt into your custom grass block!
                     world.setBlockState(targetPos, ModBlocks.CORRUPTED_GRASS_BLOCK.getDefaultState());
+                    world.setBlockState(targetPos, ModBlocks.ACIDIC_GRASS_BLOCK.getDefaultState());
                 }
             }
         }
