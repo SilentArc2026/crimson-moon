@@ -16,10 +16,16 @@ public class ModBoats {
     public static final Identifier ACIDIC_CHEST_BOAT_ID = new Identifier(CrimsonMoon.MOD_ID, "acidic_chest_boat");
     public static final Identifier CHARRED_BOAT_ID = new Identifier(CrimsonMoon.MOD_ID, "charred_boat");
     public static final Identifier CHARRED_CHEST_BOAT_ID = new Identifier(CrimsonMoon.MOD_ID, "charred_chest_boat");
+    public static final Identifier PALM_BOAT_ID = new Identifier(CrimsonMoon.MOD_ID, "palm_boat");
+    public static final Identifier PALM_CHEST_BOAT_ID = new Identifier(CrimsonMoon.MOD_ID, "palm_chest_boat");
+    public static final Identifier WITHERED_PALM_BOAT_ID = new Identifier(CrimsonMoon.MOD_ID, "withered_palm_boat");
+    public static final Identifier WITHERED_PALM_CHEST_BOAT_ID = new Identifier(CrimsonMoon.MOD_ID, "withered_palm_chest_boat");
 
     public static final RegistryKey<TerraformBoatType> CORRUPTED_BOAT_KEY = TerraformBoatTypeRegistry.createKey(CORRUPTED_BOAT_ID);
     public static final RegistryKey<TerraformBoatType> ACIDIC_BOAT_KEY = TerraformBoatTypeRegistry.createKey(ACIDIC_BOAT_ID);
     public static final RegistryKey<TerraformBoatType> CHARRED_BOAT_KEY = TerraformBoatTypeRegistry.createKey(CHARRED_BOAT_ID);
+    public static final RegistryKey<TerraformBoatType> PALM_BOAT_KEY = TerraformBoatTypeRegistry.createKey(PALM_BOAT_ID);
+    public static final RegistryKey<TerraformBoatType> WITHERED_PALM_BOAT_KEY = TerraformBoatTypeRegistry.createKey(WITHERED_PALM_BOAT_ID);
 
     public static void registerBoats() {
         TerraformBoatType corruptedBoat = new TerraformBoatType.Builder()
@@ -45,6 +51,22 @@ public class ModBoats {
                 .build();
 
         Registry.register(TerraformBoatTypeRegistry.INSTANCE, CHARRED_BOAT_KEY, charredBoat);
+
+        TerraformBoatType palmBoat = new TerraformBoatType.Builder()
+                .item(ModItems.PALM_BOAT)
+                .chestItem(ModItems.PALM_CHEST_BOAT)
+                .planks(ModBlocks.PALM_PLANKS.asItem())
+                .build();
+
+        Registry.register(TerraformBoatTypeRegistry.INSTANCE, PALM_BOAT_KEY, palmBoat);
+
+        TerraformBoatType witheredpalmBoat = new TerraformBoatType.Builder()
+                .item(ModItems.WITHERED_PALM_BOAT)
+                .chestItem(ModItems.WITHERED_PALM_CHEST_BOAT)
+                .planks(ModBlocks.WITHERED_PALM_PLANKS.asItem())
+                .build();
+
+        Registry.register(TerraformBoatTypeRegistry.INSTANCE, WITHERED_PALM_BOAT_KEY, witheredpalmBoat);
     }
 
 }

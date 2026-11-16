@@ -6,7 +6,9 @@ import name.crimsonmoon.entity.ModBoats;
 import name.crimsonmoon.item.ModItemGroup;
 import name.crimsonmoon.item.ModItems;
 import name.crimsonmoon.painting.ModPaintings;
+import name.crimsonmoon.world.feature.ModFeatures;
 import name.crimsonmoon.world.gen.ModWorldGeneration;
+import name.crimsonmoon.world.tree.ModFoliagePlacerTypes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.TillableBlockRegistry;
 import net.minecraft.block.Blocks;
@@ -34,6 +36,10 @@ public class CrimsonMoon implements ModInitializer {
 		ModBlockEntities.registerBlockEntities();
 
 		ModBoats.registerBoats();
+
+		ModFeatures.registerModFeatures();
+
+		ModFoliagePlacerTypes.register();
 
 		TillableBlockRegistry.register(ModBlocks.CORRUPTED_GRASS_BLOCK, HoeItem::canTillFarmland, HoeItem.createTillAction(Blocks.FARMLAND.getDefaultState()));
 		TillableBlockRegistry.register(ModBlocks.CORRUPTED_DIRT, HoeItem::canTillFarmland, HoeItem.createTillAction(Blocks.FARMLAND.getDefaultState()));

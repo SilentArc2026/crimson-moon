@@ -3,29 +3,6 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "crimson-moon:corrupted_leaves",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "half": "lower"
-          }
-        },
-        {
-          "condition": "minecraft:location_check",
-          "offsetY": 1,
-          "predicate": {
-            "block": {
-              "blocks": [
-                "crimson-moon:corrupted_leaves"
-              ],
-              "state": {
-                "half": "upper"
-              }
-            }
-          }
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:alternatives",
@@ -34,22 +11,33 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
-                  }
+                  "condition": "minecraft:any_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:match_tool",
+                      "predicate": {
+                        "items": [
+                          "minecraft:shears"
+                        ]
+                      }
+                    },
+                    {
+                      "condition": "minecraft:match_tool",
+                      "predicate": {
+                        "enchantments": [
+                          {
+                            "enchantment": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
                 }
               ],
-              "functions": [
-                {
-                  "add": false,
-                  "count": 2.0,
-                  "function": "minecraft:set_count"
-                }
-              ],
-              "name": "minecraft:air"
+              "name": "crimson-moon:corrupted_leaves"
             },
             {
               "type": "minecraft:item",
@@ -58,11 +46,14 @@
                   "condition": "minecraft:survives_explosion"
                 },
                 {
-                  "chance": 0.125,
-                  "condition": "minecraft:random_chance"
+                  "chances": [
+                    0.5
+                  ],
+                  "condition": "minecraft:table_bonus",
+                  "enchantment": "minecraft:fortune"
                 }
               ],
-              "name": "minecraft:wheat_seeds"
+              "name": "crimson-moon:corrupted_sapling"
             }
           ]
         }
@@ -73,66 +64,66 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "crimson-moon:corrupted_leaves",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "half": "upper"
-          }
-        },
-        {
-          "condition": "minecraft:location_check",
-          "offsetY": -1,
-          "predicate": {
-            "block": {
-              "blocks": [
-                "crimson-moon:corrupted_leaves"
-              ],
-              "state": {
-                "half": "lower"
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:match_tool",
+                "predicate": {
+                  "items": [
+                    "minecraft:shears"
+                  ]
+                }
+              },
+              {
+                "condition": "minecraft:match_tool",
+                "predicate": {
+                  "enchantments": [
+                    {
+                      "enchantment": "minecraft:silk_touch",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
               }
-            }
+            ]
           }
         }
       ],
       "entries": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
+          "type": "minecraft:item",
+          "conditions": [
             {
-              "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
-                  }
-                }
+              "chances": [
+                0.02,
+                0.022222223,
+                0.025,
+                0.033333335,
+                0.1
               ],
-              "functions": [
-                {
-                  "add": false,
-                  "count": 2.0,
-                  "function": "minecraft:set_count"
-                }
-              ],
-              "name": "minecraft:air"
+              "condition": "minecraft:table_bonus",
+              "enchantment": "minecraft:fortune"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
             },
             {
-              "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:survives_explosion"
-                },
-                {
-                  "chance": 0.125,
-                  "condition": "minecraft:random_chance"
-                }
-              ],
-              "name": "minecraft:wheat_seeds"
+              "function": "minecraft:explosion_decay"
             }
-          ]
+          ],
+          "name": "minecraft:stick"
         }
       ],
       "rolls": 1.0

@@ -4,12 +4,18 @@ import name.crimsonmoon.block.ModBlocks;
 import name.crimsonmoon.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.TallFlowerBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.predicate.StatePredicate;
+import net.minecraft.state.property.Properties;
 
 public class ModLootTableGenerator extends FabricBlockLootTableProvider {
     public ModLootTableGenerator(FabricDataOutput dataOutput) {
@@ -81,6 +87,10 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CORRUPTED_SLAB, slabDrops(ModBlocks.CORRUPTED_SLAB));
         addDrop(ModBlocks.CHARRED_DOOR, doorDrops(ModBlocks.CHARRED_DOOR));
         addDrop(ModBlocks.CHARRED_SLAB, slabDrops(ModBlocks.CHARRED_SLAB));
+        addDrop(ModBlocks.PALM_DOOR, doorDrops(ModBlocks.PALM_DOOR));
+        addDrop(ModBlocks.PALM_SLAB, slabDrops(ModBlocks.PALM_SLAB));
+        addDrop(ModBlocks.WITHERED_PALM_DOOR, doorDrops(ModBlocks.WITHERED_PALM_DOOR));
+        addDrop(ModBlocks.WITHERED_PALM_SLAB, slabDrops(ModBlocks.WITHERED_PALM_SLAB));
         addDrop(ModBlocks.ACIDIC_SLAB, slabDrops(ModBlocks.ACIDIC_SLAB));
         addDrop(ModBlocks.Turqite_Cluster, drops(ModItems.TURQITE_CRYSTAL));
         addDrop(ModBlocks.CORRUPTED_GRASS_BLOCK, dropsWithSilkTouch(ModBlocks.CORRUPTED_GRASS_BLOCK, ItemEntry.builder(ModBlocks.CORRUPTED_DIRT)));
@@ -88,23 +98,69 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ACIDIC_GRASS, grassDrops(ModBlocks.ACIDIC_GRASS));
         addDrop(ModBlocks.ACIDIC_TALL_GRASS, block -> tallGrassDrops(block, Blocks.AIR));
         addDrop(ModBlocks.CORRUPTED_TALL_GRASS, block -> tallGrassDrops(block, Blocks.AIR));
-        addDrop(ModBlocks.ACIDIC_LEAVES, block -> tallGrassDrops(block, Blocks.AIR));
-        addDrop(ModBlocks.CORRUPTED_LEAVES, block -> tallGrassDrops(block, Blocks.AIR));
-        addDrop(ModBlocks.CHARRED_WART_BLOCK, block -> tallGrassDrops(block, Blocks.AIR));
-        addDrop(ModBlocks.ACIDIC_LILAC, block -> dropsWithProperty(block, TallFlowerBlock.HALF, DoubleBlockHalf.LOWER));
+        addDrop(ModBlocks.ACIDIC_LEAVES, leavesDrops(ModBlocks.ACIDIC_LEAVES, ModBlocks.ACIDIC_SAPLING, 0.5f));
+        addDrop(ModBlocks.CORRUPTED_LEAVES, leavesDrops(ModBlocks.CORRUPTED_LEAVES, ModBlocks.CORRUPTED_SAPLING, 0.5f));
+        addDrop(ModBlocks.WITHERED_PALM_LEAVES, leavesDrops(ModBlocks.WITHERED_PALM_LEAVES, ModBlocks.WITHERED_PALM_SAPLING, 0.5f));
+        addDrop(ModBlocks.CHARRED_WART_BLOCK);
+        addDrop(ModBlocks.ACIDIC_LILAC, dropsWithProperty(ModBlocks.ACIDIC_LILAC, TallFlowerBlock.HALF, DoubleBlockHalf.LOWER));
         addDrop(ModBlocks.CORRUPTED_CLOSED_EYEBLOSSOM);
         addDrop(ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM);
         addDrop(ModBlocks.CORRUPTED_REDSTONE_HEART);
+        addDrop(ModBlocks.GLOOMLIGHT);
+        addDrop(ModBlocks.CORRUPTED_WITHER_ROSE);
+        addDrop(ModBlocks.PALM_LOG);
+        addDrop(ModBlocks.PALM_WOOD);
+        addDrop(ModBlocks.STRIPPED_PALM_LOG);
+        addDrop(ModBlocks.STRIPPED_PALM_WOOD);
+        addDrop(ModBlocks.PALM_PLANKS);
+        addDrop(ModBlocks.PALM_STAIRS);
+        addDrop(ModBlocks.PALM_BUTTON);
+        addDrop(ModBlocks.PALM_PRESSURE_PLATE);
+        addDrop(ModBlocks.PALM_FENCE);
+        addDrop(ModBlocks.PALM_FENCE_GATE);
+        addDrop(ModBlocks.PALM_TRAPDOOR);
+        addDrop(ModBlocks.WITHERED_PALM_STAIRS);
+        addDrop(ModBlocks.WITHERED_PALM_BUTTON);
+        addDrop(ModBlocks.WITHERED_PALM_PRESSURE_PLATE);
+        addDrop(ModBlocks.WITHERED_PALM_FENCE);
+        addDrop(ModBlocks.WITHERED_PALM_FENCE_GATE);
+        addDrop(ModBlocks.WITHERED_PALM_TRAPDOOR);
+        addDrop(ModBlocks.PALM_SIGN);
+        addDrop(ModBlocks.PALM_HANGING_SIGN);
+        addDrop(ModBlocks.PALM_SAPLING);
+        addDrop(ModBlocks.WITHERED_PALM_LOG);
+        addDrop(ModBlocks.WITHERED_PALM_WOOD);
+        addDrop(ModBlocks.STRIPPED_WITHERED_PALM_LOG);
+        addDrop(ModBlocks.STRIPPED_WITHERED_PALM_WOOD);
+        addDrop(ModBlocks.WITHERED_PALM_PLANKS);
+        addDrop(ModBlocks.WITHERED_PALM_SAPLING);
+        addDrop(ModBlocks.WITHERED_PALM_SIGN);
+        addDrop(ModBlocks.WITHERED_PALM_HANGING_SIGN);
 
         addPottedPlantDrops(ModBlocks.POTTED_CORRUPTED_OPEN_EYEBLOSSOM);
         addPottedPlantDrops(ModBlocks.POTTED_CORRUPTED_CLOSED_EYEBLOSSOM);
         addPottedPlantDrops(ModBlocks.POTTED_ACID_FLOWER);
         addPottedPlantDrops(ModBlocks.POTTED_CORRUPTED_POPPY);
+        addPottedPlantDrops(ModBlocks.POTTED_CORRUPTED_WITHER_ROSE);
 
         addDrop(ModBlocks.Vampyrite_Ore, oreDrops(ModBlocks.Vampyrite_Ore, ModItems.RAW_VAMPYRITE));
         addDrop(ModBlocks.Deepslate_Vampyrite_Ore, oreDrops(ModBlocks.Deepslate_Vampyrite_Ore, ModItems.RAW_VAMPYRITE));
         addDrop(ModBlocks.Smooth_Basalt_Turqite_Ore, oreDrops(ModBlocks.Smooth_Basalt_Turqite_Ore, ModItems.TURQITE_CRYSTAL));
 
+        addDrop(ModBlocks.CHARRED_VINES, berryVineDrops(ModBlocks.CHARRED_VINES));
+        addDrop(ModBlocks.CHARRED_VINES_PLANT, berryVineDrops(ModBlocks.CHARRED_VINES_PLANT));
 
+
+    }
+
+    private LootTable.Builder berryVineDrops(Block vineBlock) {
+        return LootTable.builder().pool(
+                LootPool.builder()
+                        .with(ItemEntry.builder(ModItems.GLOOM_BERRIES))
+                        .conditionally(
+                                BlockStatePropertyLootCondition.builder(vineBlock)
+                                        .properties(StatePredicate.Builder.create().exactMatch(Properties.BERRIES, true))
+                        )
+        );
     }
 }

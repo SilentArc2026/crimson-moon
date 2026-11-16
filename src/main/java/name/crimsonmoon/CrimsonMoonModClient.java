@@ -42,10 +42,24 @@ public class CrimsonMoonModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_CORRUPTED_OPEN_EYEBLOSSOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORRUPTED_CLOSED_EYEBLOSSOM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHARRED_VINES, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHARRED_VINES_PLANT, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORRUPTED_WITHER_ROSE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_CORRUPTED_WITHER_ROSE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PALM_LEAVES, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PALM_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PALM_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PALM_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WITHERED_PALM_LEAVES, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WITHERED_PALM_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WITHERED_PALM_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WITHERED_PALM_TRAPDOOR, RenderLayer.getCutout());
 
         TexturedRenderLayers.SIGN_TYPE_TEXTURES.put(ModWoodTypes.ACIDIC, TexturedRenderLayers.getSignTextureId(ModWoodTypes.ACIDIC));
         TexturedRenderLayers.SIGN_TYPE_TEXTURES.put(ModWoodTypes.CORRUPTED, TexturedRenderLayers.getSignTextureId(ModWoodTypes.CORRUPTED));
         TexturedRenderLayers.SIGN_TYPE_TEXTURES.put(ModWoodTypes.CHARRED, TexturedRenderLayers.getSignTextureId(ModWoodTypes.CHARRED));
+        TexturedRenderLayers.SIGN_TYPE_TEXTURES.put(ModWoodTypes.PALM, TexturedRenderLayers.getSignTextureId(ModWoodTypes.PALM));
+        TexturedRenderLayers.SIGN_TYPE_TEXTURES.put(ModWoodTypes.WITHERED, TexturedRenderLayers.getSignTextureId(ModWoodTypes.WITHERED));
 
         BlockEntityRendererFactories.register(ModBlockEntities.MOD_SIGN_BLOCK_ENTITY, SignBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.MOD_HANGING_SIGN_BLOCK_ENTITY, HangingSignBlockEntityRenderer::new);
@@ -53,6 +67,8 @@ public class CrimsonMoonModClient implements ClientModInitializer {
         TerraformBoatClientHelper.registerModelLayers(ModBoats.ACIDIC_BOAT_ID, false);
         TerraformBoatClientHelper.registerModelLayers(ModBoats.CORRUPTED_BOAT_ID, false);
         TerraformBoatClientHelper.registerModelLayers(ModBoats.CHARRED_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(ModBoats.PALM_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(ModBoats.WITHERED_PALM_BOAT_ID, false);
 
     }
 }

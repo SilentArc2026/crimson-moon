@@ -12,6 +12,14 @@
     "crimson-moon:stripped_acidic_wood",
     "crimson-moon:stripped_acidic_log",
     "crimson-moon:acidic_log",
-    "crimson-moon:acidic_wood"
+    "crimson-moon:acidic_wood",
+    "crimson-moon:palm_log",
+    "crimson-moon:palm_wood",
+    "crimson-moon:stripped_palm_log",
+    "crimson-moon:stripped_palm_wood",
+    "crimson-moon:withered_palm_log",
+    "crimson-moon:withered_palm_wood",
+    "crimson-moon:stripped_withered_palm_log",
+    "crimson-moon:stripped_withered_palm_wood"
   ]
 }

@@ -18,6 +18,8 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> CORRUPTED_PLACED_KEY = registerKey("corrupted_placed");
     public static final RegistryKey<PlacedFeature> ACIDIC_PLACED_KEY = registerKey("acidic_placed");
     public static final RegistryKey<PlacedFeature> CHARRED_PLACED_KEY = registerKey("charred_placed");
+    public static final RegistryKey<PlacedFeature> PALM_PLACED_KEY = registerKey("palm_placed");
+    public static final RegistryKey<PlacedFeature> WITHERED_PLACED_KEY = registerKey("withered_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -31,6 +33,12 @@ public class ModPlacedFeatures {
         register(context, CHARRED_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CHARRED_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                     PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.CHARRED_FUNGUS));
+        register(context, PALM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PALM_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                    PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.PALM_SAPLING));
+        register(context, WITHERED_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WITHERED_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                    PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.WITHERED_PALM_SAPLING));
     }
 
 

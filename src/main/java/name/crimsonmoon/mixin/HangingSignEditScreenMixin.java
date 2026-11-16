@@ -26,7 +26,8 @@ public abstract class HangingSignEditScreenMixin extends AbstractSignEditScreen 
     private String fixCustomHangingSignGuiTexture(String originalPath) {
         if (this.signType == ModWoodTypes.CORRUPTED ||
                 this.signType == ModWoodTypes.ACIDIC ||
-                this.signType == ModWoodTypes.CHARRED) {
+                this.signType == ModWoodTypes.CHARRED ||
+                this.signType == ModWoodTypes.PALM) {
 
             String woodName = this.signType.name().contains(":")
                     ? this.signType.name().split(":")[1]

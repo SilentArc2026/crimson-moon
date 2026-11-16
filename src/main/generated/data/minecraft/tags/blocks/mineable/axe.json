@@ -20,6 +20,22 @@
     "crimson-moon:charred_fence",
     "crimson-moon:charred_fence_gate",
     "crimson-moon:charred_door",
-    "crimson-moon:charred_trapdoor"
+    "crimson-moon:charred_trapdoor",
+    "crimson-moon:palm_stairs",
+    "crimson-moon:palm_slab",
+    "crimson-moon:palm_button",
+    "crimson-moon:palm_pressure_plate",
+    "crimson-moon:palm_fence",
+    "crimson-moon:palm_fence_gate",
+    "crimson-moon:palm_door",
+    "crimson-moon:palm_trapdoor",
+    "crimson-moon:withered_palm_stairs",
+    "crimson-moon:withered_palm_slab",
+    "crimson-moon:withered_palm_button",
+    "crimson-moon:withered_palm_pressure_plate",
+    "crimson-moon:withered_palm_fence",
+    "crimson-moon:withered_palm_fence_gate",
+    "crimson-moon:withered_palm_door",
+    "crimson-moon:withered_palm_trapdoor"
   ]
 }

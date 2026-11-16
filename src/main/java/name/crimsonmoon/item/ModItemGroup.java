@@ -71,8 +71,14 @@ public class ModItemGroup {
                         entries.add(ModItems.CORRUPTED_CHEST_BOAT);
                         entries.add(ModItems.CHARRED_BOAT);
                         entries.add(ModItems.CHARRED_CHEST_BOAT);
+                        entries.add(ModItems.GLOOM_BERRIES);
+                        entries.add(ModItems.PALM_BOAT);
+                        entries.add(ModItems.PALM_CHEST_BOAT);
+                        entries.add(ModItems.WITHERED_PALM_BOAT);
+                        entries.add(ModItems.WITHERED_PALM_CHEST_BOAT);
 
                         entries.add(ModBlocks.Crimsonite_Block);
+                        entries.add(ModBlocks.GLOOMLIGHT);
                         entries.add(ModBlocks.Raw_Vampyrite_Block);
                         entries.add(ModBlocks.Vampyrite_Block);
                         entries.add(ModBlocks.Vampyrite_Ore);
@@ -156,6 +162,41 @@ public class ModItemGroup {
                         entries.add(ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM);
                         entries.add(ModBlocks.CORRUPTED_CLOSED_EYEBLOSSOM);
                         entries.add(ModBlocks.CORRUPTED_REDSTONE_HEART);
+                        entries.add(ModBlocks.CORRUPTED_WITHER_ROSE);
+                        entries.add(ModBlocks.PALM_LEAVES);
+                        entries.add(ModBlocks.PALM_LOG);
+                        entries.add(ModBlocks.PALM_PLANKS);
+                        entries.add(ModBlocks.PALM_WOOD);
+                        entries.add(ModBlocks.STRIPPED_PALM_LOG);
+                        entries.add(ModBlocks.STRIPPED_PALM_WOOD);
+                        entries.add(ModBlocks.PALM_DOOR);
+                        entries.add(ModBlocks.PALM_TRAPDOOR);
+                        entries.add(ModBlocks.PALM_BUTTON);
+                        entries.add(ModBlocks.PALM_PRESSURE_PLATE);
+                        entries.add(ModBlocks.PALM_FENCE);
+                        entries.add(ModBlocks.PALM_FENCE_GATE);
+                        entries.add(ModBlocks.PALM_STAIRS);
+                        entries.add(ModBlocks.PALM_SLAB);
+                        entries.add(ModBlocks.PALM_SIGN);
+                        entries.add(ModBlocks.PALM_HANGING_SIGN);
+                        entries.add(ModBlocks.PALM_SAPLING);
+                        entries.add(ModBlocks.WITHERED_PALM_LEAVES);
+                        entries.add(ModBlocks.WITHERED_PALM_LOG);
+                        entries.add(ModBlocks.WITHERED_PALM_PLANKS);
+                        entries.add(ModBlocks.WITHERED_PALM_SAPLING);
+                        entries.add(ModBlocks.WITHERED_PALM_WOOD);
+                        entries.add(ModBlocks.STRIPPED_WITHERED_PALM_LOG);
+                        entries.add(ModBlocks.STRIPPED_WITHERED_PALM_WOOD);
+                        entries.add(ModBlocks.WITHERED_PALM_STAIRS);
+                        entries.add(ModBlocks.WITHERED_PALM_SLAB);
+                        entries.add(ModBlocks.WITHERED_PALM_BUTTON);
+                        entries.add(ModBlocks.WITHERED_PALM_PRESSURE_PLATE);
+                        entries.add(ModBlocks.WITHERED_PALM_FENCE);
+                        entries.add(ModBlocks.WITHERED_PALM_FENCE_GATE);
+                        entries.add(ModBlocks.WITHERED_PALM_DOOR);
+                        entries.add(ModBlocks.WITHERED_PALM_TRAPDOOR);
+                        entries.add(ModBlocks.WITHERED_PALM_SIGN);
+                        entries.add(ModBlocks.WITHERED_PALM_HANGING_SIGN);
                     }).build());
 
 

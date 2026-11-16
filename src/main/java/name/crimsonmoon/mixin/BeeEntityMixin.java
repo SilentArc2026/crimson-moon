@@ -34,6 +34,17 @@ public abstract class BeeEntityMixin {
                 }
 
                 cir.setReturnValue(ActionResult.success(bee.getWorld().isClient));
+            } else if (stack.isOf(ModBlocks.CORRUPTED_WITHER_ROSE.asItem())) {
+                if (!bee.getWorld().isClient) {
+                    if (!player.getAbilities().creativeMode) {
+                        stack.decrement(1);
+                    }
+
+                    bee.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 10));
+                    bee.playSound(SoundEvents.ENTITY_GENERIC_EAT, 1.0F, 1.0F);
+                }
+                cir.setReturnValue(ActionResult.success(bee.getWorld().isClient));
+
             }
         }
     }

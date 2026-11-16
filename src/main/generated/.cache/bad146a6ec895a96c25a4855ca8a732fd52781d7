@@ -1,16 +1,18 @@
-// 1.20.1	2026-11-15T03:18:48.4864116	Crimson Moon/Tags for minecraft:block
+// 1.20.1	2026-11-16T14:21:03.8124118	Crimson Moon/Tags for minecraft:block
 1bf3b2d1763d255914735c0d2edc525efe6c7ed6 data\minecraft\tags\blocks\needs_stone_tool.json
 453bdbeee3ed810765b4460cb53873215156328f data\fabric\tags\blocks\needs_tool_level_5.json
-9576f8c3faab0aeefc1e5e3505be02c2524cb48c data\minecraft\tags\blocks\fences.json
+6b764dce8a7864df786f88c60aa16852e4dc46de data\minecraft\tags\blocks\fences.json
+740f9ce72bd37820734373e61ce71aeca915bfe7 data\minecraft\tags\blocks\climbable.json
 4a39f7bef56e284e93532c33abbed9c803f2a662 data\minecraft\tags\blocks\tall_flowers.json
 fe35f8de3d2747df908897ddf365c8460b77cf17 data\minecraft\tags\blocks\needs_diamond_tool.json
-4c7ad7801ca9de401332cbbc90294865652910e2 data\minecraft\tags\blocks\logs_that_burn.json
+4df52e76574cf65c298ebebad306a53d902a8e5d data\minecraft\tags\blocks\logs_that_burn.json
 41273a22baad5236e9ed6f7fbb469fb8e9ffb67c data\minecraft\tags\blocks\mineable\shovel.json
-b52c18bd17a880931f826f9cdbfee465ea7935e7 data\minecraft\tags\blocks\small_flowers.json
+05443de14b7dcb59bf7b4b7f6037c40782f7d0e7 data\minecraft\tags\blocks\small_flowers.json
 9297e7a68173a9cb4a5943c984711ad9551b4b1d data\minecraft\tags\blocks\dirt.json
 6b55be92447e7716ac9f8ebefcd8dec0a2473f81 data\minecraft\tags\blocks\needs_iron_tool.json
-9f1c54988a2f01afaff9fdcb234af5388522feae data\minecraft\tags\blocks\mineable\axe.json
 3c57b3fc7d80e26d37f31dcee450c4f005affb5d data\fabric\tags\blocks\needs_iron_tool.json
+3977193ddf2092f2e485f4168a98605a0647af1d data\minecraft\tags\blocks\mineable\axe.json
 3a14bf4d9b2d22578b76b08cd02220bb37dfb2e5 data\minecraft\tags\blocks\mineable\pickaxe.json
-c29ff3659d4fd06e5356af3eb42d32a7ac402f08 data\minecraft\tags\blocks\fence_gates.json
+f2461dd1e0331f6697f7a076fb1e6dfd210b89a0 data\minecraft\tags\blocks\leaves.json
+beec6bec2e903325d0e4183ebd75704a6b016618 data\minecraft\tags\blocks\fence_gates.json
 02f48a5c5dae68d2ed5ec18a0fef3abd50f5f06a data\minecraft\tags\blocks\replaceable_by_trees.json

@@ -14,5 +14,9 @@ public class ModTreeGeneration {
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ACIDIC_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CHARRED_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PALM_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WITHERED_PLACED_KEY);
     }
 }

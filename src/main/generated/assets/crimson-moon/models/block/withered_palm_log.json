@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "crimson-moon:block/withered_palm_log_top",
+    "side": "crimson-moon:block/withered_palm_log"
+  }
+}

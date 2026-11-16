@@ -1,28 +1,35 @@
 {
-  "type": "minecraft:huge_red_mushroom",
+  "type": "your_mod_id:charred_huge_fungus",
   "config": {
-    "cap_provider": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "crimson-moon:charred_wart_block",
-        "Properties": {
-          "down": "true",
-          "east": "true",
-          "north": "true",
-          "south": "true",
-          "up": "true",
-          "west": "true"
-        }
+    "decor_state": {
+      "Name": "crimson-moon:gloomlight"
+    },
+    "hat_state": {
+      "Name": "crimson-moon:charred_wart_block",
+      "Properties": {
+        "down": "true",
+        "east": "true",
+        "north": "true",
+        "south": "true",
+        "up": "true",
+        "west": "true"
       }
     },
-    "foliage_radius": 3,
-    "stem_provider": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "crimson-moon:charred_log",
-        "Properties": {
-          "axis": "y"
-        }
+    "planted": false,
+    "replaceable_blocks": {
+      "type": "minecraft:matching_block_tag",
+      "tag": "minecraft:replaceable_by_trees"
+    },
+    "stem_state": {
+      "Name": "crimson-moon:charred_log",
+      "Properties": {
+        "axis": "y"
+      }
+    },
+    "valid_base_block": {
+      "Name": "crimson-moon:corrupted_grass_block",
+      "Properties": {
+        "snowy": "false"
       }
     }
   }

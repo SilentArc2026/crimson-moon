@@ -126,13 +126,29 @@ public class ModItems {
             new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.CHARRED_SIGN, ModBlocks.CHARRED_WALL_SIGN));
     public static final Item CHARRED_HANGING_SIGN = registerItem("charred_hanging_sign",
             new HangingSignItem(ModBlocks.CHARRED_HANGING_SIGN, ModBlocks.CHARRED_HANGING_WALL_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item PALM_SIGN = registerItem("palm_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.PALM_SIGN, ModBlocks.PALM_WALL_SIGN));
+    public static final Item PALM_HANGING_SIGN = registerItem("palm_hanging_sign",
+            new HangingSignItem(ModBlocks.PALM_HANGING_SIGN, ModBlocks.PALM_HANGING_WALL_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item WITHERED_PALM_SIGN = registerItem("withered_palm_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.WITHERED_PALM_SIGN, ModBlocks.WITHERED_PALM_WALL_SIGN));
+    public static final Item WITHERED_PALM_HANGING_SIGN = registerItem("withered_palm_hanging_sign",
+            new HangingSignItem(ModBlocks.WITHERED_PALM_HANGING_SIGN, ModBlocks.WITHERED_PALM_HANGING_WALL_SIGN, new FabricItemSettings().maxCount(16)));
 
     public static final Item CORRUPTED_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.CORRUPTED_BOAT_ID, ModBoats.CORRUPTED_BOAT_KEY, false);
     public static final Item CORRUPTED_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.CORRUPTED_CHEST_BOAT_ID, ModBoats.CORRUPTED_BOAT_KEY, true);
-    public static final Item ACIDIC_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.ACIDIC_CHEST_BOAT_ID, ModBoats.ACIDIC_BOAT_KEY, false);
-    public static final Item ACIDIC_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.ACIDIC_BOAT_ID, ModBoats.ACIDIC_BOAT_KEY, true);
+    public static final Item ACIDIC_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.ACIDIC_BOAT_ID, ModBoats.ACIDIC_BOAT_KEY, false);
+    public static final Item ACIDIC_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.ACIDIC_CHEST_BOAT_ID, ModBoats.ACIDIC_BOAT_KEY, true);
     public static final Item CHARRED_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.CHARRED_BOAT_ID, ModBoats.CHARRED_BOAT_KEY, false);
     public static final Item CHARRED_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.CHARRED_CHEST_BOAT_ID, ModBoats.CHARRED_BOAT_KEY, true);
+    public static final Item PALM_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.PALM_BOAT_ID, ModBoats.PALM_BOAT_KEY, false);
+    public static final Item PALM_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.PALM_CHEST_BOAT_ID, ModBoats.PALM_BOAT_KEY, true);
+    public static final Item WITHERED_PALM_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.WITHERED_PALM_BOAT_ID, ModBoats.WITHERED_PALM_BOAT_KEY, false);
+    public static final Item WITHERED_PALM_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.WITHERED_PALM_CHEST_BOAT_ID, ModBoats.WITHERED_PALM_BOAT_KEY, true);
+
+    public static final Item GLOOM_BERRIES = registerItem("gloom_berries",
+            new AliasedBlockItem(ModBlocks.CHARRED_VINES, new FabricItemSettings()
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(0.1F).build())));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(CrimsonMoon.MOD_ID, name), item);
