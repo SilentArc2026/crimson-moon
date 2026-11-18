@@ -1,6 +1,7 @@
 package name.crimsonmoon.datagen;
 
 import name.crimsonmoon.block.ModBlocks;
+import name.crimsonmoon.item.ModItems;
 import name.crimsonmoon.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -39,17 +40,23 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(ModBlocks.CORRUPTED_DIRT, ModBlocks.CORRUPTED_GRASS_BLOCK, ModBlocks.ACIDIC_GRASS_BLOCK, ModBlocks.ACIDIC_DIRT);
         getOrCreateTagBuilder(BlockTags.REPLACEABLE_BY_TREES)
-                .add(ModBlocks.CORRUPTED_TALL_GRASS, ModBlocks.CORRUPTED_GRASS, ModBlocks.ACIDIC_TALL_GRASS, ModBlocks.ACIDIC_GRASS);
+                .add(ModBlocks.CAT_TAILS, ModBlocks.CORRUPTED_TALL_GRASS, ModBlocks.CORRUPTED_GRASS, ModBlocks.ACIDIC_TALL_GRASS, ModBlocks.ACIDIC_GRASS, ModBlocks.BUSH, ModBlocks.WILD_BUSH, ModBlocks.WEEDS, ModBlocks.WITHERED_BUSH, ModBlocks.WITHERED_WILD_BUSH, ModBlocks.WITHERED_WEEDS, ModBlocks.WITHERED_CAT_TAILS);
         getOrCreateTagBuilder(BlockTags.TALL_FLOWERS)
-                .add(ModBlocks.CORRUPTED_TALL_GRASS, ModBlocks.ACIDIC_TALL_GRASS);
+                .add(ModBlocks.CORRUPTED_TALL_GRASS, ModBlocks.ACIDIC_TALL_GRASS, ModBlocks.CAT_TAILS, ModBlocks.WITHERED_CAT_TAILS);
         getOrCreateTagBuilder(BlockTags.TALL_FLOWERS)
-                .add(ModBlocks.ACIDIC_LILAC);
+                .add(ModBlocks.ACIDIC_LILAC, ModBlocks.ACIDIC_PITCHER);
+        getOrCreateTagBuilder(BlockTags.CROPS)
+                .add(ModBlocks.ACIDIC_PITCHER_CROP);
         getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
-                .add(ModBlocks.ACID_FLOWER, ModBlocks.CORRUPTED_POPPY, ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM, ModBlocks.CORRUPTED_WITHER_ROSE);
+                .add(ModBlocks.FIRE_FLOWER, ModBlocks.ACID_FLOWER, ModBlocks.CORRUPTED_POPPY, ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM, ModBlocks.CORRUPTED_WITHER_ROSE, ModBlocks.PINK_FLOWER);
         getOrCreateTagBuilder(BlockTags.CLIMBABLE)
                 .add(ModBlocks.CHARRED_VINES, ModBlocks.CHARRED_VINES_PLANT);
         getOrCreateTagBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.ACIDIC_LEAVES, ModBlocks.CORRUPTED_LEAVES, ModBlocks.PALM_LEAVES, ModBlocks.WITHERED_PALM_LEAVES);
+        getOrCreateTagBuilder(BlockTags.REPLACEABLE)
+                .add(ModBlocks.WEEDS, ModBlocks.WILD_BUSH, ModBlocks.BUSH, ModBlocks.CAT_TAILS, ModBlocks.WITHERED_BUSH, ModBlocks.WITHERED_WILD_BUSH, ModBlocks.WITHERED_WEEDS, ModBlocks.WITHERED_CAT_TAILS);
+        getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
+                .add(ModBlocks.BUSH, ModBlocks.WILD_BUSH, ModBlocks.WEEDS, ModBlocks.CAT_TAILS, ModBlocks.WITHERED_BUSH, ModBlocks.WITHERED_WILD_BUSH, ModBlocks.WITHERED_WEEDS, ModBlocks.WITHERED_CAT_TAILS);
 
 
         //Tag for Custom Tool Material for Crimson

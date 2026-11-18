@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_solarium_sword": {
+    "has_heavenly_upgrade_smithing_template": {
       "conditions": {
         "items": [
           {
             "items": [
-              "crimson-moon:solarium_sword"
+              "crimson-moon:heavenly_upgrade_smithing_template"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_solarium_sword",
+      "has_heavenly_upgrade_smithing_template",
       "has_the_recipe"
     ]
   ],

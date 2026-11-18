@@ -79,6 +79,8 @@ public class ModItems {
             new Item(new FabricItemSettings()));
     public static final Item TURQITE_UPGRADE_SMITHING_TEMPLATE = registerItem("turqite_upgrade_smithing_template",
             new Item(new FabricItemSettings()));
+    public static final Item HEAVENLY_UPGRADE_SMITHING_TEMPLATE = registerItem("heavenly_upgrade_smithing_template",
+            new Item(new FabricItemSettings().fireproof()));
     public static final Item TURQITE_CRYSTAL = registerItem("turqite_crystal",
             new Item(new FabricItemSettings()));
     public static final Item VAMPYRITE_HELMET = registerItem("vampyrite_helmet",
@@ -149,6 +151,12 @@ public class ModItems {
     public static final Item GLOOM_BERRIES = registerItem("gloom_berries",
             new AliasedBlockItem(ModBlocks.CHARRED_VINES, new FabricItemSettings()
                     .food(new FoodComponent.Builder().hunger(2).saturationModifier(0.1F).build())));
+
+    public static final Item ACIDIC_PITCHER_POD = registerItem("acidic_pitcher_pod",
+            new AliasedBlockItem(ModBlocks.ACIDIC_PITCHER_CROP, new FabricItemSettings()));
+
+    public static final Item CORRUPTED_TORCHFLOWER_SEEDS = registerItem("corrupted_torchflower_seeds",
+            new AliasedBlockItem(ModBlocks.CORRUPTED_TORCHFLOWER_CROP, new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(CrimsonMoon.MOD_ID, name), item);

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "crimson-moon:block/corrupted_torchflower_crop_stage1"
+  }
+}

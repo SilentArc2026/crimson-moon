@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_single_face",
+  "textures": {
+    "texture": "crimson-moon:block/corrupted_mushroom_block"
+  }
+}

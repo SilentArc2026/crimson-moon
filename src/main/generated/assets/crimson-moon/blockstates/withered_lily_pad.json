@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "crimson-moon:block/withered_lily_pad"
+      },
+      {
+        "model": "crimson-moon:block/withered_lily_pad",
+        "y": 90
+      },
+      {
+        "model": "crimson-moon:block/withered_lily_pad",
+        "y": 180
+      },
+      {
+        "model": "crimson-moon:block/withered_lily_pad",
+        "y": 270
+      }
+    ]
+  }
+}

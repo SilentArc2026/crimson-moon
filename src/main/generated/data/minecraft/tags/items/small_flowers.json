@@ -1,6 +1,15 @@
 {
   "replace": false,
   "values": [
+    "crimson-moon:fire_flower",
+    "crimson-moon:withered_cat_tails",
+    "crimson-moon:withered_weeds",
+    "crimson-moon:withered_bush",
+    "crimson-moon:withered_wild_bush",
+    "crimson-moon:weeds",
+    "crimson-moon:bush",
+    "crimson-moon:wild_bush",
+    "crimson-moon:pink_flower",
     "crimson-moon:corrupted_poppy",
     "crimson-moon:acid_flower",
     "crimson-moon:corrupted_open_eyeblossom",

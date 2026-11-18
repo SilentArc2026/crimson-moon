@@ -10,6 +10,7 @@ import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.PlaceableOnWaterItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -81,6 +82,12 @@ public class ModBlocks {
             new SaplingBlock(new CorruptedSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
     public static final Block CHARRED_FUNGUS  = registerBlock("charred_fungus",
             new SaplingBlock(new CharredSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS)));
+    public static final Block ACIDIC_MUSHROOM  = registerBlock("acidic_mushroom",
+            new SaplingBlock(new AcidicMushroomSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS)));
+    public static final Block BLACKENED_MUSHROOM  = registerBlock("blackened_mushroom",
+            new SaplingBlock(new BlackenedMushroomSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS)));
+    public static final Block CORRUPTED_MUSHROOM  = registerBlock("corrupted_mushroom",
+            new SaplingBlock(new CorruptedMushroomSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS)));
     public static final Block ACIDIC_LOG = registerBlock("acidic_log",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
     public static final Block ACIDIC_WOOD = registerBlock("acidic_wood",
@@ -126,7 +133,17 @@ public class ModBlocks {
     public static final Block POLISHED_DOLOMITE = registerBlock("polished_dolomite",
             new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_BLACKSTONE)));
     public static final Block CHARRED_WART_BLOCK = registerBlock("charred_wart_block",
-            new MushroomBlock(FabricBlockSettings.copyOf(Blocks.WARPED_WART_BLOCK)));
+            new Block(FabricBlockSettings.copyOf(Blocks.WARPED_WART_BLOCK)));
+    public static final Block ACIDIC_MUSHROOM_BLOCK = registerBlock("acidic_mushroom_block",
+            new MushroomBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block CORRUPTED_MUSHROOM_BLOCK = registerBlock("corrupted_mushroom_block",
+            new MushroomBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block BLACKENED_MUSHROOM_BLOCK = registerBlock("blackened_mushroom_block",
+            new MushroomBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block CORRUPTED_MUSHROOM_STEM = registerBlock("corrupted_mushroom_stem",
+            new MushroomBlock(FabricBlockSettings.copyOf(Blocks.MUSHROOM_STEM)));
+    public static final Block ACIDIC_MUSHROOM_STEM = registerBlock("acidic_mushroom_stem",
+            new MushroomBlock(FabricBlockSettings.copyOf(Blocks.MUSHROOM_STEM)));
     public static final Block CHARRED_SIGN = registerBlockWithoutBlockItem("charred_sign",
             new ModStandingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), ModWoodTypes.CHARRED));
     public static final Block CHARRED_WALL_SIGN = registerBlockWithoutBlockItem("charred_wall_sign",
@@ -275,15 +292,27 @@ public class ModBlocks {
             new FlowerBlock(StatusEffects.POISON, 5, FabricBlockSettings.copyOf(Blocks.ALLIUM)));
     public static final Block POTTED_ACID_FLOWER = registerBlockWithoutBlockItem("potted_acid_flower",
             new FlowerPotBlock(ACID_FLOWER, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));
+    public static final Block PINK_FLOWER = registerBlock("pink_flower",
+            new FlowerBlock(StatusEffects.REGENERATION, 5, FabricBlockSettings.copyOf(Blocks.ALLIUM)));
+    public static final Block POTTED_PINK_FLOWER = registerBlockWithoutBlockItem("potted_pink_flower",
+            new FlowerPotBlock(PINK_FLOWER, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));
     public static final Block CORRUPTED_POPPY = registerBlock("corrupted_poppy",
             new FlowerBlock(StatusEffects.WITHER, 4, FabricBlockSettings.copyOf(Blocks.ALLIUM)));
     public static final Block POTTED_CORRUPTED_POPPY = registerBlockWithoutBlockItem("potted_corrupted_poppy",
             new FlowerPotBlock(CORRUPTED_POPPY, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));
+    public static final Block FIRE_FLOWER = registerBlock("fire_flower",
+            new FlowerBlock(StatusEffects.FIRE_RESISTANCE, 4, FabricBlockSettings.copyOf(Blocks.ALLIUM)));
+    public static final Block POTTED_FIRE_FLOWER = registerBlockWithoutBlockItem("potted_fire_flower",
+            new FlowerPotBlock(FIRE_FLOWER, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));
     public static final Block CORRUPTED_WITHER_ROSE = registerBlock("corrupted_wither_rose",
             new CorruptedWitherRoseBlock(StatusEffects.WITHER, StatusEffects.DARKNESS, 60, 0, AbstractBlock.Settings.copy(Blocks.WITHER_ROSE)));
     public static final Block POTTED_CORRUPTED_WITHER_ROSE = registerBlockWithoutBlockItem("potted_corrupted_wither_rose",
             new FlowerPotBlock(CORRUPTED_WITHER_ROSE, FabricBlockSettings.copyOf(Blocks.POTTED_WITHER_ROSE)));
     public static final Block ACIDIC_LILAC = registerBlock("acidic_lilac",
+            new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.LILAC)));
+    public static final Block CAT_TAILS = registerBlock("cat_tails",
+            new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.LILAC)));
+    public static final Block WITHERED_CAT_TAILS = registerBlock("withered_cat_tails",
             new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.LILAC)));
     public static final Block CORRUPTED_CLOSED_EYEBLOSSOM = registerBlock("corrupted_closed_eyeblossom",
             new ModEyeBlossomBlock(false, () -> ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM, StatusEffects.NAUSEA, 7, FabricBlockSettings.copyOf(Blocks.POPPY)));
@@ -293,6 +322,41 @@ public class ModBlocks {
             new FlowerPotBlock(CORRUPTED_CLOSED_EYEBLOSSOM, FabricBlockSettings.copyOf(Blocks.POTTED_POPPY)));
     public static final Block POTTED_CORRUPTED_OPEN_EYEBLOSSOM = registerBlockWithoutBlockItem("potted_corrupted_open_eyeblossom",
             new FlowerPotBlock(CORRUPTED_OPEN_EYEBLOSSOM, FabricBlockSettings.copyOf(Blocks.POTTED_POPPY)));
+    public static final Block BUSH = registerBlock("bush",
+            new CustomShrubBlock(FabricBlockSettings.copyOf(Blocks.DEAD_BUSH).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static final Block WILD_BUSH = registerBlock("wild_bush",
+            new CustomShrubBlock(FabricBlockSettings.copyOf(Blocks.DEAD_BUSH).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static final Block WEEDS = registerBlock("weeds",
+            new CustomShrubBlock(FabricBlockSettings.copyOf(Blocks.DEAD_BUSH).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static final Block WITHERED_BUSH = registerBlock("withered_bush",
+            new CustomShrubBlock(FabricBlockSettings.copyOf(Blocks.DEAD_BUSH).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static final Block WITHERED_WILD_BUSH = registerBlock("withered_wild_bush",
+            new CustomShrubBlock(FabricBlockSettings.copyOf(Blocks.DEAD_BUSH).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static final Block WITHERED_WEEDS = registerBlock("withered_weeds",
+            new CustomShrubBlock(FabricBlockSettings.copyOf(Blocks.DEAD_BUSH).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+
+    public static final Block ACIDIC_PITCHER_CROP = registerBlock("acidic_pitcher_crop",
+            new AcidicPitcherCropBlock(FabricBlockSettings.copyOf(Blocks.PITCHER_CROP)));
+    public static final Block ACIDIC_PITCHER = registerBlock("acidic_pitcher",
+            new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.PITCHER_PLANT)));
+
+    public static final Block CORRUPTED_TORCHFLOWER = registerBlock("corrupted_torchflower",
+            new FlowerBlock(StatusEffects.NIGHT_VISION, 100,
+                    AbstractBlock.Settings.copy(Blocks.TORCHFLOWER)));
+
+    public static final Block POTTED_CORRUPTED_TORCHFLOWER = Registry.register(Registries.BLOCK,
+            new Identifier(CrimsonMoon.MOD_ID, "potted_corrupted_torchflower"),
+            new FlowerPotBlock(CORRUPTED_TORCHFLOWER, AbstractBlock.Settings.copy(Blocks.POTTED_TORCHFLOWER)));
+
+    public static final Block CORRUPTED_TORCHFLOWER_CROP = Registry.register(Registries.BLOCK,
+            new Identifier(CrimsonMoon.MOD_ID, "corrupted_torchflower_crop"),
+            new CorruptedTorchflowerCropBlock(AbstractBlock.Settings.copy(Blocks.TORCHFLOWER_CROP)));
+
+    public static final Block WITHERED_LILY_PAD = registerLilyPad("withered_lily_pad",
+            new LilyPadBlock(FabricBlockSettings.copyOf(Blocks.LILY_PAD)));
+
+    public static final Block CORRUPTED_LILY_PAD = registerLilyPad("corrupted_lily_pad",
+            new LilyPadBlock(FabricBlockSettings.copyOf(Blocks.LILY_PAD)));
 
     public static final Block GLOOMLIGHT = registerBlock("gloomlight",
             new Block(FabricBlockSettings.copyOf(Blocks.SHROOMLIGHT).luminance(state -> 15).sounds(BlockSoundGroup.SHROOMLIGHT)));
@@ -322,4 +386,11 @@ public class ModBlocks {
     public static void registerModBlocks() {
         CrimsonMoon.LOGGER.info("Registering ModBlocks for " + CrimsonMoon.MOD_ID);
     }
+
+    private static Block registerLilyPad(String name, Block block) {
+        Registry.register(Registries.ITEM, new Identifier(CrimsonMoon.MOD_ID, name),
+                new PlaceableOnWaterItem(block, new FabricItemSettings()));
+        return Registry.register(Registries.BLOCK, new Identifier(CrimsonMoon.MOD_ID, name), block);
+    }
+
 }

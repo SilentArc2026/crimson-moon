@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "crimson-moon:acidic_pitcher_crop",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "4",
+                    "half": "lower"
+                  }
+                }
+              ],
+              "name": "crimson-moon:acidic_pitcher"
+            },
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "crimson-moon:acidic_pitcher_crop",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "half": "lower"
+                  }
+                }
+              ],
+              "name": "crimson-moon:acidic_pitcher_pod"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

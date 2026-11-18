@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/lily_pad",
+  "textures": {
+    "texture": "crimson-moon:block/corrupted_lily_pad"
+  }
+}

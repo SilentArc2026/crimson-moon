@@ -28,7 +28,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.WOODEN_SLABS)
                 .add(ModBlocks.ACIDIC_SLAB.asItem(), ModBlocks.CORRUPTED_SLAB.asItem(), ModBlocks.CHARRED_SLAB.asItem(), ModBlocks.PALM_SLAB.asItem(), ModBlocks.WITHERED_PALM_SLAB.asItem());
         getOrCreateTagBuilder(ItemTags.SMALL_FLOWERS)
-                .add(ModBlocks.CORRUPTED_POPPY.asItem(), ModBlocks.ACID_FLOWER.asItem(), ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM.asItem(), ModBlocks.CORRUPTED_WITHER_ROSE.asItem());
+                .add(ModBlocks.FIRE_FLOWER.asItem(), ModBlocks.WITHERED_CAT_TAILS.asItem(), ModBlocks.WITHERED_WEEDS.asItem(), ModBlocks.WITHERED_BUSH.asItem(), ModBlocks.WITHERED_WILD_BUSH.asItem(), ModBlocks.WEEDS.asItem(), ModBlocks.BUSH.asItem(), ModBlocks.WILD_BUSH.asItem(), ModBlocks.PINK_FLOWER.asItem(), ModBlocks.CORRUPTED_POPPY.asItem(), ModBlocks.ACID_FLOWER.asItem(), ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM.asItem(), ModBlocks.CORRUPTED_WITHER_ROSE.asItem());
 
     }
 }

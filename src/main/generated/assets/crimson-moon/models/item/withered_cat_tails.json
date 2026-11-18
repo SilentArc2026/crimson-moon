@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "crimson-moon:block/withered_cat_tails_top"
+  }
+}

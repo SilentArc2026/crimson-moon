@@ -12,11 +12,17 @@ public class ModTreeGeneration {
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CORRUPTED_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ACIDIC_PLACED_KEY);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MUSHROOM_FIELDS),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CHARRED_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PALM_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WITHERED_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MUSHROOM_FIELDS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CORRUPTED_MUSHROOM_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MUSHROOM_FIELDS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BLACKENED_MUSHROOM_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MUSHROOM_FIELDS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.ACIDIC_MUSHROOM_PLACED_KEY);
     }
 }

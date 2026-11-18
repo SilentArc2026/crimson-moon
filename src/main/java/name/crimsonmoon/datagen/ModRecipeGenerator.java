@@ -211,6 +211,14 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         ).criterion(hasItem(ModItems.Crimsonite_Ingot), conditionsFromItem(ModItems.Crimsonite_Ingot))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.CRIMSON_SWORD) + "_"));
         SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.HEAVENLY_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.ofItems(ModItems.SOLARIUM_SWORD),
+                Ingredient.ofItems(ModItems.SOLAR_STAR),
+                RecipeCategory.COMBAT,
+                ModItems.HEAVENLY_BLADE
+        ).criterion(hasItem(ModItems.HEAVENLY_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(ModItems.HEAVENLY_UPGRADE_SMITHING_TEMPLATE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HEAVENLY_BLADE) + "_"));
+        SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
                 Ingredient.ofItems(Items.NETHERITE_PICKAXE),
                 Ingredient.ofItems(ModItems.Crimsonite_Ingot),
@@ -418,14 +426,6 @@ SmithingTransformRecipeJsonBuilder.create(
                 ModItems.TURQITE_HOE
         ).criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_HOE) + "_"));
-SmithingTransformRecipeJsonBuilder.create(
-                Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
-                Ingredient.ofItems(ModItems.SOLARIUM_SWORD),
-                Ingredient.ofItems(ModItems.SOLAR_STAR),
-                RecipeCategory.COMBAT,
-                ModItems.HEAVENLY_BLADE
-        ).criterion(hasItem(ModItems.SOLARIUM_SWORD), conditionsFromItem(ModItems.SOLARIUM_SWORD))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HEAVENLY_BLADE) + "_"));
 
     }
 

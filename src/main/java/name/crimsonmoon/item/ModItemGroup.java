@@ -76,6 +76,9 @@ public class ModItemGroup {
                         entries.add(ModItems.PALM_CHEST_BOAT);
                         entries.add(ModItems.WITHERED_PALM_BOAT);
                         entries.add(ModItems.WITHERED_PALM_CHEST_BOAT);
+                        entries.add(ModItems.ACIDIC_PITCHER_POD);
+                        entries.add(ModItems.CORRUPTED_TORCHFLOWER_SEEDS);
+                        entries.add(ModItems.HEAVENLY_UPGRADE_SMITHING_TEMPLATE);
 
                         entries.add(ModBlocks.Crimsonite_Block);
                         entries.add(ModBlocks.GLOOMLIGHT);
@@ -197,6 +200,28 @@ public class ModItemGroup {
                         entries.add(ModBlocks.WITHERED_PALM_TRAPDOOR);
                         entries.add(ModBlocks.WITHERED_PALM_SIGN);
                         entries.add(ModBlocks.WITHERED_PALM_HANGING_SIGN);
+                        entries.add(ModBlocks.ACIDIC_PITCHER);
+                        entries.add(ModBlocks.CORRUPTED_TORCHFLOWER);
+                        entries.add(ModBlocks.PINK_FLOWER);
+                        entries.add(ModBlocks.CAT_TAILS);
+                        entries.add(ModBlocks.WITHERED_CAT_TAILS);
+                        entries.add(ModBlocks.BUSH);
+                        entries.add(ModBlocks.WILD_BUSH);
+                        entries.add(ModBlocks.WEEDS);
+                        entries.add(ModBlocks.WITHERED_BUSH);
+                        entries.add(ModBlocks.WITHERED_WILD_BUSH);
+                        entries.add(ModBlocks.WITHERED_WEEDS);
+                        entries.add(ModBlocks.FIRE_FLOWER);
+                        entries.add(ModBlocks.WITHERED_LILY_PAD);
+                        entries.add(ModBlocks.CORRUPTED_LILY_PAD);
+                        entries.add(ModBlocks.ACIDIC_MUSHROOM);
+                        entries.add(ModBlocks.BLACKENED_MUSHROOM);
+                        entries.add(ModBlocks.CORRUPTED_MUSHROOM);
+                        entries.add(ModBlocks.ACIDIC_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BLACKENED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.CORRUPTED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.ACIDIC_MUSHROOM_STEM);
+                        entries.add(ModBlocks.CORRUPTED_MUSHROOM_STEM);
                     }).build());
 
 

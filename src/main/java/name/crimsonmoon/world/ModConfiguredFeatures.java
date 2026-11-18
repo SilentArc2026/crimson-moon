@@ -5,6 +5,7 @@ import name.crimsonmoon.block.ModBlocks;
 import name.crimsonmoon.world.feature.ModFeatures;
 import name.crimsonmoon.world.tree.custom.PalmFoliagePlacer;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.MushroomBlock;
 import net.minecraft.client.gl.Uniform;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.tag.BlockTags;
@@ -31,6 +32,9 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHARRED_KEY = registerKey("charred");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PALM_KEY = registerKey("palm");
     public static final RegistryKey<ConfiguredFeature<?, ?>> WITHERED_KEY = registerKey("withered");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ACIDIC_MUSHROOM_KEY = registerKey("acidic_mushroom");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> CORRUPTED_MUSHROOM_KEY = registerKey("corrupted_mushroom");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BLACKENED_MUSHROOM_KEY = registerKey("blackened_mushroom");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, CORRUPTED_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
@@ -63,6 +67,21 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(ModBlocks.WITHERED_PALM_LEAVES),
                 new PalmFoliagePlacer(ConstantIntProvider.create(3), ConstantIntProvider.create(0), 2),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
+        register(context, CORRUPTED_MUSHROOM_KEY, Feature.HUGE_RED_MUSHROOM, new HugeMushroomFeatureConfig(
+                BlockStateProvider.of(ModBlocks.CORRUPTED_MUSHROOM_BLOCK.getDefaultState().with(MushroomBlock.DOWN, false)),
+                BlockStateProvider.of(ModBlocks.CORRUPTED_MUSHROOM_STEM.getDefaultState()),
+                2
+        ));
+        register(context, ACIDIC_MUSHROOM_KEY, Feature.HUGE_BROWN_MUSHROOM, new HugeMushroomFeatureConfig(
+                BlockStateProvider.of(ModBlocks.ACIDIC_MUSHROOM_BLOCK.getDefaultState().with(MushroomBlock.DOWN, false)),
+                BlockStateProvider.of(ModBlocks.ACIDIC_MUSHROOM_STEM.getDefaultState()),
+                3
+        ));
+        register(context, BLACKENED_MUSHROOM_KEY, Feature.HUGE_RED_MUSHROOM, new HugeMushroomFeatureConfig(
+                BlockStateProvider.of(ModBlocks.BLACKENED_MUSHROOM_BLOCK.getDefaultState().with(MushroomBlock.DOWN, false)),
+                BlockStateProvider.of(ModBlocks.CORRUPTED_MUSHROOM_STEM.getDefaultState()),
+                2
+        ));
     }
 
 

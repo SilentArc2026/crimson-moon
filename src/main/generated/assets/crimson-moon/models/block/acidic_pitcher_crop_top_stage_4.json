@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/pitcher_crop_top_stage_4",
+  "textures": {
+    "side": "crimson-moon:block/acidic_pitcher_crop_side",
+    "top": "crimson-moon:block/acidic_pitcher_crop_top_stage_4"
+  }
+}

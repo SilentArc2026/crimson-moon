@@ -2,17 +2,26 @@ package name.crimsonmoon.datagen;
 
 import name.crimsonmoon.CrimsonMoon;
 import name.crimsonmoon.block.ModBlocks;
+import name.crimsonmoon.block.custom.CorruptedTorchflowerCropBlock;
 import name.crimsonmoon.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.PitcherCropBlock;
+import net.minecraft.block.TallFlowerBlock;
+import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 
+import java.util.Optional;
+
 public class ModModelProvider extends FabricModelProvider {
+
+    private static final Model LILY_PAD_TEMPLATE = new Model(
+            Optional.of(new Identifier("minecraft", "block/lily_pad")), Optional.empty(), TextureKey.TEXTURE);
     public ModModelProvider(FabricDataOutput output) {
         super(output);
     }
@@ -37,20 +46,34 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.POLISHED_DOLOMITE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GLOOMLIGHT);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_DIRT);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ACIDIC_MUSHROOM_STEM);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_MUSHROOM_STEM);
         blockStateModelGenerator.registerSingleton(ModBlocks.CORRUPTED_GRASS_BLOCK, TexturedModel.CUBE_BOTTOM_TOP);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ACIDIC_DIRT);
         blockStateModelGenerator.registerSingleton(ModBlocks.ACIDIC_GRASS_BLOCK, TexturedModel.CUBE_BOTTOM_TOP);
         blockStateModelGenerator.registerTintableCross(ModBlocks.CORRUPTED_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.BUSH, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_BUSH, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WEEDS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WITHERED_BUSH, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WITHERED_WILD_BUSH, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WITHERED_WEEDS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.CORRUPTED_TALL_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.ACIDIC_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.ACIDIC_TALL_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.ACID_FLOWER, ModBlocks.POTTED_ACID_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.FIRE_FLOWER, ModBlocks.POTTED_FIRE_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PINK_FLOWER, ModBlocks.POTTED_PINK_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_TORCHFLOWER, ModBlocks.POTTED_CORRUPTED_TORCHFLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_WITHER_ROSE, ModBlocks.POTTED_CORRUPTED_WITHER_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_POPPY, ModBlocks.POTTED_CORRUPTED_POPPY, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_CLOSED_EYEBLOSSOM, ModBlocks.POTTED_CORRUPTED_CLOSED_EYEBLOSSOM, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM, ModBlocks.POTTED_CORRUPTED_OPEN_EYEBLOSSOM, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.ACIDIC_LILAC, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerDoubleBlock(ModBlocks.CAT_TAILS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerDoubleBlock(ModBlocks.WITHERED_CAT_TAILS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerCrop(ModBlocks.CORRUPTED_TORCHFLOWER_CROP, CorruptedTorchflowerCropBlock.AGE, 0, 1);
 
         blockStateModelGenerator.registerLog(ModBlocks.CORRUPTED_LOG).log(ModBlocks.CORRUPTED_LOG).wood(ModBlocks.CORRUPTED_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_CORRUPTED_LOG).log(ModBlocks.STRIPPED_CORRUPTED_LOG).wood(ModBlocks.STRIPPED_CORRUPTED_WOOD);
@@ -76,6 +99,9 @@ public class ModModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool acidicTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.ACIDIC_PLANKS);
         BlockStateModelGenerator.BlockTexturePool charredTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CHARRED_PLANKS);
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.CHARRED_FUNGUS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.ACIDIC_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.CORRUPTED_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.BLACKENED_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.PALM_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_CORRUPTED_LOG, ModBlocks.CORRUPTED_HANGING_SIGN, ModBlocks.CORRUPTED_HANGING_WALL_SIGN);
@@ -136,6 +162,39 @@ public class ModModelProvider extends FabricModelProvider {
         registerBerryVine(blockStateModelGenerator, ModBlocks.CHARRED_VINES);
         registerBerryVine(blockStateModelGenerator, ModBlocks.CHARRED_VINES_PLANT);
 
+        uploadPitcherModels(blockStateModelGenerator);
+        registerCustomPitcherCrop(blockStateModelGenerator, ModBlocks.ACIDIC_PITCHER_CROP);
+        registerCustomTall3DPlant(blockStateModelGenerator, ModBlocks.ACIDIC_PITCHER);
+
+        registerLilyPad(blockStateModelGenerator, ModBlocks.WITHERED_LILY_PAD);
+        registerLilyPad(blockStateModelGenerator, ModBlocks.CORRUPTED_LILY_PAD);
+
+        // 1. Corrupted Mushroom Block (uses its own inside texture)
+        registerCustomMushroomBlock(
+                blockStateModelGenerator,
+                ModBlocks.CORRUPTED_MUSHROOM_BLOCK,
+                TextureMap.getId(ModBlocks.CORRUPTED_MUSHROOM_BLOCK),
+                TextureMap.getSubId(ModBlocks.CORRUPTED_MUSHROOM_BLOCK, "_inside")
+        );
+
+// 2. Blackened Mushroom Block (shares Corrupted's inside texture)
+        registerCustomMushroomBlock(
+                blockStateModelGenerator,
+                ModBlocks.BLACKENED_MUSHROOM_BLOCK,
+                TextureMap.getId(ModBlocks.BLACKENED_MUSHROOM_BLOCK),
+                TextureMap.getSubId(ModBlocks.CORRUPTED_MUSHROOM_BLOCK, "_inside")
+        );
+
+// 3. Acidic Mushroom Block (uses its own inside texture)
+        registerCustomMushroomBlock(
+                blockStateModelGenerator,
+                ModBlocks.ACIDIC_MUSHROOM_BLOCK,
+                TextureMap.getId(ModBlocks.ACIDIC_MUSHROOM_BLOCK),
+                TextureMap.getSubId(ModBlocks.ACIDIC_MUSHROOM_BLOCK, "_inside")
+        );
+
+
+
         // === 1. TURQITE CLUSTER ===
         Identifier clusterModel = Models.CROSS.upload(
                 ModBlocks.Turqite_Cluster,
@@ -193,6 +252,155 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerParentedItemModel(block.asItem(), budModel);
     } // FIXED: Removed the stray closing braces that were cutting the class file in half
 
+    private void registerCustomPitcherCrop(BlockStateModelGenerator generator, Block cropBlock) {
+        Identifier airModel = new Identifier("minecraft", "block/air");
+
+        BlockStateVariantMap variantMap = BlockStateVariantMap.create(PitcherCropBlock.AGE, PitcherCropBlock.HALF)
+                .register(0, DoubleBlockHalf.LOWER, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(cropBlock, "_stage_0")))
+                .register(0, DoubleBlockHalf.UPPER, BlockStateVariant.create().put(VariantSettings.MODEL, airModel))
+                .register(1, DoubleBlockHalf.LOWER, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(cropBlock, "_stage_1")))
+                .register(1, DoubleBlockHalf.UPPER, BlockStateVariant.create().put(VariantSettings.MODEL, airModel))
+                .register(2, DoubleBlockHalf.LOWER, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(cropBlock, "_stage_2")))
+                .register(2, DoubleBlockHalf.UPPER, BlockStateVariant.create().put(VariantSettings.MODEL, airModel))
+                .register(3, DoubleBlockHalf.LOWER, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(cropBlock, "_bottom_stage_3")))
+                .register(3, DoubleBlockHalf.UPPER, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(cropBlock, "_top_stage_3")))
+                .register(4, DoubleBlockHalf.LOWER, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(cropBlock, "_bottom_stage_4")))
+                .register(4, DoubleBlockHalf.UPPER, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(cropBlock, "_top_stage_4")));
+
+        generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(cropBlock).coordinate(variantMap));
+    }
+
+    private void registerCustomTall3DPlant(BlockStateModelGenerator generator, Block plantBlock) {
+        BlockStateVariantMap variantMap = BlockStateVariantMap.create(TallFlowerBlock.HALF)
+                .register(DoubleBlockHalf.LOWER, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(plantBlock, "_bottom")))
+                .register(DoubleBlockHalf.UPPER, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(plantBlock, "_top")));
+
+        generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(plantBlock).coordinate(variantMap));
+    }
+
+    private static Model createPitcherBottomModel(String parent) {
+        return new Model(Optional.of(new Identifier("minecraft", "block/" + parent)), Optional.empty(),
+                TextureKey.BOTTOM, TextureKey.TOP, TextureKey.SIDE);
+    }
+
+    private static Model createPitcherTopModel(String parent) {
+        return new Model(Optional.of(new Identifier("minecraft", "block/" + parent)), Optional.empty(),
+                TextureKey.TOP, TextureKey.SIDE);
+    }
+
+    private void uploadPitcherModels(BlockStateModelGenerator generator) {
+        Identifier bottom0 = new Identifier("crimson-moon", "block/acidic_pitcher_crop_bottom");
+        Identifier bottom1 = new Identifier("crimson-moon", "block/acidic_pitcher_crop_bottom_stage_1");
+        Identifier bottom2 = new Identifier("crimson-moon", "block/acidic_pitcher_crop_bottom_stage_2");
+        Identifier bottom3 = new Identifier("crimson-moon", "block/acidic_pitcher_crop_bottom_stage_3");
+        Identifier bottom4 = new Identifier("crimson-moon", "block/acidic_pitcher_crop_bottom_stage_4");
+
+        Identifier topBase = new Identifier("crimson-moon", "block/acidic_pitcher_crop_top");
+        Identifier top3 = new Identifier("crimson-moon", "block/acidic_pitcher_crop_top_stage_3");
+        Identifier top4 = new Identifier("crimson-moon", "block/acidic_pitcher_crop_top_stage_4");
+        Identifier side = new Identifier("crimson-moon", "block/acidic_pitcher_crop_side");
+
+        // Crop stages 0 - 4
+        createPitcherBottomModel("pitcher_crop_stage_0").upload(
+                ModelIds.getBlockSubModelId(ModBlocks.ACIDIC_PITCHER_CROP, "_stage_0"),
+                new TextureMap().put(TextureKey.BOTTOM, bottom0).put(TextureKey.TOP, topBase).put(TextureKey.SIDE, side),
+                generator.modelCollector);
+
+        createPitcherBottomModel("pitcher_crop_stage_1").upload(
+                ModelIds.getBlockSubModelId(ModBlocks.ACIDIC_PITCHER_CROP, "_stage_1"),
+                new TextureMap().put(TextureKey.BOTTOM, bottom1).put(TextureKey.TOP, topBase).put(TextureKey.SIDE, side),
+                generator.modelCollector);
+
+        createPitcherBottomModel("pitcher_crop_stage_2").upload(
+                ModelIds.getBlockSubModelId(ModBlocks.ACIDIC_PITCHER_CROP, "_stage_2"),
+                new TextureMap().put(TextureKey.BOTTOM, bottom2).put(TextureKey.TOP, topBase).put(TextureKey.SIDE, side),
+                generator.modelCollector);
+
+        createPitcherBottomModel("pitcher_crop_bottom_stage_3").upload(
+                ModelIds.getBlockSubModelId(ModBlocks.ACIDIC_PITCHER_CROP, "_bottom_stage_3"),
+                new TextureMap().put(TextureKey.BOTTOM, bottom3).put(TextureKey.TOP, topBase).put(TextureKey.SIDE, side),
+                generator.modelCollector);
+
+        createPitcherTopModel("pitcher_crop_top_stage_3").upload(
+                ModelIds.getBlockSubModelId(ModBlocks.ACIDIC_PITCHER_CROP, "_top_stage_3"),
+                new TextureMap().put(TextureKey.TOP, top3).put(TextureKey.SIDE, side),
+                generator.modelCollector);
+
+        createPitcherBottomModel("pitcher_crop_bottom_stage_4").upload(
+                ModelIds.getBlockSubModelId(ModBlocks.ACIDIC_PITCHER_CROP, "_bottom_stage_4"),
+                new TextureMap().put(TextureKey.BOTTOM, bottom4).put(TextureKey.TOP, topBase).put(TextureKey.SIDE, side),
+                generator.modelCollector);
+
+        createPitcherTopModel("pitcher_crop_top_stage_4").upload(
+                ModelIds.getBlockSubModelId(ModBlocks.ACIDIC_PITCHER_CROP, "_top_stage_4"),
+                new TextureMap().put(TextureKey.TOP, top4).put(TextureKey.SIDE, side),
+                generator.modelCollector);
+
+        // Mature 2-block-tall Acidic Pitcher flower
+        createPitcherBottomModel("pitcher_plant_bottom").upload(
+                ModelIds.getBlockSubModelId(ModBlocks.ACIDIC_PITCHER, "_bottom"),
+                new TextureMap().put(TextureKey.BOTTOM, bottom4).put(TextureKey.TOP, topBase).put(TextureKey.SIDE, side),
+                generator.modelCollector);
+
+        createPitcherTopModel("pitcher_plant_top").upload(
+                ModelIds.getBlockSubModelId(ModBlocks.ACIDIC_PITCHER, "_top"),
+                new TextureMap().put(TextureKey.TOP, top4).put(TextureKey.SIDE, side),
+                generator.modelCollector);
+    }
+
+    private void registerCustomMushroomBlock(BlockStateModelGenerator generator, Block block, Identifier outsideTexture, Identifier insideTexture) {
+        // 1. Create the single-face model for the OUTSIDE (cap) texture
+        Identifier outsideModel = Models.TEMPLATE_SINGLE_FACE.upload(
+                block,
+                "_outside",
+                TextureMap.texture(outsideTexture),
+                generator.modelCollector
+        );
+
+        // 2. Create the single-face model for the INSIDE (pore) texture
+        Identifier insideModel = Models.TEMPLATE_SINGLE_FACE.upload(
+                block,
+                "_inside",
+                TextureMap.texture(insideTexture),
+                generator.modelCollector
+        );
+
+        // 3. Build the Multipart Blockstate mapping each direction (true = outside, false = inside)
+        generator.blockStateCollector.accept(
+                MultipartBlockStateSupplier.create(block)
+                        // UP (Rotate 270 degrees on X-axis to point North face straight up)
+                        .with(When.create().set(Properties.UP, true), BlockStateVariant.create().put(VariantSettings.MODEL, outsideModel).put(VariantSettings.X, VariantSettings.Rotation.R270))
+                        .with(When.create().set(Properties.UP, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideModel).put(VariantSettings.X, VariantSettings.Rotation.R270))
+                        // DOWN (Rotate 90 degrees on X-axis to point North face straight down)
+                        .with(When.create().set(Properties.DOWN, true), BlockStateVariant.create().put(VariantSettings.MODEL, outsideModel).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, true))
+                        .with(When.create().set(Properties.DOWN, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideModel).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, true))
+                        // NORTH
+                        .with(When.create().set(Properties.NORTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, outsideModel))
+                        .with(When.create().set(Properties.NORTH, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideModel))
+                        // SOUTH
+                        .with(When.create().set(Properties.SOUTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, outsideModel).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                        .with(When.create().set(Properties.SOUTH, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideModel).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                        // EAST
+                        .with(When.create().set(Properties.EAST, true), BlockStateVariant.create().put(VariantSettings.MODEL, outsideModel).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                        .with(When.create().set(Properties.EAST, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideModel).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                        // WEST
+                        .with(When.create().set(Properties.WEST, true), BlockStateVariant.create().put(VariantSettings.MODEL, outsideModel).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+                        .with(When.create().set(Properties.WEST, false), BlockStateVariant.create().put(VariantSettings.MODEL, insideModel).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+        );
+
+        // 4. Register the inventory item model using the outside cap texture
+        Identifier inventoryModel = Models.CUBE_ALL.upload(
+                block,
+                "_inventory",
+                TextureMap.all(outsideTexture),
+                generator.modelCollector
+        );
+        generator.registerParentedItemModel(block, inventoryModel);
+    }
+
+
+
+
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.Crimsonite_Ingot, Models.GENERATED);
@@ -222,6 +430,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SOLAR_STAR, Models.GENERATED);
         itemModelGenerator.register(ModItems.TURQITE_CRYSTAL, Models.GENERATED);
         itemModelGenerator.register(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEAVENLY_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.REFINED_TURQITE, Models.GENERATED);
         itemModelGenerator.register(ModItems.TURQITE_SWORD, Models.GENERATED);
         itemModelGenerator.register(ModItems.TURQITE_PICKAXE, Models.GENERATED);
@@ -258,5 +467,28 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PALM_CHEST_BOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.WITHERED_PALM_BOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.WITHERED_PALM_CHEST_BOAT, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.ACIDIC_PITCHER_POD, Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.ACIDIC_PITCHER.asItem(), Models.GENERATED);
+
+        itemModelGenerator.register(ModBlocks.WITHERED_LILY_PAD.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.CORRUPTED_LILY_PAD.asItem(), Models.GENERATED);
+    }
+
+    private void registerLilyPad(BlockStateModelGenerator generator, Block lilyPad) {
+        // Generates the block model using your block texture
+        Identifier modelId = LILY_PAD_TEMPLATE.upload(
+                lilyPad,
+                TextureMap.texture(lilyPad),
+                generator.modelCollector
+        );
+
+        // Generates the blockstate with random 0, 90, 180, and 270 degree rotations
+        generator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(
+                        lilyPad,
+                        BlockStateModelGenerator.createModelVariantWithRandomHorizontalRotations(modelId)
+                )
+        );
     }
 }

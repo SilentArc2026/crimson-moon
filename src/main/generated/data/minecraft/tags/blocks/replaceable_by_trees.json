@@ -1,9 +1,17 @@
 {
   "replace": false,
   "values": [
+    "crimson-moon:cat_tails",
     "crimson-moon:corrupted_tall_grass",
     "crimson-moon:corrupted_grass",
     "crimson-moon:acidic_tall_grass",
-    "crimson-moon:acidic_grass"
+    "crimson-moon:acidic_grass",
+    "crimson-moon:bush",
+    "crimson-moon:wild_bush",
+    "crimson-moon:weeds",
+    "crimson-moon:withered_bush",
+    "crimson-moon:withered_wild_bush",
+    "crimson-moon:withered_weeds",
+    "crimson-moon:withered_cat_tails"
   ]
 }

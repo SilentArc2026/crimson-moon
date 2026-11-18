@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/lily_pad",
+  "textures": {
+    "texture": "crimson-moon:block/withered_lily_pad"
+  }
+}

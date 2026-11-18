@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "crimson-moon:block/corrupted_torchflower_crop_stage0"
+    },
+    "age=1": {
+      "model": "crimson-moon:block/corrupted_torchflower_crop_stage1"
+    }
+  }
+}

@@ -20,6 +20,9 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> CHARRED_PLACED_KEY = registerKey("charred_placed");
     public static final RegistryKey<PlacedFeature> PALM_PLACED_KEY = registerKey("palm_placed");
     public static final RegistryKey<PlacedFeature> WITHERED_PLACED_KEY = registerKey("withered_placed");
+    public static final RegistryKey<PlacedFeature> ACIDIC_MUSHROOM_PLACED_KEY = registerKey("acidic_mushroom_placed");
+    public static final RegistryKey<PlacedFeature> BLACKENED_MUSHROOM_PLACED_KEY = registerKey("blackened_mushroom_placed");
+    public static final RegistryKey<PlacedFeature> CORRUPTED_MUSHROOM_PLACED_KEY = registerKey("corrupted_mushroom_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -39,6 +42,15 @@ public class ModPlacedFeatures {
         register(context, WITHERED_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WITHERED_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                     PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.WITHERED_PALM_SAPLING));
+        register(context, ACIDIC_MUSHROOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ACIDIC_MUSHROOM_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                    PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.ACIDIC_MUSHROOM));
+        register(context, CORRUPTED_MUSHROOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CORRUPTED_MUSHROOM_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                    PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.CORRUPTED_MUSHROOM));
+        register(context, BLACKENED_MUSHROOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLACKENED_MUSHROOM_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                    PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.BLACKENED_MUSHROOM));
     }
 
 

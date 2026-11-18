@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "crimson-moon:block/cat_tails_bottom"
+    },
+    "half=upper": {
+      "model": "crimson-moon:block/cat_tails_top"
+    }
+  }
+}
