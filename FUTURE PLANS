@@ -1,12 +1,16 @@
-Start Implementation for any other new items or blocks that may be ready for 0.1.3
-Bug Test
-Fix Bugs (If Any)
-Push 0.1.3 ALPHA to public databases once all wood and trees/mushrooms are implemented and survival friendly
+TAKE TWO-THREE DAY BREAK
+
 Start Branch 0.2 ALPHA
+Clean up Code Including The ModItemGroups so It is organized on minecraft creative menu
+Make Wood Types Completely Survival Friendly
+Implement Any Biome Specific Blocks
 Learn how to implement Entities
 Learn how to build and implement Biomes
 Learn how to build and Implement Geodes
 Implement all above topics
+Make Remaining Items Survival Friendly
+Update Changelog on Drive Periodically
+Get Suggestions from Dev Team + Outsiders
 Bug Test
 Fix Bugs if any
 Push 0.2 ALPHA to public databases
@@ -21,3 +25,14 @@ Implement Music
 Bug Test
 Fix Bugs if any
 Push 0.2.1 ALPHA to public databases
+Start 0.2.2 ALPHA Branch
+Review and Implement Major and Minor Bosses
+Implement Voice Acting
+Implement Music to Events
+Review and Implement Dev Team and Outsider Suggestions
+Implement way to restart the Crimson Moon Story Line but Harder
+Bug Test
+Fix Bugs if necessary
+Push 0.2.2 ALPHA to Public Databases
+Start Branch 0.3 ALPHA
+EXTENSIVE BUG TESTING REQUIRED TO VERIFY ALL FEATURES FUNCTIONING WITH EACH OTHER PROPERLY
