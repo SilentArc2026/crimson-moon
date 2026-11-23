@@ -11,14 +11,14 @@ This template is available under the CC0 license. Feel free to learn from it and
 
 # Thanks to everyone who has been here to help me
 
-DeaSophiVT - Artist, Programming, and General Planning
+DeaSophiVT - Artist, Programming, and General Planning, Bug Tester
 
 Valentine!! - Music Production, Artist, and General Planning
 
 AutumnFalls - General Planning
 
-YeetMaster - Lore Writing, General Planning
+YeetMaster - Lore Writing, General Planning, Bug Tester
 
-MountainSon - Artist, General Planning
+MountainSon - Artist, General Planning, Bug Tester
 
-Acer6822 - Lore, General Planning, Financial Support
+Acer6822 - Lore, General Planning, Financial Support, Bug Tester
