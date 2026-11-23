@@ -2,16 +2,21 @@ package name.crimsonmoon.datagen;
 
 import name.crimsonmoon.block.ModBlocks;
 import name.crimsonmoon.item.ModItems;
+import name.crimsonmoon.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.SmithingTransformRecipeJsonBuilder;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -24,10 +29,122 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
+        generateWoodSetRecipes(
+                exporter,
+                ModTags.Items.CORRUPTED_LOGS,
+                ModBlocks.CORRUPTED_LOG,
+                ModBlocks.STRIPPED_CORRUPTED_LOG,
+                ModBlocks.CORRUPTED_WOOD,
+                ModBlocks.STRIPPED_CORRUPTED_WOOD,
+                ModBlocks.CORRUPTED_PLANKS,
+                ModBlocks.CORRUPTED_STAIRS,
+                ModBlocks.CORRUPTED_SLAB,
+                ModBlocks.CORRUPTED_FENCE,
+                ModBlocks.CORRUPTED_FENCE_GATE,
+                ModBlocks.CORRUPTED_DOOR,
+                ModBlocks.CORRUPTED_TRAPDOOR,
+                ModBlocks.CORRUPTED_PRESSURE_PLATE,
+                ModBlocks.CORRUPTED_BUTTON,
+                ModBlocks.CORRUPTED_SIGN,
+                ModBlocks.CORRUPTED_WALL_SIGN,
+                ModItems.CORRUPTED_HANGING_SIGN,
+                ModItems.CORRUPTED_BOAT,
+                ModItems.CORRUPTED_CHEST_BOAT
+        );
+        generateWoodSetRecipes(
+                exporter,
+                ModTags.Items.ACIDIC_LOGS,
+                ModBlocks.ACIDIC_LOG,
+                ModBlocks.STRIPPED_ACIDIC_LOG,
+                ModBlocks.ACIDIC_WOOD,
+                ModBlocks.STRIPPED_ACIDIC_WOOD,
+                ModBlocks.ACIDIC_PLANKS,
+                ModBlocks.ACIDIC_STAIRS,
+                ModBlocks.ACIDIC_SLAB,
+                ModBlocks.ACIDIC_FENCE,
+                ModBlocks.ACIDIC_FENCE_GATE,
+                ModBlocks.ACIDIC_DOOR,
+                ModBlocks.ACIDIC_TRAPDOOR,
+                ModBlocks.ACIDIC_PRESSURE_PLATE,
+                ModBlocks.ACIDIC_BUTTON,
+                ModBlocks.ACIDIC_SIGN,
+                ModBlocks.ACIDIC_WALL_SIGN,
+                ModItems.ACIDIC_HANGING_SIGN,
+                ModItems.ACIDIC_BOAT,
+                ModItems.ACIDIC_CHEST_BOAT
+        );
+        generateWoodSetRecipes(
+                exporter,
+                ModTags.Items.CHARRED_LOGS,
+                ModBlocks.CHARRED_LOG,
+                ModBlocks.STRIPPED_CHARRED_LOG,
+                ModBlocks.CHARRED_WOOD,
+                ModBlocks.STRIPPED_CHARRED_WOOD,
+                ModBlocks.CHARRED_PLANKS,
+                ModBlocks.CHARRED_STAIRS,
+                ModBlocks.CHARRED_SLAB,
+                ModBlocks.CHARRED_FENCE,
+                ModBlocks.CHARRED_FENCE_GATE,
+                ModBlocks.CHARRED_DOOR,
+                ModBlocks.CHARRED_TRAPDOOR,
+                ModBlocks.CHARRED_PRESSURE_PLATE,
+                ModBlocks.CHARRED_BUTTON,
+                ModBlocks.CHARRED_SIGN,
+                ModBlocks.CHARRED_WALL_SIGN,
+                ModItems.CHARRED_HANGING_SIGN,
+                ModItems.CHARRED_BOAT,
+                ModItems.CHARRED_CHEST_BOAT
+        );
+        generateWoodSetRecipes(
+                exporter,
+                ModTags.Items.PALM_LOGS,
+                ModBlocks.PALM_LOG,
+                ModBlocks.STRIPPED_PALM_LOG,
+                ModBlocks.PALM_WOOD,
+                ModBlocks.STRIPPED_PALM_WOOD,
+                ModBlocks.PALM_PLANKS,
+                ModBlocks.PALM_STAIRS,
+                ModBlocks.PALM_SLAB,
+                ModBlocks.PALM_FENCE,
+                ModBlocks.PALM_FENCE_GATE,
+                ModBlocks.PALM_DOOR,
+                ModBlocks.PALM_TRAPDOOR,
+                ModBlocks.PALM_PRESSURE_PLATE,
+                ModBlocks.PALM_BUTTON,
+                ModBlocks.PALM_SIGN,
+                ModBlocks.PALM_WALL_SIGN,
+                ModItems.PALM_HANGING_SIGN,
+                ModItems.PALM_BOAT,
+                ModItems.PALM_CHEST_BOAT
+        );
+        generateWoodSetRecipes(
+                exporter,
+                ModTags.Items.WITHERED_PALM_LOGS,
+                ModBlocks.WITHERED_PALM_LOG,
+                ModBlocks.STRIPPED_WITHERED_PALM_LOG,
+                ModBlocks.WITHERED_PALM_WOOD,
+                ModBlocks.STRIPPED_WITHERED_PALM_WOOD,
+                ModBlocks.WITHERED_PALM_PLANKS,
+                ModBlocks.WITHERED_PALM_STAIRS,
+                ModBlocks.WITHERED_PALM_SLAB,
+                ModBlocks.WITHERED_PALM_FENCE,
+                ModBlocks.WITHERED_PALM_FENCE_GATE,
+                ModBlocks.WITHERED_PALM_DOOR,
+                ModBlocks.WITHERED_PALM_TRAPDOOR,
+                ModBlocks.WITHERED_PALM_PRESSURE_PLATE,
+                ModBlocks.WITHERED_PALM_BUTTON,
+                ModBlocks.WITHERED_PALM_SIGN,
+                ModBlocks.WITHERED_PALM_WALL_SIGN,
+                ModItems.WITHERED_PALM_HANGING_SIGN,
+                ModItems.WITHERED_PALM_BOAT,
+                ModItems.WITHERED_PALM_CHEST_BOAT
+        );
+
+
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.Crimsonite_Ingot)
                 .pattern("CCN")
                 .pattern("CG ")
-                .pattern("   ")
                 .input('C', ModItems.Crimsonite_Plate)
                 .input('G', Items.GOLD_INGOT)
                 .input('N', Items.NETHERITE_SCRAP)
@@ -80,7 +197,6 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.RAW_VAMPYRITE), conditionsFromItem(ModItems.RAW_VAMPYRITE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.Raw_Vampyrite_Block) + "_"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_HELMET)
-                .pattern("   ")
                 .pattern("VVV")
                 .pattern("V V")
                 .input('V', ModItems.VAMPYRITE_INGOT)
@@ -101,7 +217,6 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.VAMPYRITE_INGOT), conditionsFromItem(ModItems.VAMPYRITE_INGOT))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_LEGGINGS) + "_"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_BOOTS)
-                .pattern("   ")
                 .pattern("V V")
                 .pattern("V V")
                 .input('V', ModItems.VAMPYRITE_INGOT)
@@ -116,17 +231,17 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.DIAMOND_ROD) + "_"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_SWORD)
-                .pattern(" V ")
-                .pattern(" V ")
-                .pattern(" D ")
+                .pattern("V")
+                .pattern("V")
+                .pattern("D")
                 .input('D', ModItems.DIAMOND_ROD)
                 .input('V', ModItems.VAMPYRITE_INGOT)
                 .criterion(hasItem(ModItems.DIAMOND_ROD), conditionsFromItem(ModItems.DIAMOND_ROD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_SWORD) + "_"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_SHOVEL)
-                .pattern(" V ")
-                .pattern(" D ")
-                .pattern(" D ")
+                .pattern("V")
+                .pattern("D")
+                .pattern("D")
                 .input('D', ModItems.DIAMOND_ROD)
                 .input('V', ModItems.VAMPYRITE_INGOT)
                 .criterion(hasItem(ModItems.DIAMOND_ROD), conditionsFromItem(ModItems.DIAMOND_ROD))
@@ -140,22 +255,22 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.DIAMOND_ROD), conditionsFromItem(ModItems.DIAMOND_ROD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_PICKAXE) + "_"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_AXE)
-                .pattern("VV ")
-                .pattern("VD ")
-                .pattern(" D ")
+                .pattern("VV")
+                .pattern("VD")
+                .pattern(" D")
                 .input('D', ModItems.DIAMOND_ROD)
                 .input('V', ModItems.VAMPYRITE_INGOT)
                 .criterion(hasItem(ModItems.DIAMOND_ROD), conditionsFromItem(ModItems.DIAMOND_ROD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_AXE) + "_"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VAMPYRITE_HOE)
-                .pattern("VV ")
-                .pattern(" D ")
-                .pattern(" D ")
+                .pattern("VV")
+                .pattern(" D")
+                .pattern(" D")
                 .input('D', ModItems.DIAMOND_ROD)
                 .input('V', ModItems.VAMPYRITE_INGOT)
                 .criterion(hasItem(ModItems.DIAMOND_ROD), conditionsFromItem(ModItems.DIAMOND_ROD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.VAMPYRITE_HOE) + "_"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SOLARIUM_INGOT)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SOLARIUM_INGOT, 1)
                 .pattern("BNB")
                 .pattern("NSN")
                 .pattern("BNB")
@@ -163,8 +278,8 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('B', Items.BLAZE_ROD)
                 .input('S', ModItems.SOLAR_STAR)
                 .criterion(hasItem(ModItems.SOLAR_STAR), conditionsFromItem(ModItems.SOLAR_STAR))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_INGOT) + "3"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SOLAR_STAR)
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_INGOT) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SOLAR_STAR, 1)
                 .pattern("BGB")
                 .pattern("GSG")
                 .pattern("BGB")
@@ -172,28 +287,108 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('B', Items.BLAZE_ROD)
                 .input('S', Items.NETHER_STAR)
                 .criterion(hasItem(Items.NETHER_STAR), conditionsFromItem(Items.NETHER_STAR))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLAR_STAR) + "1"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.POLISHED_DOLOMITE)
-                .pattern("   ")
-                .pattern("DD ")
-                .pattern("DD ")
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLAR_STAR) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.POLISHED_DOLOMITE, 4)
+                .pattern("DD")
+                .pattern("DD")
                 .input('D', ModBlocks.DOLOMITE)
                 .criterion(hasItem(ModBlocks.DOLOMITE), conditionsFromItem(ModBlocks.DOLOMITE))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.POLISHED_DOLOMITE) + "4"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DOLOMITE_BRICKS)
-                .pattern("   ")
-                .pattern("PP ")
-                .pattern("PP ")
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.POLISHED_DOLOMITE) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DOLOMITE_BRICKS, 4)
+                .pattern("PP")
+                .pattern("PP")
                 .input('P', ModBlocks.POLISHED_DOLOMITE)
                 .criterion(hasItem(ModBlocks.POLISHED_DOLOMITE), conditionsFromItem(ModBlocks.POLISHED_DOLOMITE))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DOLOMITE_BRICKS) + "4"));
-        offerPressurePlateRecipe(exporter, RecipeCategory.MISC, ModBlocks.CORRUPTED_PLANKS, RecipeCategory.MISC, ModBlocks.CORRUPTED_PRESSURE_PLATE);
-        offerPressurePlateRecipe(exporter, RecipeCategory.MISC, ModBlocks.ACIDIC_PLANKS, RecipeCategory.MISC, ModBlocks.ACIDIC_PRESSURE_PLATE);
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DOLOMITE_BRICKS) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.PALM_MOSAIC)
+                .pattern("P")
+                .pattern("P")
+                .input('P', ModBlocks.PALM_SLAB)
+                .criterion(hasItem(ModBlocks.PALM_PLANKS), conditionsFromItem(ModBlocks.PALM_PLANKS))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.PALM_MOSAIC) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.PALM_MOSAIC_SLAB, 6)
+                .pattern("PPP")
+                .input('P', ModBlocks.PALM_MOSAIC)
+                .criterion(hasItem(ModBlocks.PALM_MOSAIC), conditionsFromItem(ModBlocks.PALM_MOSAIC))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.PALM_MOSAIC_SLAB) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.PALM_MOSAIC_STAIRS, 4)
+                .pattern("P  ")
+                .pattern("PP ")
+                .pattern("PPP")
+                .input('P', ModBlocks.PALM_MOSAIC)
+                .criterion(hasItem(ModBlocks.PALM_MOSAIC), conditionsFromItem(ModBlocks.PALM_MOSAIC))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.PALM_MOSAIC_STAIRS) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.WITHERED_PALM_MOSAIC)
+                .pattern("P")
+                .pattern("P")
+                .input('P', ModBlocks.WITHERED_PALM_SLAB)
+                .criterion(hasItem(ModBlocks.WITHERED_PALM_SLAB), conditionsFromItem(ModBlocks.WITHERED_PALM_SLAB))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.WITHERED_PALM_MOSAIC) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.WITHERED_PALM_MOSAIC_SLAB, 6)
+                .pattern("PPP")
+                .input('P', ModBlocks.WITHERED_PALM_MOSAIC)
+                .criterion(hasItem(ModBlocks.WITHERED_PALM_MOSAIC), conditionsFromItem(ModBlocks.WITHERED_PALM_MOSAIC))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.WITHERED_PALM_MOSAIC_SLAB) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.WITHERED_PALM_MOSAIC_STAIRS, 4)
+                .pattern("P  ")
+                .pattern("PP ")
+                .pattern("PPP")
+                .input('P', ModBlocks.WITHERED_PALM_MOSAIC)
+                .criterion(hasItem(ModBlocks.WITHERED_PALM_MOSAIC), conditionsFromItem(ModBlocks.WITHERED_PALM_MOSAIC))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.WITHERED_PALM_MOSAIC_STAIRS) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.ACIDIC_TRAPPED_RUG)
+                .pattern("LL")
+                .input('L', ModItems.ACIDIC_LEATHER)
+                .criterion(hasItem(ModItems.ACIDIC_LEATHER), conditionsFromItem(ModItems.ACIDIC_LEATHER))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.ACIDIC_TRAPPED_RUG) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.ACIDIC_SADDLE)
+                .pattern(" L ")
+                .pattern("LIL")
+                .input('L', ModItems.ACIDIC_LEATHER)
+                .input('I', Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.ACIDIC_SADDLE) + "_"));
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.Crimsonite_Ingot, RecipeCategory.MISC, ModBlocks.Crimsonite_Block);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.SOLARIUM_INGOT, RecipeCategory.MISC, ModBlocks.Solarium_Block);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.VAMPYRITE_INGOT, RecipeCategory.MISC, ModBlocks.Vampyrite_Block);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.RAW_VAMPYRITE, RecipeCategory.MISC, ModBlocks.Raw_Vampyrite_Block);
+        offer2x2CompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_SANDSTONE, ModBlocks.BLACK_SAND);
+        createStairsRecipe(ModBlocks.CUT_BLACK_SANDSTONE_STAIRS, Ingredient.ofItems(ModBlocks.CUT_BLACK_SANDSTONE))
+                .criterion(hasItem(ModBlocks.CUT_BLACK_SANDSTONE), conditionsFromItem(ModBlocks.CUT_BLACK_SANDSTONE))
+                .offerTo(exporter);
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_BLACK_SANDSTONE_SLAB, ModBlocks.CUT_BLACK_SANDSTONE);
+        createStairsRecipe(ModBlocks.SMOOTH_BLACK_SANDSTONE_STAIRS, Ingredient.ofItems(ModBlocks.SMOOTH_BLACK_SANDSTONE))
+                .criterion(hasItem(ModBlocks.SMOOTH_BLACK_SANDSTONE), conditionsFromItem(ModBlocks.SMOOTH_BLACK_SANDSTONE))
+                .offerTo(exporter);
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_BLACK_SANDSTONE_SLAB, ModBlocks.SMOOTH_BLACK_SANDSTONE);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_BLACK_SANDSTONE_STAIRS, ModBlocks.BLACK_SANDSTONE);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_BLACK_SANDSTONE_STAIRS, ModBlocks.CUT_BLACK_SANDSTONE);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_BLACK_SANDSTONE_SLAB, ModBlocks.BLACK_SANDSTONE, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_BLACK_SANDSTONE_SLAB, ModBlocks.CUT_BLACK_SANDSTONE, 2);
+
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_BLACK_SANDSTONE_STAIRS, ModBlocks.SMOOTH_BLACK_SANDSTONE);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_BLACK_SANDSTONE_SLAB, ModBlocks.SMOOTH_BLACK_SANDSTONE, 2);
+
+
+        offerCutCopperRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_BLACK_SANDSTONE, ModBlocks.BLACK_SANDSTONE);
+        offerChiseledBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_BLACK_SANDSTONE, ModBlocks.BLACK_SANDSTONE_SLAB);
+
+        createStairsRecipe(ModBlocks.BLACK_SANDSTONE_STAIRS, Ingredient.ofItems(ModBlocks.BLACK_SANDSTONE))
+                .criterion(hasItem(ModBlocks.BLACK_SANDSTONE), conditionsFromItem(ModBlocks.BLACK_SANDSTONE))
+                .offerTo(exporter);
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_SANDSTONE_SLAB, ModBlocks.BLACK_SANDSTONE);
+        offerWallRecipe(exporter, RecipeCategory.DECORATIONS, ModBlocks.BLACK_SANDSTONE_WALL, ModBlocks.BLACK_SANDSTONE);
+
+        offerSmelting(exporter, List.of(ModBlocks.BLACK_SANDSTONE), RecipeCategory.BUILDING_BLOCKS,
+                ModBlocks.SMOOTH_BLACK_SANDSTONE, 0.1f, 200, "black_sandstone");
+
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_BLACK_SANDSTONE, ModBlocks.BLACK_SANDSTONE);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_BLACK_SANDSTONE, ModBlocks.BLACK_SANDSTONE);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_SANDSTONE_STAIRS, ModBlocks.BLACK_SANDSTONE);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_SANDSTONE_SLAB, ModBlocks.BLACK_SANDSTONE, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.DECORATIONS, ModBlocks.BLACK_SANDSTONE_WALL, ModBlocks.BLACK_SANDSTONE);
+
         offerSmelting(exporter, List.of(ModItems.RAW_VAMPYRITE, ModBlocks.Vampyrite_Ore, ModBlocks.Deepslate_Vampyrite_Ore),
                 RecipeCategory.MISC, ModItems.VAMPYRITE_INGOT, .25f, 200, "vampyrite_ingot");
         offerBlasting(exporter, List.of(ModItems.RAW_VAMPYRITE, ModBlocks.Vampyrite_Ore, ModBlocks.Deepslate_Vampyrite_Ore),
@@ -202,6 +397,11 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 RecipeCategory.MISC, ModItems.REFINED_TURQITE, .25f, 200, "refined_turqite");
         offerBlasting(exporter, List.of(ModItems.TURQITE_CRYSTAL),
                 RecipeCategory.MISC, ModItems.REFINED_TURQITE, .25f, 200, "refined_turqite");
+        offerSmelting(exporter, List.of(ModItems.RAW_ACIDIC_BEEF),
+                RecipeCategory.MISC, Items.COOKED_BEEF, .25f, 200, "cooked_beef");
+        offerFoodCookingRecipe(exporter, "furnace", RecipeSerializer.SMELTING, 200, ModItems.RAW_ACIDIC_BEEF, Items.COOKED_BEEF, 0.35f);
+        offerFoodCookingRecipe(exporter, "campfire", RecipeSerializer.CAMPFIRE_COOKING, 400, ModItems.RAW_ACIDIC_BEEF, Items.COOKED_BEEF, 0.35f);
+        offerFoodCookingRecipe(exporter, "smoker", RecipeSerializer.SMOKING, 100, ModItems.RAW_ACIDIC_BEEF, Items.COOKED_BEEF, 0.35f);
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
                 Ingredient.ofItems(Items.NETHERITE_SWORD),
@@ -428,22 +628,41 @@ SmithingTransformRecipeJsonBuilder.create(
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_HOE) + "_"));
 
     }
+    private void generateWoodSetRecipes(
+            Consumer<RecipeJsonProvider> exporter,
+            TagKey<Item> logItemTag,
+            Block log, Block strippedLog, Block wood, Block strippedWood,
+            Block planks, Block stairs, Block slab, Block fence, Block fenceGate,
+            Block door, Block trapdoor, Block pressurePlate, Block button,
+            Block standingSign, Block wallSign, ItemConvertible hangingSignItem,
+            ItemConvertible boatItem, ItemConvertible chestBoatItem
+    ) {
+        offerPlanksRecipe(exporter, planks, logItemTag, 4);
+        offerBarkBlockRecipe(exporter, wood, log);
+        offerBarkBlockRecipe(exporter, strippedWood, strippedLog);
+        offerHangingSignRecipe(exporter, hangingSignItem, strippedLog);
 
-    private void offerPressurePlateRecipe(Consumer<RecipeJsonProvider> exporter, RecipeCategory recipeCategory, Block acidicPlanks, RecipeCategory recipeCategory1, Block acidicPressurePlate) {
-        
+        offerBoatRecipe(exporter, boatItem, planks);
+        offerChestBoatRecipe(exporter, chestBoatItem, boatItem);
+
+        BlockFamily family = new BlockFamily.Builder(planks)
+                .stairs(stairs)
+                .slab(slab)
+                .fence(fence)
+                .fenceGate(fenceGate)
+                .door(door)
+                .trapdoor(trapdoor)
+                .pressurePlate(pressurePlate)
+                .button(button)
+                .sign(standingSign, wallSign)
+                .group("wooden")
+                .unlockCriterionName("has_planks")
+                .build();
+
+        generateFamily(exporter, family);
     }
 
-    public record WoodFamily(
-            net.minecraft.block.Block planks,
-            net.minecraft.block.Block strippedLog, // Required for hanging signs
-            net.minecraft.block.Block door,
-            net.minecraft.block.Block trapdoor,
-            net.minecraft.block.Block fence,
-            net.minecraft.block.Block fenceGate,
-            net.minecraft.block.Block sign,
-            net.minecraft.block.Block hangingSign,
-            net.minecraft.item.Item boat,
-            net.minecraft.item.Item chestBoat
-    ) {}
+
+
 
 }

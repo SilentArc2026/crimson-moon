@@ -36,6 +36,12 @@
     "crimson-moon:withered_palm_fence",
     "crimson-moon:withered_palm_fence_gate",
     "crimson-moon:withered_palm_door",
-    "crimson-moon:withered_palm_trapdoor"
+    "crimson-moon:withered_palm_trapdoor",
+    "crimson-moon:palm_mosaic",
+    "crimson-moon:palm_mosaic_slab",
+    "crimson-moon:palm_mosaic_stairs",
+    "crimson-moon:withered_palm_mosaic",
+    "crimson-moon:withered_palm_mosaic_slab",
+    "crimson-moon:withered_palm_mosaic_stairs"
   ]
 }

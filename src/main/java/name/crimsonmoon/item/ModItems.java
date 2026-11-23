@@ -13,6 +13,20 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
+    public static final Item ACIDIC_LEATHER = registerItem("acidic_leather",
+            new Item(new FabricItemSettings()));
+    public static final Item THE_BEHEMOTHS_HORN = registerItem("the_behemoths_horn",
+            new GoatHornItem(new FabricItemSettings().maxCount(1), ModInstruments.BEHEMOTH_HORNS));
+    public static final Item ACIDIC_LEATHER_HORSE_ARMOR = registerItem("acidic_leather_horse_armor",
+            new HorseArmorItem(3, "acidic_leather", new FabricItemSettings()));
+    public static final Item ACIDIC_SADDLE = registerItem("acidic_saddle",
+            new SaddleItem(new FabricItemSettings().maxCount(1)));
+    public static final Item CORRUPTED_STAR = registerItem("corrupted_star",
+            new Item(new FabricItemSettings()));
+    public static final Item PLUME_OF_CRIMSON = registerItem("plume_of_crimson",
+            new Item(new FabricItemSettings()));
+    public static final Item RAW_ACIDIC_BEEF = registerItem("raw_acidic_beef",
+            new Item(new FabricItemSettings().food(ModFoodComponents.RAW_ACIDIC_BEEF)));
     public static final Item Crimsonite_Ingot = registerItem("crimsonite_ingot",
             new Item(new FabricItemSettings().fireproof()));
     public static final Item Crimsonite_upgrade_smithing_template = registerItem("crimsonite_upgrade_smithing_template",

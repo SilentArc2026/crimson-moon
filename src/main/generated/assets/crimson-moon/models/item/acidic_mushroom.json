@@ -1,3 +1,6 @@
 {
-  "parent": "crimson-moon:block/acidic_mushroom"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "crimson-moon:item/acidic_mushroom"
+  }
 }

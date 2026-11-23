@@ -1,3 +1,6 @@
 {
-  "parent": "crimson-moon:block/small_turqite_bud"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "crimson-moon:item/small_turqite_bud"
+  }
 }

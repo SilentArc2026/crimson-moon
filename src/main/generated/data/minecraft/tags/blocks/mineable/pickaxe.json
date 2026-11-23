@@ -14,6 +14,17 @@
     "crimson-moon:smooth_basalt_turqite_ore",
     "crimson-moon:turqite_bricks",
     "crimson-moon:turqite_crystal_block",
-    "crimson-moon:turqite_cluster"
+    "crimson-moon:turqite_cluster",
+    "crimson-moon:black_sandstone",
+    "crimson-moon:cut_black_sandstone",
+    "crimson-moon:chiseled_black_sandstone",
+    "crimson-moon:smooth_black_sandstone",
+    "crimson-moon:black_sandstone_stairs",
+    "crimson-moon:black_sandstone_slab",
+    "crimson-moon:black_sandstone_wall",
+    "crimson-moon:cut_black_sandstone_slab",
+    "crimson-moon:cut_black_sandstone_stairs",
+    "crimson-moon:smooth_black_sandstone_slab",
+    "crimson-moon:smooth_black_sandstone_stairs"
   ]
 }

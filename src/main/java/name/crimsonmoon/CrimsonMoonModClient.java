@@ -4,14 +4,17 @@ import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import name.crimsonmoon.block.ModBlocks;
 import name.crimsonmoon.block.entity.ModBlockEntities;
 import name.crimsonmoon.entity.ModBoats;
+import name.crimsonmoon.item.ModItems;
 import name.crimsonmoon.util.ModWoodTypes;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.block.entity.HangingSignBlockEntityRenderer;
 import net.minecraft.client.render.block.entity.SignBlockEntityRenderer;
+import net.minecraft.util.Identifier;
 
 public class CrimsonMoonModClient implements ClientModInitializer {
     @Override
@@ -92,5 +95,8 @@ public class CrimsonMoonModClient implements ClientModInitializer {
         TerraformBoatClientHelper.registerModelLayers(ModBoats.PALM_BOAT_ID, false);
         TerraformBoatClientHelper.registerModelLayers(ModBoats.WITHERED_PALM_BOAT_ID, false);
 
-    }
+        ModelPredicateProviderRegistry.register(
+                ModItems.THE_BEHEMOTHS_HORN,
+                new Identifier("tooting"),
+                (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F);}
 }

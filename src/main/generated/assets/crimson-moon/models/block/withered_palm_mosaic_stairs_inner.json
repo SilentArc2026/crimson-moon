@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "crimson-moon:block/withered_palm_mosaic",
+    "side": "crimson-moon:block/withered_palm_mosaic",
+    "top": "crimson-moon:block/withered_palm_mosaic"
+  }
+}

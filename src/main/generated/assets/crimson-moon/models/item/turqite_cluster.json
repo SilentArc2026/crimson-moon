@@ -1,3 +1,6 @@
 {
-  "parent": "crimson-moon:block/turqite_cluster"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "crimson-moon:item/turqite_cluster"
+  }
 }

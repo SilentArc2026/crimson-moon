@@ -3,9 +3,11 @@ package name.crimsonmoon;
 import name.crimsonmoon.block.ModBlocks;
 import name.crimsonmoon.block.entity.ModBlockEntities;
 import name.crimsonmoon.entity.ModBoats;
+import name.crimsonmoon.item.ModInstruments;
 import name.crimsonmoon.item.ModItemGroup;
 import name.crimsonmoon.item.ModItems;
 import name.crimsonmoon.painting.ModPaintings;
+import name.crimsonmoon.sounds.ModSounds;
 import name.crimsonmoon.world.feature.ModFeatures;
 import name.crimsonmoon.world.gen.ModWorldGeneration;
 import name.crimsonmoon.world.tree.ModFoliagePlacerTypes;
@@ -41,6 +43,9 @@ public class CrimsonMoon implements ModInitializer {
 		ModFeatures.registerModFeatures();
 
 		ModFoliagePlacerTypes.register();
+
+		ModSounds.registerSounds();
+		ModInstruments.registerInstruments();
 
 		TillableBlockRegistry.register(ModBlocks.CORRUPTED_GRASS_BLOCK, HoeItem::canTillFarmland, HoeItem.createTillAction(Blocks.FARMLAND.getDefaultState()));
 		TillableBlockRegistry.register(ModBlocks.CORRUPTED_DIRT, HoeItem::canTillFarmland, HoeItem.createTillAction(Blocks.FARMLAND.getDefaultState()));

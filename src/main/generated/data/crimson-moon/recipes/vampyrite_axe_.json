@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    "VV ",
-    "VD ",
-    " D "
+    "VV",
+    "VD",
+    " D"
   ],
   "result": {
     "item": "crimson-moon:vampyrite_axe"

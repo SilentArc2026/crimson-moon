@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:withered_palm_mosaic_slab_"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_withered_palm_mosaic": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crimson-moon:withered_palm_mosaic"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_withered_palm_mosaic",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:withered_palm_mosaic_slab_"
+    ]
+  },
+  "sends_telemetry_event": false
+}

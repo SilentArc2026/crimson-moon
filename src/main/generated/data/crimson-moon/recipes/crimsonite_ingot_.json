@@ -14,8 +14,7 @@
   },
   "pattern": [
     "CCN",
-    "CG ",
-    "   "
+    "CG "
   ],
   "result": {
     "item": "crimson-moon:crimsonite_ingot"

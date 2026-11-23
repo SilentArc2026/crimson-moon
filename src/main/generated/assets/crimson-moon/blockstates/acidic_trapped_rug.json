@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "crimson-moon:block/acidic_trapped_rug"
+    },
+    "powered=true": {
+      "model": "crimson-moon:block/acidic_trapped_rug_down"
+    }
+  }
+}

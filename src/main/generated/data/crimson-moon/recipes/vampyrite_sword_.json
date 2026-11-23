@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " V ",
-    " V ",
-    " D "
+    "V",
+    "V",
+    "D"
   ],
   "result": {
     "item": "crimson-moon:vampyrite_sword"

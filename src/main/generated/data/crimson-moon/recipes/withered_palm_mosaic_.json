@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "crimson-moon:withered_palm_slab"
+    }
+  },
+  "pattern": [
+    "P",
+    "P"
+  ],
+  "result": {
+    "item": "crimson-moon:withered_palm_mosaic"
+  },
+  "show_notification": true
+}

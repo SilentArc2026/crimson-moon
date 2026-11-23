@@ -5,6 +5,8 @@ import name.crimsonmoon.item.ModItems;
 import name.crimsonmoon.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.mininglevel.v1.FabricMineableTags;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
@@ -22,21 +24,23 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.CORRUPTED_REDSTONE_HEART, ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Vampyrite_Block, ModBlocks.Vampyrite_Ore, ModBlocks.Budding_Crystalized_Turqite_Block, ModBlocks.Crystalized_Turqite_Block, ModBlocks.Refined_Turqite_Block, ModBlocks.Smooth_Basalt_Turqite_Ore, ModBlocks.Turqite_Bricks, ModBlocks.Turqite_Crystal_Block, ModBlocks.Turqite_Cluster);
+                .add(ModBlocks.CORRUPTED_REDSTONE_HEART, ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Vampyrite_Block, ModBlocks.Vampyrite_Ore, ModBlocks.Budding_Crystalized_Turqite_Block, ModBlocks.Crystalized_Turqite_Block, ModBlocks.Refined_Turqite_Block, ModBlocks.Smooth_Basalt_Turqite_Ore, ModBlocks.Turqite_Bricks, ModBlocks.Turqite_Crystal_Block, ModBlocks.Turqite_Cluster, ModBlocks.BLACK_SANDSTONE, ModBlocks.CUT_BLACK_SANDSTONE, ModBlocks.CHISELED_BLACK_SANDSTONE, ModBlocks.SMOOTH_BLACK_SANDSTONE, ModBlocks.BLACK_SANDSTONE_STAIRS, ModBlocks.BLACK_SANDSTONE_SLAB, ModBlocks.BLACK_SANDSTONE_WALL, ModBlocks.CUT_BLACK_SANDSTONE_SLAB, ModBlocks.CUT_BLACK_SANDSTONE_STAIRS, ModBlocks.SMOOTH_BLACK_SANDSTONE_SLAB, ModBlocks.SMOOTH_BLACK_SANDSTONE_STAIRS);
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block, ModBlocks.CORRUPTED_REDSTONE_HEART);
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.Vampyrite_Ore, ModBlocks.Vampyrite_Block, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Budding_Crystalized_Turqite_Block, ModBlocks.Crystalized_Turqite_Block, ModBlocks.Refined_Turqite_Block, ModBlocks.Smooth_Basalt_Turqite_Ore, ModBlocks.Turqite_Bricks, ModBlocks.Turqite_Crystal_Block, ModBlocks.Turqite_Cluster);
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.DOLOMITE, ModBlocks.POLISHED_DOLOMITE, ModBlocks.DOLOMITE_BRICKS);
+        getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES)
+                .add(ModBlocks.WITHERED_PALM_PRESSURE_PLATE, ModBlocks.PALM_PRESSURE_PLATE, ModBlocks.CHARRED_PRESSURE_PLATE, ModBlocks.ACIDIC_PRESSURE_PLATE, ModBlocks.ACIDIC_PRESSURE_PLATE, ModBlocks.ACIDIC_TRAPPED_RUG);
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(ModBlocks.CORRUPTED_SLAB, ModBlocks.CORRUPTED_STAIRS, ModBlocks.ACIDIC_SLAB, ModBlocks.ACIDIC_STAIRS, ModBlocks.ACIDIC_FENCE, ModBlocks.ACIDIC_FENCE_GATE, ModBlocks.CORRUPTED_FENCE, ModBlocks.CORRUPTED_FENCE_GATE, ModBlocks.ACIDIC_DOOR, ModBlocks.CORRUPTED_DOOR, ModBlocks.ACIDIC_TRAPDOOR, ModBlocks.CORRUPTED_TRAPDOOR, ModBlocks.CHARRED_STAIRS, ModBlocks.CHARRED_SLAB, ModBlocks.CHARRED_BUTTON, ModBlocks.CHARRED_PRESSURE_PLATE, ModBlocks.CHARRED_FENCE, ModBlocks.CHARRED_FENCE_GATE, ModBlocks.CHARRED_DOOR, ModBlocks.CHARRED_TRAPDOOR, ModBlocks.PALM_STAIRS, ModBlocks.PALM_SLAB, ModBlocks.PALM_BUTTON, ModBlocks.PALM_PRESSURE_PLATE, ModBlocks.PALM_FENCE, ModBlocks.PALM_FENCE_GATE, ModBlocks.PALM_DOOR, ModBlocks.PALM_TRAPDOOR, ModBlocks.WITHERED_PALM_STAIRS, ModBlocks.WITHERED_PALM_SLAB, ModBlocks.WITHERED_PALM_BUTTON, ModBlocks.WITHERED_PALM_PRESSURE_PLATE, ModBlocks.WITHERED_PALM_FENCE, ModBlocks.WITHERED_PALM_FENCE_GATE, ModBlocks.WITHERED_PALM_DOOR, ModBlocks.WITHERED_PALM_TRAPDOOR);
+                .add(ModBlocks.CORRUPTED_SLAB, ModBlocks.CORRUPTED_STAIRS, ModBlocks.ACIDIC_SLAB, ModBlocks.ACIDIC_STAIRS, ModBlocks.ACIDIC_FENCE, ModBlocks.ACIDIC_FENCE_GATE, ModBlocks.CORRUPTED_FENCE, ModBlocks.CORRUPTED_FENCE_GATE, ModBlocks.ACIDIC_DOOR, ModBlocks.CORRUPTED_DOOR, ModBlocks.ACIDIC_TRAPDOOR, ModBlocks.CORRUPTED_TRAPDOOR, ModBlocks.CHARRED_STAIRS, ModBlocks.CHARRED_SLAB, ModBlocks.CHARRED_BUTTON, ModBlocks.CHARRED_PRESSURE_PLATE, ModBlocks.CHARRED_FENCE, ModBlocks.CHARRED_FENCE_GATE, ModBlocks.CHARRED_DOOR, ModBlocks.CHARRED_TRAPDOOR, ModBlocks.PALM_STAIRS, ModBlocks.PALM_SLAB, ModBlocks.PALM_BUTTON, ModBlocks.PALM_PRESSURE_PLATE, ModBlocks.PALM_FENCE, ModBlocks.PALM_FENCE_GATE, ModBlocks.PALM_DOOR, ModBlocks.PALM_TRAPDOOR, ModBlocks.WITHERED_PALM_STAIRS, ModBlocks.WITHERED_PALM_SLAB, ModBlocks.WITHERED_PALM_BUTTON, ModBlocks.WITHERED_PALM_PRESSURE_PLATE, ModBlocks.WITHERED_PALM_FENCE, ModBlocks.WITHERED_PALM_FENCE_GATE, ModBlocks.WITHERED_PALM_DOOR, ModBlocks.WITHERED_PALM_TRAPDOOR, ModBlocks.PALM_MOSAIC, ModBlocks.PALM_MOSAIC_SLAB, ModBlocks.PALM_MOSAIC_STAIRS, ModBlocks.WITHERED_PALM_MOSAIC, ModBlocks.WITHERED_PALM_MOSAIC_SLAB, ModBlocks.WITHERED_PALM_MOSAIC_STAIRS);
         getOrCreateTagBuilder(BlockTags.FENCES)
                 .add(ModBlocks.CORRUPTED_FENCE, ModBlocks.ACIDIC_FENCE, ModBlocks.CHARRED_FENCE, ModBlocks.PALM_FENCE, ModBlocks.WITHERED_PALM_FENCE);
         getOrCreateTagBuilder(BlockTags.FENCE_GATES)
                 .add(ModBlocks.CORRUPTED_FENCE_GATE, ModBlocks.ACIDIC_FENCE_GATE, ModBlocks.CHARRED_FENCE_GATE, ModBlocks.PALM_FENCE_GATE, ModBlocks.WITHERED_PALM_FENCE_GATE);
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
-                .add(ModBlocks.CORRUPTED_DIRT, ModBlocks.CORRUPTED_GRASS_BLOCK, ModBlocks.ACIDIC_DIRT, ModBlocks.ACIDIC_GRASS_BLOCK);
+                .add(ModBlocks.CORRUPTED_DIRT, ModBlocks.CORRUPTED_GRASS_BLOCK, ModBlocks.ACIDIC_DIRT, ModBlocks.ACIDIC_GRASS_BLOCK, ModBlocks.BLACK_SAND, ModBlocks.WET_BLACK_SAND, ModBlocks.WET_RED_SAND, ModBlocks.WET_SAND);
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(ModBlocks.CORRUPTED_DIRT, ModBlocks.CORRUPTED_GRASS_BLOCK, ModBlocks.ACIDIC_GRASS_BLOCK, ModBlocks.ACIDIC_DIRT);
         getOrCreateTagBuilder(BlockTags.REPLACEABLE_BY_TREES)
@@ -47,6 +51,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.ACIDIC_LILAC, ModBlocks.ACIDIC_PITCHER);
         getOrCreateTagBuilder(BlockTags.CROPS)
                 .add(ModBlocks.ACIDIC_PITCHER_CROP);
+        getOrCreateTagBuilder(FabricMineableTags.SHEARS_MINEABLE)
+                .add(ModBlocks.ACIDIC_TRAPPED_RUG);
         getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
                 .add(ModBlocks.FIRE_FLOWER, ModBlocks.ACID_FLOWER, ModBlocks.CORRUPTED_POPPY, ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM, ModBlocks.CORRUPTED_WITHER_ROSE, ModBlocks.PINK_FLOWER);
         getOrCreateTagBuilder(BlockTags.CLIMBABLE)
@@ -57,7 +63,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.WEEDS, ModBlocks.WILD_BUSH, ModBlocks.BUSH, ModBlocks.CAT_TAILS, ModBlocks.WITHERED_BUSH, ModBlocks.WITHERED_WILD_BUSH, ModBlocks.WITHERED_WEEDS, ModBlocks.WITHERED_CAT_TAILS);
         getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
                 .add(ModBlocks.BUSH, ModBlocks.WILD_BUSH, ModBlocks.WEEDS, ModBlocks.CAT_TAILS, ModBlocks.WITHERED_BUSH, ModBlocks.WITHERED_WILD_BUSH, ModBlocks.WITHERED_WEEDS, ModBlocks.WITHERED_CAT_TAILS);
-
+        getOrCreateTagBuilder(BlockTags.WALLS)
+                .add(ModBlocks.BLACK_SANDSTONE_WALL);
 
         //Tag for Custom Tool Material for Crimson
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric","needs_tool_level_5")))

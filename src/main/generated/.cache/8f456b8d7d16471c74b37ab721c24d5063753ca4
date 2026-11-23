@@ -1,12 +1,12 @@
-// 1.20.1	2026-11-17T21:18:19.1258766	Crimson Moon/
+// 1.20.1	2026-11-23T02:30:49.528614	Crimson Moon/
 bc89a404f748f2072bf4047a41e462d56cde8754 data\crimson-moon\worldgen\configured_feature\acidic_mushroom.json
 cd64526d107ba4c1339f5908f981090eb312fb15 data\crimson-moon\worldgen\placed_feature\corrupted_placed.json
 766137e1c6dbb7c1eb70d74a1cdad4a12ecbf35c data\crimson-moon\worldgen\configured_feature\corrupted.json
 31197b5c857f67690a321d115aea532d50f925e0 data\crimson-moon\worldgen\placed_feature\blackened_mushroom_placed.json
 19293d66e14171225dce9326f4f4002e2db365a1 data\crimson-moon\worldgen\configured_feature\acidic.json
 a765d69277a8074116dfcd9c60a5d0b8dfef32d4 data\crimson-moon\worldgen\placed_feature\corrupted_mushroom_placed.json
-2aacce2cea43e7613305bc497b5885f6b7ecc16a data\crimson-moon\worldgen\placed_feature\palm_placed.json
 9ee9c44a464be51482a1d35f8ff65d84a62cf4fc data\crimson-moon\worldgen\placed_feature\acidic_mushroom_placed.json
+2aacce2cea43e7613305bc497b5885f6b7ecc16a data\crimson-moon\worldgen\placed_feature\palm_placed.json
 79fbf11304c91cb934afe042f1411769c4d4809d data\crimson-moon\worldgen\placed_feature\withered_placed.json
 a6510a8966fc1831d65d49df86803f6017193ade data\crimson-moon\worldgen\configured_feature\blackened_mushroom.json
 ed8db9566ea4c41c676b2bb5043fc9a9a43dca3f data\crimson-moon\worldgen\configured_feature\withered.json

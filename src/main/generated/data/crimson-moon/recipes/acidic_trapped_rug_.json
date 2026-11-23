@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "crimson-moon:acidic_leather"
+    }
+  },
+  "pattern": [
+    "LL"
+  ],
+  "result": {
+    "item": "crimson-moon:acidic_trapped_rug"
+  },
+  "show_notification": true
+}

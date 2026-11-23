@@ -1,0 +1,8 @@
+{
+  "item.the_behemoths_horn.play": {
+    "subtitle": "subtitles.crimson-moon.item.the_behemoths_horn.play",
+    "sounds": [
+      "crimson-moon:item/behemoth_horn"
+    ]
+  }
+}

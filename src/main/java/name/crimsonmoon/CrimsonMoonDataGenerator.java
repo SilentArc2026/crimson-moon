@@ -1,6 +1,7 @@
 package name.crimsonmoon;
 
 import name.crimsonmoon.datagen.*;
+import name.crimsonmoon.item.ModInstruments;
 import name.crimsonmoon.world.ModConfiguredFeatures;
 import name.crimsonmoon.world.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -20,6 +21,7 @@ public class CrimsonMoonDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModRecipeGenerator::new);
 		pack.addProvider(ModWorldGenerator::new);
 		pack.addProvider(ModPaintingVariantTagProvider::new);
+		pack.addProvider(ModInstrumentTagProvider::new);
 	}
 
 	@Override

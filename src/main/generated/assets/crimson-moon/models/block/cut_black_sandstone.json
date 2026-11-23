@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "crimson-moon:block/black_sandstone_top",
+    "side": "crimson-moon:block/cut_black_sandstone",
+    "top": "crimson-moon:block/black_sandstone_top"
+  }
+}

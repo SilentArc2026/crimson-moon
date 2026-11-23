@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crimson-moon:block/withered_palm_mosaic_slab"
+    },
+    "type=double": {
+      "model": "crimson-moon:block/withered_palm_mosaic"
+    },
+    "type=top": {
+      "model": "crimson-moon:block/withered_palm_mosaic_slab_top"
+    }
+  }
+}

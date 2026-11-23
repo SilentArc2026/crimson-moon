@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    "VV ",
-    " D ",
-    " D "
+    "VV",
+    " D",
+    " D"
   ],
   "result": {
     "item": "crimson-moon:vampyrite_hoe"

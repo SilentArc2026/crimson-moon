@@ -14,6 +14,7 @@ import net.minecraft.item.PlaceableOnWaterItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.structure.StrongholdGenerator;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
@@ -22,6 +23,18 @@ public class ModBlocks {
 
     public static final Block Crimsonite_Block = registerBlock("crimsonite_block",
             new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
+    public static final Block PALM_MOSAIC = registerBlock("palm_mosaic",
+            new Block(FabricBlockSettings.copyOf(Blocks.BAMBOO_MOSAIC)));
+    public static final Block WITHERED_PALM_MOSAIC = registerBlock("withered_palm_mosaic",
+            new Block(FabricBlockSettings.copyOf(Blocks.BAMBOO_MOSAIC)));
+    public static final Block PALM_MOSAIC_SLAB = registerBlock("palm_mosaic_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.BAMBOO_MOSAIC_SLAB)));
+    public static final Block WITHERED_PALM_MOSAIC_SLAB = registerBlock("withered_palm_mosaic_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.BAMBOO_MOSAIC_SLAB)));
+    public static final Block PALM_MOSAIC_STAIRS = registerBlock("palm_mosaic_stairs",
+            new StairsBlock(ModBlocks.PALM_MOSAIC.getDefaultState(), FabricBlockSettings.copyOf(Blocks.BAMBOO_MOSAIC_STAIRS)));
+    public static final Block WITHERED_PALM_MOSAIC_STAIRS = registerBlock("withered_palm_mosaic_stairs",
+            new StairsBlock(ModBlocks.WITHERED_PALM_MOSAIC.getDefaultState(), FabricBlockSettings.copyOf(Blocks.BAMBOO_MOSAIC_STAIRS)));
     public static final Block Deepslate_Vampyrite_Ore = registerBlock("deepslate_vampyrite_ore",
             new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_IRON_ORE)));
     public static final Block Raw_Vampyrite_Block = registerBlock("raw_vampyrite_block",
@@ -144,6 +157,40 @@ public class ModBlocks {
             new MushroomBlock(FabricBlockSettings.copyOf(Blocks.MUSHROOM_STEM)));
     public static final Block ACIDIC_MUSHROOM_STEM = registerBlock("acidic_mushroom_stem",
             new MushroomBlock(FabricBlockSettings.copyOf(Blocks.MUSHROOM_STEM)));
+    public static final Block BLACK_SAND = registerBlock("black_sand",
+            new CustomSandBlock(0x141414, FabricBlockSettings.copyOf(Blocks.SAND)));
+    public static final Block WET_BLACK_SAND = registerBlock("wet_black_sand",
+            new CustomSandBlock(0x141414, FabricBlockSettings.copyOf(Blocks.SAND)));
+    public static final Block WET_RED_SAND = registerBlock("wet_red_sand",
+            new CustomSandBlock(0xA95821, FabricBlockSettings.copyOf(Blocks.SAND)));
+    public static final Block WET_SAND = registerBlock("wet_sand",
+            new CustomSandBlock(0xD8C38A, FabricBlockSettings.copyOf(Blocks.SAND)));
+
+    public static final Block BLACK_SANDSTONE = registerBlock("black_sandstone",
+            new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
+    public static final Block CUT_BLACK_SANDSTONE = registerBlock("cut_black_sandstone",
+            new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
+    public static final Block CHISELED_BLACK_SANDSTONE = registerBlock("chiseled_black_sandstone",
+            new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
+    public static final Block SMOOTH_BLACK_SANDSTONE = registerBlock("smooth_black_sandstone",
+            new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
+    public static final Block BLACK_SANDSTONE_STAIRS = registerBlock("black_sandstone_stairs",
+            new StairsBlock(BLACK_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
+    public static final Block BLACK_SANDSTONE_SLAB = registerBlock("black_sandstone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
+    public static final Block BLACK_SANDSTONE_WALL = registerBlock("black_sandstone_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
+    public static final Block CUT_BLACK_SANDSTONE_STAIRS = registerBlock("cut_black_sandstone_stairs",
+            new StairsBlock(CUT_BLACK_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE)));
+    public static final Block CUT_BLACK_SANDSTONE_SLAB = registerBlock("cut_black_sandstone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE_SLAB)));
+    public static final Block SMOOTH_BLACK_SANDSTONE_STAIRS = registerBlock("smooth_black_sandstone_stairs",
+            new StairsBlock(SMOOTH_BLACK_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE_STAIRS)));
+    public static final Block SMOOTH_BLACK_SANDSTONE_SLAB = registerBlock("smooth_black_sandstone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE_SLAB)));
+    public static final Block REDSTONE_HEART = registerBlock("redstone_heart",
+            new Block(FabricBlockSettings.copyOf(ModBlocks.CORRUPTED_REDSTONE_HEART)));
+
     public static final Block CHARRED_SIGN = registerBlockWithoutBlockItem("charred_sign",
             new ModStandingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), ModWoodTypes.CHARRED));
     public static final Block CHARRED_WALL_SIGN = registerBlockWithoutBlockItem("charred_wall_sign",
@@ -213,6 +260,8 @@ public class ModBlocks {
             new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 10, true));
     public static final Block CORRUPTED_PRESSURE_PLATE = registerBlock("corrupted_pressure_plate",
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+    public static final Block ACIDIC_TRAPPED_RUG = registerBlock("acidic_trapped_rug",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.GREEN_CARPET), BlockSetType.OAK));
     public static final Block WITHERED_PALM_BUTTON = registerBlock("withered_palm_button",
             new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 10, true));
     public static final Block WITHERED_PALM_PRESSURE_PLATE = registerBlock("withered_palm_pressure_plate",

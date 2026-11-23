@@ -1,3 +1,6 @@
 {
-  "parent": "crimson-moon:block/blackened_mushroom"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "crimson-moon:item/blackened_mushroom"
+  }
 }

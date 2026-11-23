@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " V ",
-    " D ",
-    " D "
+    "V",
+    "D",
+    "D"
   ],
   "result": {
     "item": "crimson-moon:vampyrite_shovel"

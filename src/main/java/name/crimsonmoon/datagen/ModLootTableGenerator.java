@@ -94,6 +94,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PALM_SLAB, slabDrops(ModBlocks.PALM_SLAB));
         addDrop(ModBlocks.WITHERED_PALM_DOOR, doorDrops(ModBlocks.WITHERED_PALM_DOOR));
         addDrop(ModBlocks.WITHERED_PALM_SLAB, slabDrops(ModBlocks.WITHERED_PALM_SLAB));
+        addDrop(ModBlocks.BLACK_SANDSTONE_SLAB, slabDrops(ModBlocks.BLACK_SANDSTONE_SLAB));
         addDrop(ModBlocks.ACIDIC_SLAB, slabDrops(ModBlocks.ACIDIC_SLAB));
         addDrop(ModBlocks.Turqite_Cluster, drops(ModItems.TURQITE_CRYSTAL));
         addDrop(ModBlocks.CORRUPTED_GRASS_BLOCK, dropsWithSilkTouch(ModBlocks.CORRUPTED_GRASS_BLOCK, ItemEntry.builder(ModBlocks.CORRUPTED_DIRT)));
@@ -141,6 +142,23 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WITHERED_PALM_SAPLING);
         addDrop(ModBlocks.WITHERED_PALM_SIGN);
         addDrop(ModBlocks.WITHERED_PALM_HANGING_SIGN);
+        addDrop(ModBlocks.WET_RED_SAND);
+        addDrop(ModBlocks.WET_SAND);
+        addDrop(ModBlocks.WET_BLACK_SAND);
+        addDrop(ModBlocks.BLACK_SAND);
+        addDrop(ModBlocks.ACIDIC_TRAPPED_RUG);
+        addDrop(ModBlocks.PALM_MOSAIC);
+        addDrop(ModBlocks.PALM_MOSAIC_SLAB);
+        addDrop(ModBlocks.PALM_MOSAIC_STAIRS);
+        addDrop(ModBlocks.WITHERED_PALM_MOSAIC);
+        addDrop(ModBlocks.WITHERED_PALM_MOSAIC_SLAB);
+        addDrop(ModBlocks.WITHERED_PALM_MOSAIC_STAIRS);
+        addDrop(ModBlocks.BLACK_SANDSTONE_WALL);
+        addDrop(ModBlocks.CUT_BLACK_SANDSTONE);
+        addDrop(ModBlocks.CHISELED_BLACK_SANDSTONE);
+        addDrop(ModBlocks.SMOOTH_BLACK_SANDSTONE);
+        addDrop(ModBlocks.BLACK_SANDSTONE);
+        addDrop(ModBlocks.BLACK_SANDSTONE_STAIRS);
         addDrop(ModBlocks.ACIDIC_PITCHER, block -> dropsWithProperty(block, TallFlowerBlock.HALF, DoubleBlockHalf.LOWER));
         addDrop(ModBlocks.CORRUPTED_TORCHFLOWER);
         addDrop(ModBlocks.PINK_FLOWER);
@@ -164,6 +182,11 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WITHERED_BUSH, silkTouchOrShearsDrop(ModBlocks.WITHERED_BUSH));
         addDrop(ModBlocks.WITHERED_WILD_BUSH, silkTouchOrShearsDrop(ModBlocks.WITHERED_WILD_BUSH));
         addDrop(ModBlocks.WITHERED_WEEDS, silkTouchOrShearsDrop(ModBlocks.WITHERED_WEEDS));
+        addDrop(ModBlocks.CUT_BLACK_SANDSTONE_STAIRS);
+        addDrop(ModBlocks.SMOOTH_BLACK_SANDSTONE_STAIRS);
+        addDrop(ModBlocks.REDSTONE_HEART);
+        addDrop(ModBlocks.CUT_BLACK_SANDSTONE_SLAB, slabDrops(ModBlocks.CUT_BLACK_SANDSTONE_SLAB));
+        addDrop(ModBlocks.SMOOTH_BLACK_SANDSTONE_SLAB, slabDrops(ModBlocks.SMOOTH_BLACK_SANDSTONE_SLAB));
 
         BlockStatePropertyLootCondition.Builder isMaturePitcher = BlockStatePropertyLootCondition.builder(ModBlocks.ACIDIC_PITCHER_CROP)
                 .properties(StatePredicate.Builder.create()

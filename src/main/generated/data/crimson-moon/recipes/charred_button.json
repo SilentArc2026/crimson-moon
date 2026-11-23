@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "crimson-moon:charred_planks"
+    }
+  ],
+  "result": {
+    "item": "crimson-moon:charred_button"
+  }
+}

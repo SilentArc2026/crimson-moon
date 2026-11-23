@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/goat_horn",
+  "overrides": [
+    {
+      "model": "crimson-moon:tooting_item/the_behemoths_horn",
+      "predicate": {
+        "tooting": 1
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "crimson-moon:item/the_behemoths_horn"
+  }
+}

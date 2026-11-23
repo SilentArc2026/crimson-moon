@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crimson-moon:block/black_sandstone_slab"
+    },
+    "type=double": {
+      "model": "crimson-moon:block/black_sandstone"
+    },
+    "type=top": {
+      "model": "crimson-moon:block/black_sandstone_slab_top"
+    }
+  }
+}
