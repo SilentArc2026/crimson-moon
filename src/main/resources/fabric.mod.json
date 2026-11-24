@@ -1,6 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "crimson-moon",
+	"accessWidener": "crimson-moon.accesswidener",
 	"version": "${version}",
 	"name": "Crimson Moon",
 	"description": "This is an example description! Tell everyone what your mod is about!",

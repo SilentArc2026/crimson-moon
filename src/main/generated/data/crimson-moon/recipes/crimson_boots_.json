@@ -4,7 +4,7 @@
     "item": "crimson-moon:crimsonite_ingot"
   },
   "base": {
-    "item": "minecraft:netherite_boots"
+    "item": "crimson-moon:turqite_boots"
   },
   "result": {
     "item": "crimson-moon:crimson_boots"

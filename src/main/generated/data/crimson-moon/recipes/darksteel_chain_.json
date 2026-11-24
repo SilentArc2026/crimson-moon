@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "crimson-moon:darksteel_ingot"
+    },
+    "N": {
+      "item": "crimson-moon:darksteel_nugget"
+    }
+  },
+  "pattern": [
+    "N",
+    "I",
+    "N"
+  ],
+  "result": {
+    "item": "crimson-moon:darksteel_chain"
+  },
+  "show_notification": true
+}

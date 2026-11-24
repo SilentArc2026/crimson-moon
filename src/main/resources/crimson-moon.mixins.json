@@ -3,17 +3,26 @@
 	"package": "name.crimsonmoon.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin",
-		"HangingSignEditScreenMixin",
+		"AbstractHorseEntityAccessor",
+		"ArmorEnchantmentTargetMixin",
 		"BeeEntityMixin",
+		"BlockEntityTypeMixin",
+		"ExampleMixin",
 		"FoliagePlacerTypeInvoker",
-		"PigEntityMixin",
+		"HangingSignEditScreenMixin",
 		"HorseScreenHandlerMixin",
+		"PigEntityMixin",
+		"PlayerEntityMixin",
+		"PlayerScreenHandlerMixin",
+		"ServerPlayerEntityMixin",
+		"ServerPlayNetworkHandlerMixin",
 		"StriderEntityMixin",
-		"AbstractHorseEntityAccessor"
+		"WorldChunkSculkMixin"
 	],
 	"client": [
-		"SaddleFeatureRendererMixin"
+		"SaddleFeatureRendererMixin",
+		"client.CreativeInventoryScreenMixin",
+		"client.InventoryScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

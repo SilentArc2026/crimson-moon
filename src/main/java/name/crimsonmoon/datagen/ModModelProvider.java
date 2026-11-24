@@ -9,10 +9,9 @@ import name.crimsonmoon.item.ModInstruments;
 import name.crimsonmoon.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Block;
-import net.minecraft.block.PitcherCropBlock;
-import net.minecraft.block.TallFlowerBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.enums.DoubleBlockHalf;
+import net.minecraft.block.enums.SculkSensorPhase;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.item.ArmorItem;
@@ -24,6 +23,70 @@ import java.util.Optional;
 
 public class ModModelProvider extends FabricModelProvider {
 
+    private static final TextureKey LANTERN_KEY = TextureKey.of("lantern");
+
+    private static final Model CUSTOM_LANTERN_TEMPLATE = new Model(
+            Optional.of(new Identifier("minecraft", "block/template_lantern")),
+            Optional.empty(),
+            LANTERN_KEY
+    );
+
+    private static final Model CUSTOM_HANGING_LANTERN_TEMPLATE = new Model(
+            Optional.of(new Identifier("minecraft", "block/template_hanging_lantern")),
+            Optional.of("_hanging"),
+            LANTERN_KEY
+    );
+
+    private static final TextureKey CACTUS_KEY = TextureKey.of("cactus");
+    private static final TextureKey CACTUS_TOP_KEY = TextureKey.of("cactustop");
+
+    private static final Model CACTUS_MODEL = new Model(
+            Optional.of(new Identifier("minecraft", "block/cactus")),
+            Optional.empty(),
+            TextureKey.TOP, TextureKey.BOTTOM, TextureKey.SIDE, TextureKey.PARTICLE
+    );
+
+
+    private static final Model POTTED_CACTUS_MODEL = new Model(
+            Optional.of(new Identifier("minecraft", "block/potted_cactus")),
+            Optional.empty(),
+            CACTUS_KEY, CACTUS_TOP_KEY
+    );
+
+
+    private static final TextureKey TENDRILS = TextureKey.of("tendrils");
+    private static final TextureKey INNER_TOP = TextureKey.of("inner_top");
+
+    private static final TextureKey SCULK_VEIN = TextureKey.of("sculk_vein");
+
+    private static final Model VEIN_TEMPLATE = new Model(
+            Optional.of(new Identifier("minecraft", "block/sculk_vein")),
+            Optional.empty(),
+            TextureKey.PARTICLE, SCULK_VEIN
+    );
+
+    // Parent model templates pointing to vanilla geometry
+    private static final Model SENSOR_INACTIVE_TEMPLATE = new Model(
+            Optional.of(new Identifier("minecraft", "block/sculk_sensor_inactive")),
+            Optional.empty(),
+            TextureKey.BOTTOM, TextureKey.SIDE, TextureKey.TOP, TENDRILS
+    );
+    private static final Model SENSOR_ACTIVE_TEMPLATE = new Model(
+            Optional.of(new Identifier("minecraft", "block/sculk_sensor_active")),
+            Optional.of("_active"),
+            TextureKey.BOTTOM, TextureKey.SIDE, TextureKey.TOP, TENDRILS
+    );
+    private static final Model SHRIEKER_TEMPLATE = new Model(
+            Optional.of(new Identifier("minecraft", "block/sculk_shrieker")),
+            Optional.empty(),
+            TextureKey.BOTTOM, TextureKey.SIDE, TextureKey.TOP, INNER_TOP
+    );
+    private static final Model SHRIEKER_CAN_SUMMON_TEMPLATE = new Model(
+            Optional.of(new Identifier("minecraft", "block/sculk_shrieker_can_summon")),
+            Optional.of("_can_summon"),
+            TextureKey.BOTTOM, TextureKey.SIDE, TextureKey.TOP, INNER_TOP
+    );
+
     private static final Model LILY_PAD_TEMPLATE = new Model(
             Optional.of(new Identifier("minecraft", "block/lily_pad")), Optional.empty(), TextureKey.TEXTURE);
     public ModModelProvider(FabricDataOutput output) {
@@ -32,6 +95,43 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+
+        Model chainModel = new Model(
+                Optional.of(new Identifier("minecraft", "block/chain")),
+                Optional.empty(),
+                TextureKey.ALL,
+                TextureKey.PARTICLE
+        );
+
+        TextureMap chainTextures = new TextureMap()
+                .put(TextureKey.ALL, TextureMap.getId(ModBlocks.DARKSTEEL_CHAIN))
+                .put(TextureKey.PARTICLE, TextureMap.getId(ModBlocks.DARKSTEEL_CHAIN));
+
+        Identifier chainModelId = chainModel.upload(ModBlocks.DARKSTEEL_CHAIN, chainTextures, blockStateModelGenerator.modelCollector);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.DARKSTEEL_CHAIN, chainModelId);
+
+
+        TextureMap cactusTextures = new TextureMap()
+                .put(TextureKey.TOP, TextureMap.getSubId(ModBlocks.CRIMSON_CACTUS, "_top"))
+                .put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks.CRIMSON_CACTUS, "_bottom"))
+                .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.CRIMSON_CACTUS, "_side"))
+                .put(TextureKey.PARTICLE, TextureMap.getSubId(ModBlocks.CRIMSON_CACTUS, "_side"));
+
+        Identifier cactusModelId = CACTUS_MODEL.upload(ModBlocks.CRIMSON_CACTUS, cactusTextures, blockStateModelGenerator.modelCollector);
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(ModBlocks.CRIMSON_CACTUS, cactusModelId)
+        );
+
+        // --- 2. POTTED CRIMSON CACTUS ---
+        Identifier pottedModelId = new Identifier("crimson-moon", "block/potted_crimson_cactus");
+        blockStateModelGenerator.modelCollector.accept(pottedModelId, () -> createPottedCactusJson(
+                TextureMap.getSubId(ModBlocks.CRIMSON_CACTUS, "_side").toString(),
+                TextureMap.getSubId(ModBlocks.CRIMSON_CACTUS, "_top").toString()
+        ));
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(ModBlocks.POTTED_CRIMSON_CACTUS, pottedModelId)
+        );
+
         TextureMap sandstoneTextures = new TextureMap()
                 .put(TextureKey.TOP, TextureMap.getSubId(ModBlocks.BLACK_SANDSTONE, "_top"))
                 .put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks.BLACK_SANDSTONE, "_bottom"))
@@ -80,7 +180,23 @@ public class ModModelProvider extends FabricModelProvider {
         Identifier downModelId = Models.PRESSURE_PLATE_DOWN.upload(
                 ModBlocks.ACIDIC_TRAPPED_RUG, textureMap, blockStateModelGenerator.modelCollector);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLOOD_SCULK);
+
+        // 2. Blood Sculk Catalyst (bloom = false / true)
+        registerBloodSculkCatalyst(blockStateModelGenerator);
+
+        // 3. Blood Sculk Sensor (inactive / active / cooldown)
+        registerBloodSculkSensor(blockStateModelGenerator);
+
+        // 4. Blood Sculk Shrieker (can_summon = false / true)
+        registerBloodSculkShrieker(blockStateModelGenerator);
+
+        // 5. Blood Sculk Vein (6-directional multipart)
+        registerBloodSculkVein(blockStateModelGenerator);
+
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_REDSTONE_HEART);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARKSTEEL_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CORRUPTED_MOSS_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Crimsonite_Block);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Raw_Vampyrite_Block);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.Vampyrite_Block);
@@ -125,6 +241,11 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.ACID_FLOWER, ModBlocks.POTTED_ACID_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.FIRE_FLOWER, ModBlocks.POTTED_FIRE_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PINK_FLOWER, ModBlocks.POTTED_PINK_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CHARRED_FUNGUS, ModBlocks.POTTED_CHARRED_FUNGUS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.ACIDIC_MUSHROOM, ModBlocks.POTTED_ACIDIC_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_MUSHROOM, ModBlocks.POTTED_CORRUPTED_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BLACKENED_MUSHROOM, ModBlocks.POTTED_BLACKENED_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.DEAD_BLOOD_BUSH, ModBlocks.POTTED_DEAD_BLOOD_BUSH, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_TORCHFLOWER, ModBlocks.POTTED_CORRUPTED_TORCHFLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_WITHER_ROSE, ModBlocks.POTTED_CORRUPTED_WITHER_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CORRUPTED_POPPY, ModBlocks.POTTED_CORRUPTED_POPPY, BlockStateModelGenerator.TintType.NOT_TINTED);
@@ -160,10 +281,6 @@ public class ModModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool charredTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CHARRED_PLANKS);
         BlockStateModelGenerator.BlockTexturePool palmmosaicTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PALM_MOSAIC);
         BlockStateModelGenerator.BlockTexturePool witheredpalmmosaicTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.WITHERED_PALM_MOSAIC);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.CHARRED_FUNGUS, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.ACIDIC_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.CORRUPTED_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.BLACKENED_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.PALM_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_CORRUPTED_LOG, ModBlocks.CORRUPTED_HANGING_SIGN, ModBlocks.CORRUPTED_HANGING_WALL_SIGN);
@@ -224,6 +341,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTrapdoor(ModBlocks.PALM_TRAPDOOR);
         blockStateModelGenerator.registerDoor(ModBlocks.WITHERED_PALM_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.WITHERED_PALM_TRAPDOOR);
+        blockStateModelGenerator.registerDoor(ModBlocks.DARKSTEEL_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.DARKSTEEL_TRAPDOOR);
 
         registerBerryVine(blockStateModelGenerator, ModBlocks.CHARRED_VINES);
         registerBerryVine(blockStateModelGenerator, ModBlocks.CHARRED_VINES_PLANT);
@@ -234,6 +353,10 @@ public class ModModelProvider extends FabricModelProvider {
 
         registerLilyPad(blockStateModelGenerator, ModBlocks.WITHERED_LILY_PAD);
         registerLilyPad(blockStateModelGenerator, ModBlocks.CORRUPTED_LILY_PAD);
+
+        registerIronBars(blockStateModelGenerator, ModBlocks.DARKSTEEL_BARS);
+        registerCustomLantern(blockStateModelGenerator, ModBlocks.DARKSTEEL_LANTERN);
+        registerCustomLantern(blockStateModelGenerator, ModBlocks.DARKSTEEL_SOUL_LANTERN);
 
         // 1. Corrupted Mushroom Block (uses its own inside texture)
         registerCustomMushroomBlock(
@@ -458,6 +581,287 @@ public class ModModelProvider extends FabricModelProvider {
         );
         generator.registerParentedItemModel(block, inventoryModel);
     }
+    private void registerBloodSculkCatalyst(BlockStateModelGenerator generator) {
+        Block block = ModBlocks.BLOOD_SCULK_CATALYST;
+        Identifier bottom = TextureMap.getSubId(block, "_bottom");
+
+        TextureMap normalMap = new TextureMap()
+                .put(TextureKey.BOTTOM, bottom)
+                .put(TextureKey.SIDE, TextureMap.getSubId(block, "_side"))
+                .put(TextureKey.TOP, TextureMap.getSubId(block, "_top"));
+
+        TextureMap bloomMap = new TextureMap()
+                .put(TextureKey.BOTTOM, bottom)
+                .put(TextureKey.SIDE, TextureMap.getSubId(block, "_side_bloom"))
+                .put(TextureKey.TOP, TextureMap.getSubId(block, "_top_bloom"));
+
+        Identifier normalModel = Models.CUBE_BOTTOM_TOP.upload(block, normalMap, generator.modelCollector);
+        Identifier bloomModel = Models.CUBE_BOTTOM_TOP.upload(block, "_bloom", bloomMap, generator.modelCollector);
+
+        generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block)
+                .coordinate(BlockStateVariantMap.create(Properties.BLOOM)
+                        .register(false, BlockStateVariant.create().put(VariantSettings.MODEL, normalModel))
+                        .register(true, BlockStateVariant.create().put(VariantSettings.MODEL, bloomModel))
+                ));
+    }
+
+    private void registerBloodSculkSensor(BlockStateModelGenerator generator) {
+        Block block = ModBlocks.BLOOD_SCULK_SENSOR;
+        Identifier bottom = TextureMap.getSubId(block, "_bottom");
+        Identifier side = TextureMap.getSubId(block, "_side");
+        Identifier top = TextureMap.getSubId(block, "_top");
+
+        TextureMap inactiveMap = new TextureMap()
+                .put(TextureKey.BOTTOM, bottom)
+                .put(TextureKey.SIDE, side)
+                .put(TextureKey.TOP, top)
+                .put(TENDRILS, TextureMap.getSubId(block, "_tendril_inactive"));
+
+        TextureMap activeMap = new TextureMap()
+                .put(TextureKey.BOTTOM, bottom)
+                .put(TextureKey.SIDE, side)
+                .put(TextureKey.TOP, top)
+                .put(TENDRILS, TextureMap.getSubId(block, "_tendril_active"));
+
+        Identifier inactiveModel = SENSOR_INACTIVE_TEMPLATE.upload(block, inactiveMap, generator.modelCollector);
+        Identifier activeModel = SENSOR_ACTIVE_TEMPLATE.upload(block, activeMap, generator.modelCollector);
+
+        generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block)
+                .coordinate(BlockStateVariantMap.create(SculkSensorBlock.SCULK_SENSOR_PHASE)
+                        .register(SculkSensorPhase.INACTIVE, BlockStateVariant.create().put(VariantSettings.MODEL, inactiveModel))
+                        .register(SculkSensorPhase.ACTIVE, BlockStateVariant.create().put(VariantSettings.MODEL, activeModel))
+                        .register(SculkSensorPhase.COOLDOWN, BlockStateVariant.create().put(VariantSettings.MODEL, inactiveModel))
+                ));
+    }
+
+    private void registerBloodSculkShrieker(BlockStateModelGenerator generator) {
+        Block block = ModBlocks.BLOOD_SCULK_SHRIEKER;
+        Identifier bottom = TextureMap.getSubId(block, "_bottom");
+        Identifier side = TextureMap.getSubId(block, "_side");
+        Identifier top = TextureMap.getSubId(block, "_top");
+
+        TextureMap normalMap = new TextureMap()
+                .put(TextureKey.BOTTOM, bottom)
+                .put(TextureKey.SIDE, side)
+                .put(TextureKey.TOP, top)
+                .put(INNER_TOP, TextureMap.getSubId(block, "_inner_top"));
+
+        TextureMap summonMap = new TextureMap()
+                .put(TextureKey.BOTTOM, bottom)
+                .put(TextureKey.SIDE, side)
+                .put(TextureKey.TOP, top)
+                .put(INNER_TOP, TextureMap.getSubId(block, "_can_summon_inner_top"));
+
+        Identifier normalModel = SHRIEKER_TEMPLATE.upload(block, normalMap, generator.modelCollector);
+        Identifier summonModel = SHRIEKER_CAN_SUMMON_TEMPLATE.upload(block, summonMap, generator.modelCollector);
+
+        generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block)
+                .coordinate(BlockStateVariantMap.create(SculkShriekerBlock.CAN_SUMMON)
+                        .register(false, BlockStateVariant.create().put(VariantSettings.MODEL, normalModel))
+                        .register(true, BlockStateVariant.create().put(VariantSettings.MODEL, summonModel))
+                ));
+    }
+
+
+    private void registerBloodSculkVein(BlockStateModelGenerator generator) {
+        Block block = ModBlocks.BLOOD_SCULK_VEIN;
+        Identifier veinTex = TextureMap.getId(block);
+
+        TextureMap veinMap = new TextureMap()
+                .put(TextureKey.PARTICLE, veinTex)
+                .put(SCULK_VEIN, veinTex); // <-- Use the exact same constant here
+
+        Identifier modelId = VEIN_TEMPLATE.upload(block, veinMap, generator.modelCollector);
+
+
+        // 6-way Multipart blockstate matching vanilla sculk_vein
+        MultipartBlockStateSupplier supplier = MultipartBlockStateSupplier.create(block)
+                .with(When.create().set(Properties.NORTH, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, modelId))
+                .with(When.create().set(Properties.EAST, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, modelId)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, true))
+                .with(When.create().set(Properties.SOUTH, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, modelId)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R180).put(VariantSettings.UVLOCK, true))
+                .with(When.create().set(Properties.WEST, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, modelId)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R270).put(VariantSettings.UVLOCK, true))
+                .with(When.create().set(Properties.UP, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, modelId)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.UVLOCK, true))
+                .with(When.create().set(Properties.DOWN, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, modelId)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, true));
+
+        // Fallback when all faces are false (default item/block preview state)
+        When allFalse = When.create()
+                .set(Properties.NORTH, false).set(Properties.EAST, false)
+                .set(Properties.SOUTH, false).set(Properties.WEST, false)
+                .set(Properties.UP, false).set(Properties.DOWN, false);
+
+        supplier.with(allFalse, BlockStateVariant.create().put(VariantSettings.MODEL, modelId))
+                .with(allFalse, BlockStateVariant.create().put(VariantSettings.MODEL, modelId).put(VariantSettings.Y, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, true))
+                .with(allFalse, BlockStateVariant.create().put(VariantSettings.MODEL, modelId).put(VariantSettings.Y, VariantSettings.Rotation.R180).put(VariantSettings.UVLOCK, true))
+                .with(allFalse, BlockStateVariant.create().put(VariantSettings.MODEL, modelId).put(VariantSettings.Y, VariantSettings.Rotation.R270).put(VariantSettings.UVLOCK, true))
+                .with(allFalse, BlockStateVariant.create().put(VariantSettings.MODEL, modelId).put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.UVLOCK, true))
+                .with(allFalse, BlockStateVariant.create().put(VariantSettings.MODEL, modelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, true));
+
+        generator.blockStateCollector.accept(supplier);
+
+
+    }
+
+    private static com.google.gson.JsonObject createPottedCactusJson(String sideTex, String topTex) {
+        com.google.gson.JsonObject root = new com.google.gson.JsonObject();
+        root.addProperty("ambientocclusion", false);
+
+        com.google.gson.JsonObject textures = new com.google.gson.JsonObject();
+        textures.addProperty("particle", "minecraft:block/flower_pot");
+        textures.addProperty("flowerpot", "minecraft:block/flower_pot");
+        textures.addProperty("dirt", "minecraft:block/dirt");
+        textures.addProperty("cactus", sideTex);
+        textures.addProperty("cactustop", topTex);
+        root.add("textures", textures);
+
+        com.google.gson.JsonArray elements = new com.google.gson.JsonArray();
+
+        // 1. Pot West Wall
+        com.google.gson.JsonObject el1 = makeBox(5, 0, 5, 6, 6, 11);
+        addFace(el1, "down", 5, 5, 6, 11, "#flowerpot", "down");
+        addFace(el1, "up", 5, 5, 6, 11, "#flowerpot", null);
+        addFace(el1, "north", 10, 10, 11, 16, "#flowerpot", null);
+        addFace(el1, "south", 5, 10, 6, 16, "#flowerpot", null);
+        addFace(el1, "west", 5, 10, 11, 16, "#flowerpot", null);
+        addFace(el1, "east", 5, 10, 11, 16, "#flowerpot", null);
+        elements.add(el1);
+
+        // 2. Pot East Wall
+        com.google.gson.JsonObject el2 = makeBox(10, 0, 5, 11, 6, 11);
+        addFace(el2, "down", 10, 5, 11, 11, "#flowerpot", "down");
+        addFace(el2, "up", 10, 5, 11, 11, "#flowerpot", null);
+        addFace(el2, "north", 5, 10, 6, 16, "#flowerpot", null);
+        addFace(el2, "south", 10, 10, 11, 16, "#flowerpot", null);
+        addFace(el2, "west", 5, 10, 11, 16, "#flowerpot", null);
+        addFace(el2, "east", 5, 10, 11, 16, "#flowerpot", null);
+        elements.add(el2);
+
+        // 3. Pot North Wall
+        com.google.gson.JsonObject el3 = makeBox(6, 0, 5, 10, 6, 6);
+        addFace(el3, "down", 6, 10, 10, 11, "#flowerpot", "down");
+        addFace(el3, "up", 6, 5, 10, 6, "#flowerpot", null);
+        addFace(el3, "north", 6, 10, 10, 16, "#flowerpot", null);
+        addFace(el3, "south", 6, 10, 10, 16, "#flowerpot", null);
+        elements.add(el3);
+
+        // 4. Pot South Wall
+        com.google.gson.JsonObject el4 = makeBox(6, 0, 10, 10, 6, 11);
+        addFace(el4, "down", 6, 5, 10, 6, "#flowerpot", "down");
+        addFace(el4, "up", 6, 10, 10, 11, "#flowerpot", null);
+        addFace(el4, "north", 6, 10, 10, 16, "#flowerpot", null);
+        addFace(el4, "south", 6, 10, 10, 16, "#flowerpot", null);
+        elements.add(el4);
+
+        // 5. Pot Bottom
+        com.google.gson.JsonObject el5 = makeBox(6, 0, 6, 10, 1, 10);
+        addFace(el5, "down", 6, 6, 10, 10, "#flowerpot", "down");
+        elements.add(el5);
+
+        // 6. Dirt
+        com.google.gson.JsonObject el6 = makeBox(6, 1, 6, 10, 4, 10);
+        addFace(el6, "up", 6, 6, 10, 10, "#dirt", null);
+        elements.add(el6);
+
+        // 7. Cactus Body & Custom Top
+        com.google.gson.JsonObject el7 = makeBox(6, 4, 6, 10, 16, 10);
+        addFace(el7, "up", 6, 6, 10, 10, "#cactustop", "up");
+        addFace(el7, "north", 6, 4, 10, 16, "#cactus", null);
+        addFace(el7, "south", 6, 4, 10, 16, "#cactus", null);
+        addFace(el7, "west", 6, 4, 10, 16, "#cactus", null);
+        addFace(el7, "east", 6, 4, 10, 16, "#cactus", null);
+        elements.add(el7);
+
+        root.add("elements", elements);
+        return root;
+    }
+
+    private static com.google.gson.JsonObject makeBox(int x1, int y1, int z1, int x2, int y2, int z2) {
+        com.google.gson.JsonObject box = new com.google.gson.JsonObject();
+        com.google.gson.JsonArray from = new com.google.gson.JsonArray();
+        from.add(x1); from.add(y1); from.add(z1);
+        com.google.gson.JsonArray to = new com.google.gson.JsonArray();
+        to.add(x2); to.add(y2); to.add(z2);
+        box.add("from", from);
+        box.add("to", to);
+        box.add("faces", new com.google.gson.JsonObject());
+        return box;
+    }
+
+    private static void addFace(com.google.gson.JsonObject box, String dir, int u1, int v1, int u2, int v2, String tex, String cull) {
+        com.google.gson.JsonObject face = new com.google.gson.JsonObject();
+        com.google.gson.JsonArray uv = new com.google.gson.JsonArray();
+        uv.add(u1); uv.add(v1); uv.add(u2); uv.add(v2);
+        face.add("uv", uv);
+        face.addProperty("texture", tex);
+        if (cull != null) {
+            face.addProperty("cullface", cull);
+        }
+        box.getAsJsonObject("faces").add(dir, face);
+    }
+
+    private static final TextureKey BARS = TextureKey.of("bars");
+
+    private void registerIronBars(BlockStateModelGenerator generator, Block barsBlock) {
+        Identifier texture = TextureMap.getId(barsBlock);
+        TextureMap textures = new TextureMap()
+                .put(BARS, texture)
+                .put(TextureKey.EDGE, texture)
+                .put(TextureKey.PARTICLE, texture);
+
+        Identifier postEnds = createBarsModel(generator, barsBlock, "_post_ends", "iron_bars_post_ends", textures);
+        Identifier post = createBarsModel(generator, barsBlock, "_post", "iron_bars_post", textures);
+        Identifier cap = createBarsModel(generator, barsBlock, "_cap", "iron_bars_cap", textures);
+        Identifier capAlt = createBarsModel(generator, barsBlock, "_cap_alt", "iron_bars_cap_alt", textures);
+        Identifier side = createBarsModel(generator, barsBlock, "_side", "iron_bars_side", textures);
+        Identifier sideAlt = createBarsModel(generator, barsBlock, "_side_alt", "iron_bars_side_alt", textures);
+
+        generator.blockStateCollector.accept(MultipartBlockStateSupplier.create(barsBlock)
+                .with(BlockStateVariant.create().put(VariantSettings.MODEL, postEnds))
+                .with(When.create().set(Properties.NORTH, false).set(Properties.EAST, false).set(Properties.SOUTH, false).set(Properties.WEST, false),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, post))
+                .with(When.create().set(Properties.NORTH, true).set(Properties.EAST, false).set(Properties.SOUTH, false).set(Properties.WEST, false),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, cap))
+                .with(When.create().set(Properties.NORTH, false).set(Properties.EAST, true).set(Properties.SOUTH, false).set(Properties.WEST, false),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, cap).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .with(When.create().set(Properties.NORTH, false).set(Properties.EAST, false).set(Properties.SOUTH, true).set(Properties.WEST, false),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, capAlt))
+                .with(When.create().set(Properties.NORTH, false).set(Properties.EAST, false).set(Properties.SOUTH, false).set(Properties.WEST, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, capAlt).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .with(When.create().set(Properties.NORTH, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, side))
+                .with(When.create().set(Properties.EAST, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, side).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .with(When.create().set(Properties.SOUTH, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, sideAlt))
+                .with(When.create().set(Properties.WEST, true),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, sideAlt).put(VariantSettings.Y, VariantSettings.Rotation.R90)));
+    }
+
+    private Identifier createBarsModel(BlockStateModelGenerator generator, Block block, String suffix, String vanillaParent, TextureMap textures) {
+        Model template = new Model(Optional.of(new Identifier("minecraft", "block/" + vanillaParent)), Optional.of(suffix), BARS, TextureKey.EDGE, TextureKey.PARTICLE);
+        return template.upload(block, suffix, textures, generator.modelCollector);
+    }
+    private void registerCustomLantern(BlockStateModelGenerator generator, Block lanternBlock) {
+        TextureMap textureMap = new TextureMap().put(LANTERN_KEY, TextureMap.getId(lanternBlock));
+
+        Identifier standingModel = CUSTOM_LANTERN_TEMPLATE.upload(lanternBlock, textureMap, generator.modelCollector);
+        Identifier hangingModel = CUSTOM_HANGING_LANTERN_TEMPLATE.upload(lanternBlock, textureMap, generator.modelCollector);
+
+        generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(lanternBlock)
+                .coordinate(BlockStateVariantMap.create(Properties.HANGING)
+                        .register(false, BlockStateVariant.create().put(VariantSettings.MODEL, standingModel))
+                        .register(true, BlockStateVariant.create().put(VariantSettings.MODEL, hangingModel))));
+    }
 
 
 
@@ -472,19 +876,19 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.Crimson_Shovel, Models.HANDHELD);
         itemModelGenerator.register(ModItems.Crimson_Hoe, Models.HANDHELD);
         itemModelGenerator.register(ModItems.Crimsonite_upgrade_smithing_template, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CRIMSON_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRIMSON_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.VAMPYRITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_VAMPYRITE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SOLARIUM_SWORD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SOLARIUM_PICKAXE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SOLARIUM_SHOVEL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SOLARIUM_AXE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SOLARIUM_HOE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.VAMPYRITE_SWORD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.VAMPYRITE_PICKAXE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.VAMPYRITE_AXE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.VAMPYRITE_SHOVEL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.VAMPYRITE_HOE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOLARIUM_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SOLARIUM_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SOLARIUM_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SOLARIUM_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SOLARIUM_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VAMPYRITE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VAMPYRITE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VAMPYRITE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VAMPYRITE_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VAMPYRITE_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.DIAMOND_ROD, Models.GENERATED);
         itemModelGenerator.register(ModItems.SOLARIUM_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
@@ -493,12 +897,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.HEAVENLY_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.REFINED_TURQITE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TURQITE_SWORD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TURQITE_PICKAXE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TURQITE_AXE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TURQITE_SHOVEL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TURQITE_HOE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HEAVENLY_BLADE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TURQITE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TURQITE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TURQITE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TURQITE_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TURQITE_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.HEAVENLY_BLADE, Models.HANDHELD);
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.CRIMSON_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.CRIMSON_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.CRIMSON_LEGGINGS));
@@ -515,20 +919,29 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.TURQITE_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.TURQITE_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.TURQITE_BOOTS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.DARKSTEEL_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.DARKSTEEL_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.DARKSTEEL_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.DARKSTEEL_BOOTS));
         itemModelGenerator.register(ModBlocks.Turqite_Cluster.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks.SMALL_TURQITE_BUD.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks.MEDIUM_TURQITE_BUD.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks.LARGE_TURQITE_BUD.asItem(), Models.GENERATED);
-        itemModelGenerator.register(ModBlocks.CHARRED_FUNGUS.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks.ACIDIC_SAPLING.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks.CORRUPTED_SAPLING.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks.PALM_SAPLING.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks.WITHERED_PALM_SAPLING.asItem(), Models.GENERATED);
-        itemModelGenerator.register(ModBlocks.ACIDIC_MUSHROOM.asItem(), Models.GENERATED);
-        itemModelGenerator.register(ModBlocks.BLACKENED_MUSHROOM.asItem(), Models.GENERATED);
-        itemModelGenerator.register(ModBlocks.CORRUPTED_MUSHROOM.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModItems.PLUME_OF_CRIMSON, Models.GENERATED);
         itemModelGenerator.register(ModItems.CORRUPTED_STAR, Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.BLOOD_SCULK_VEIN.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModItems.DARKSTEEL_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DARKSTEEL_DAGGER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.DARKSTEEL_HATCHET, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.DARKSTEEL_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.DARKSTEEL_SPADE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.DARKSTEEL_TROWEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.DARKSTEEL_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.DARKSTEEL_BARS.asItem(), Models.GENERATED);
 
         itemModelGenerator.register(ModItems.GLOOM_BERRIES, Models.GENERATED);
         itemModelGenerator.register(ModItems.ACIDIC_LEATHER, Models.GENERATED);
@@ -552,8 +965,26 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModBlocks.CORRUPTED_LILY_PAD.asItem(), Models.GENERATED);
 
         itemModelGenerator.register(ModItems.ACIDIC_LEATHER_HORSE_ARMOR, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DARKSTEEL_HORSE_ARMOR, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.ACIDIC_SADDLE, Models.GENERATED);
+
+        itemModelGenerator.register(ModBlocks.DARKSTEEL_LANTERN.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.DARKSTEEL_SOUL_LANTERN.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.DARKSTEEL_CHAIN.asItem(), Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.LEATHER_BRACERS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHAIN_FISHNETS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_BRACERS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GOLD_BRACERS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DIAMOND_BRACERS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NETHERITE_BRACERS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRIMSON_BRACERS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DARKSTEEL_BRACERS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TURQITE_BRACERS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VAMPYRITE_BRACERS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOLARIUM_BRACERS, Models.GENERATED);
+
 
         registerHornModel(itemModelGenerator, ModItems.THE_BEHEMOTHS_HORN);
     }

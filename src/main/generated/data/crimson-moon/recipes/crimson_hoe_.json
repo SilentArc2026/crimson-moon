@@ -4,7 +4,7 @@
     "item": "crimson-moon:crimsonite_ingot"
   },
   "base": {
-    "item": "minecraft:netherite_hoe"
+    "item": "crimson-moon:turqite_hoe"
   },
   "result": {
     "item": "crimson-moon:crimson_hoe"

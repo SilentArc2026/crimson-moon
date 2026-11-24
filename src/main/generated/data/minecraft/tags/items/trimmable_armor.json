@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
+    "crimson-moon:darksteel_helmet",
+    "crimson-moon:darksteel_chestplate",
+    "crimson-moon:darksteel_leggings",
+    "crimson-moon:darksteel_boots",
     "crimson-moon:crimson_helmet",
     "crimson-moon:crimson_chestplate",
     "crimson-moon:crimson_leggings",
@@ -12,6 +16,10 @@
     "crimson-moon:solarium_boots",
     "crimson-moon:solarium_leggings",
     "crimson-moon:solarium_chestplate",
-    "crimson-moon:solarium_helmet"
+    "crimson-moon:solarium_helmet",
+    "crimson-moon:turqite_boots",
+    "crimson-moon:turqite_leggings",
+    "crimson-moon:turqite_chestplate",
+    "crimson-moon:turqite_helmet"
   ]
 }

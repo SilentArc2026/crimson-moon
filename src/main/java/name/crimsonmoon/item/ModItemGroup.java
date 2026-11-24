@@ -16,27 +16,42 @@ public class ModItemGroup {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.crimson_moon_combat"))
                     .icon(() -> new ItemStack(ModItems.HEAVENLY_BLADE)).entries((displayContext, entries) -> {
                         entries.add(ModItems.VAMPYRITE_SWORD);
+                        entries.add(ModItems.TURQITE_SWORD);
                         entries.add(ModItems.CRIMSON_SWORD);
                         entries.add(ModItems.Blood_Blade);
-                        entries.add(ModItems.TURQITE_SWORD);
+                        entries.add(ModItems.DARKSTEEL_DAGGER);
                         entries.add(ModItems.SOLARIUM_SWORD);
                         entries.add(ModItems.HEAVENLY_BLADE);
+
                         entries.add(ModItems.VAMPYRITE_HELMET);
                         entries.add(ModItems.VAMPYRITE_CHESTPLATE);
                         entries.add(ModItems.VAMPYRITE_LEGGINGS);
                         entries.add(ModItems.VAMPYRITE_BOOTS);
-                        entries.add(ModItems.CRIMSON_HELMET);
-                        entries.add(ModItems.CRIMSON_CHESTPLATE);
-                        entries.add(ModItems.CRIMSON_LEGGINGS);
-                        entries.add(ModItems.CRIMSON_BOOTS);
+                        entries.add(ModItems.VAMPYRITE_BRACERS);
+
                         entries.add(ModItems.TURQITE_HELMET);
                         entries.add(ModItems.TURQITE_CHESTPLATE);
                         entries.add(ModItems.TURQITE_LEGGINGS);
                         entries.add(ModItems.TURQITE_BOOTS);
+                        entries.add(ModItems.TURQITE_BRACERS);
+
+                        entries.add(ModItems.CRIMSON_HELMET);
+                        entries.add(ModItems.CRIMSON_CHESTPLATE);
+                        entries.add(ModItems.CRIMSON_LEGGINGS);
+                        entries.add(ModItems.CRIMSON_BOOTS);
+                        entries.add(ModItems.CRIMSON_BRACERS);
+
+                        entries.add(ModItems.DARKSTEEL_HELMET);
+                        entries.add(ModItems.DARKSTEEL_CHESTPLATE);
+                        entries.add(ModItems.DARKSTEEL_LEGGINGS);
+                        entries.add(ModItems.DARKSTEEL_BOOTS);
+                        entries.add(ModItems.DARKSTEEL_BRACERS);
+
                         entries.add(ModItems.SOLARIUM_HELMET);
                         entries.add(ModItems.SOLARIUM_CHESTPLATE);
                         entries.add(ModItems.SOLARIUM_LEGGINGS);
                         entries.add(ModItems.SOLARIUM_BOOTS);
+                        entries.add(ModItems.SOLARIUM_BRACERS);
 
                     }).build());
 
@@ -118,6 +133,13 @@ public class ModItemGroup {
                         entries.add(ModBlocks.BLACK_SANDSTONE_STAIRS);
                         entries.add(ModBlocks.BLACK_SANDSTONE_SLAB);
                         entries.add(ModBlocks.BLACK_SANDSTONE_WALL);
+                        entries.add(ModBlocks.DARKSTEEL_DOOR);
+                        entries.add(ModBlocks.DARKSTEEL_TRAPDOOR);
+                        entries.add(ModBlocks.DARKSTEEL_BARS);
+                        entries.add(ModBlocks.DARKSTEEL_LANTERN);
+                        entries.add(ModBlocks.DARKSTEEL_SOUL_LANTERN);
+                        entries.add(ModBlocks.DARKSTEEL_CHAIN
+                        );
                     }).build());
 
     public static final ItemGroup Crimson_Moon_Nature = Registry.register(Registries.ITEM_GROUP,
@@ -224,6 +246,14 @@ public class ModItemGroup {
                         entries.add(ModBlocks.CUT_BLACK_SANDSTONE);
                         entries.add(ModBlocks.CHISELED_BLACK_SANDSTONE);
                         entries.add(ModBlocks.SMOOTH_BLACK_SANDSTONE);
+                        entries.add(ModBlocks.BLOOD_SCULK);
+                        entries.add(ModBlocks.BLOOD_SCULK_VEIN);
+                        entries.add(ModBlocks.BLOOD_SCULK_CATALYST);
+                        entries.add(ModBlocks.BLOOD_SCULK_SENSOR);
+                        entries.add(ModBlocks.BLOOD_SCULK_SHRIEKER);
+                        entries.add(ModBlocks.DEAD_BLOOD_BUSH);
+                        entries.add(ModBlocks.CORRUPTED_MOSS_BLOCK);
+                        entries.add(ModBlocks.CRIMSON_CACTUS);
                     }).build());
 
     public static final ItemGroup Crimson_Moon_Resources = Registry.register(Registries.ITEM_GROUP,
@@ -256,6 +286,10 @@ public class ModItemGroup {
                         entries.add(ModItems.DIAMOND_ROD);
                         entries.add(ModItems.HEAVENLY_UPGRADE_SMITHING_TEMPLATE);
 
+                        entries.add(ModItems.DARKSTEEL_INGOT);
+                        entries.add(ModItems.DARKSTEEL_NUGGET);
+                        entries.add(ModBlocks.DARKSTEEL_BLOCK);
+
 
                     }).build());
 
@@ -267,18 +301,27 @@ public class ModItemGroup {
                         entries.add(ModItems.VAMPYRITE_PICKAXE);
                         entries.add(ModItems.VAMPYRITE_AXE);
                         entries.add(ModItems.VAMPYRITE_HOE);
-                        entries.add(ModItems.Crimson_Shovel);
-                        entries.add(ModItems.Crimson_Pickaxe);
-                        entries.add(ModItems.Crimson_Axe);
-                        entries.add(ModItems.Crimson_Hoe);
+
                         entries.add(ModItems.TURQITE_SHOVEL);
                         entries.add(ModItems.TURQITE_PICKAXE);
                         entries.add(ModItems.TURQITE_AXE);
                         entries.add(ModItems.TURQITE_HOE);
+
+                        entries.add(ModItems.Crimson_Shovel);
+                        entries.add(ModItems.Crimson_Pickaxe);
+                        entries.add(ModItems.Crimson_Axe);
+                        entries.add(ModItems.Crimson_Hoe);
+
+                        entries.add(ModItems.DARKSTEEL_SPADE);
+                        entries.add(ModItems.DARKSTEEL_PICKAXE);
+                        entries.add(ModItems.DARKSTEEL_HATCHET);
+                        entries.add(ModItems.DARKSTEEL_TROWEL);
+
                         entries.add(ModItems.SOLARIUM_SHOVEL);
                         entries.add(ModItems.SOLARIUM_PICKAXE);
                         entries.add(ModItems.SOLARIUM_AXE);
                         entries.add(ModItems.SOLARIUM_HOE);
+
                         entries.add(ModItems.ACIDIC_BOAT);
                         entries.add(ModItems.ACIDIC_CHEST_BOAT);
                         entries.add(ModItems.CORRUPTED_BOAT);
@@ -289,7 +332,9 @@ public class ModItemGroup {
                         entries.add(ModItems.PALM_CHEST_BOAT);
                         entries.add(ModItems.WITHERED_PALM_BOAT);
                         entries.add(ModItems.WITHERED_PALM_CHEST_BOAT);
+
                         entries.add(ModItems.ACIDIC_LEATHER_HORSE_ARMOR);
+                        entries.add(ModItems.DARKSTEEL_HORSE_ARMOR);
                         entries.add(ModItems.ACIDIC_SADDLE);
 
                     }).build());

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "crimson-moon:darksteel_ingot"
+    }
+  },
+  "pattern": [
+    "D D",
+    "DDD",
+    "DDD"
+  ],
+  "result": {
+    "item": "crimson-moon:darksteel_chestplate"
+  },
+  "show_notification": true
+}

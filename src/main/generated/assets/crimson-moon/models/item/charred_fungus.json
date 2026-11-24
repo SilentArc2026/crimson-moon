@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "crimson-moon:item/charred_fungus"
+    "layer0": "crimson-moon:block/charred_fungus"
   }
 }

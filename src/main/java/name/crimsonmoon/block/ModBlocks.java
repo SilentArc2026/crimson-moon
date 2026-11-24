@@ -189,7 +189,18 @@ public class ModBlocks {
     public static final Block SMOOTH_BLACK_SANDSTONE_SLAB = registerBlock("smooth_black_sandstone_slab",
             new SlabBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE_SLAB)));
     public static final Block REDSTONE_HEART = registerBlock("redstone_heart",
-            new Block(FabricBlockSettings.copyOf(ModBlocks.CORRUPTED_REDSTONE_HEART)));
+            new Block(FabricBlockSettings.copyOf(ModBlocks.CORRUPTED_REDSTONE_HEART).strength(-1.0f, 3600000.0f)));
+
+    public static final Block BLOOD_SCULK = registerBlock("blood_sculk",
+            new BloodSculkBlock(FabricBlockSettings.copyOf(Blocks.SCULK)));
+    public static final Block BLOOD_SCULK_VEIN = registerBlock("blood_sculk_vein",
+            new BloodSculkVeinBlock(FabricBlockSettings.copyOf(Blocks.SCULK_VEIN)));
+    public static final Block BLOOD_SCULK_CATALYST = registerBlock("blood_sculk_catalyst",
+            new BloodSculkCatalystBlock(FabricBlockSettings.copyOf(Blocks.SCULK_CATALYST)));
+    public static final Block BLOOD_SCULK_SENSOR = registerBlock("blood_sculk_sensor",
+            new SculkSensorBlock(FabricBlockSettings.copyOf(Blocks.SCULK_SENSOR)));
+    public static final Block BLOOD_SCULK_SHRIEKER = registerBlock("blood_sculk_shrieker",
+            new SculkShriekerBlock(FabricBlockSettings.copyOf(Blocks.SCULK_SHRIEKER)));
 
     public static final Block CHARRED_SIGN = registerBlockWithoutBlockItem("charred_sign",
             new ModStandingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN), ModWoodTypes.CHARRED));
@@ -231,6 +242,29 @@ public class ModBlocks {
             new ModHangingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_HANGING_SIGN), ModWoodTypes.PALM));
     public static final Block PALM_HANGING_WALL_SIGN = registerBlockWithoutBlockItem("palm_hanging_wall_sign",
             new ModWallHangingSignBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_HANGING_SIGN), ModWoodTypes.PALM));
+    public static final Block CORRUPTED_MOSS_BLOCK = registerBlock("corrupted_moss_block",
+            new MossBlock(FabricBlockSettings.copyOf(Blocks.MOSS_BLOCK)));
+    public static final Block CRIMSON_CACTUS = registerBlock("crimson_cactus",
+            new CrimsonCactusBlock(AbstractBlock.Settings.copy(Blocks.CACTUS)));
+    public static final Block POTTED_CRIMSON_CACTUS = registerBlockWithoutBlockItem("potted_crimson_cactus",
+            new FlowerPotBlock(CRIMSON_CACTUS, FabricBlockSettings.copyOf(Blocks.POTTED_CACTUS)));
+    public static final Block DARKSTEEL_BLOCK = registerBlock("darksteel_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
+    public static final Block DARKSTEEL_DOOR = registerBlock("darksteel_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK), BlockSetType.IRON));
+    public static final Block DARKSTEEL_TRAPDOOR = registerBlock("darksteel_trapdoor",
+            new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_TRAPDOOR), BlockSetType.IRON));
+    public static final Block DARKSTEEL_BARS = registerBlock("darksteel_bars",
+            new ModPaneBlock(FabricBlockSettings.copyOf(Blocks.IRON_BARS)));
+
+    public static final Block DARKSTEEL_LANTERN = registerBlock("darksteel_lantern",
+            new LanternBlock(FabricBlockSettings.copyOf(Blocks.LANTERN)));
+
+    public static final Block DARKSTEEL_CHAIN = registerBlock("darksteel_chain",
+            new ChainBlock(FabricBlockSettings.copyOf(Blocks.CHAIN)));
+
+    public static final Block DARKSTEEL_SOUL_LANTERN = registerBlock("darksteel_soul_lantern",
+            new LanternBlock(FabricBlockSettings.copyOf(Blocks.SOUL_LANTERN)));
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(CrimsonMoon.MOD_ID, name), block);
@@ -341,6 +375,10 @@ public class ModBlocks {
             new FlowerBlock(StatusEffects.POISON, 5, FabricBlockSettings.copyOf(Blocks.ALLIUM)));
     public static final Block POTTED_ACID_FLOWER = registerBlockWithoutBlockItem("potted_acid_flower",
             new FlowerPotBlock(ACID_FLOWER, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));
+    public static final Block DEAD_BLOOD_BUSH = registerBlock("dead_blood_bush",
+            new CustomShrubBlock(FabricBlockSettings.copyOf(Blocks.DEAD_BUSH)));
+    public static final Block POTTED_DEAD_BLOOD_BUSH = registerBlockWithoutBlockItem("potted_dead_blood_bush",
+            new FlowerPotBlock(DEAD_BLOOD_BUSH, FabricBlockSettings.copyOf(Blocks.POTTED_DEAD_BUSH)));
     public static final Block PINK_FLOWER = registerBlock("pink_flower",
             new FlowerBlock(StatusEffects.REGENERATION, 5, FabricBlockSettings.copyOf(Blocks.ALLIUM)));
     public static final Block POTTED_PINK_FLOWER = registerBlockWithoutBlockItem("potted_pink_flower",
@@ -383,6 +421,14 @@ public class ModBlocks {
             new CustomShrubBlock(FabricBlockSettings.copyOf(Blocks.DEAD_BUSH).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
     public static final Block WITHERED_WEEDS = registerBlock("withered_weeds",
             new CustomShrubBlock(FabricBlockSettings.copyOf(Blocks.DEAD_BUSH).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static final Block POTTED_ACIDIC_MUSHROOM = registerBlockWithoutBlockItem("potted_acidic_mushroom",
+            new FlowerPotBlock(ACIDIC_MUSHROOM, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM)));
+    public static final Block POTTED_CORRUPTED_MUSHROOM = registerBlockWithoutBlockItem("potted_corrupted_mushroom",
+            new FlowerPotBlock(CORRUPTED_MUSHROOM, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM)));
+    public static final Block POTTED_BLACKENED_MUSHROOM = registerBlockWithoutBlockItem("potted_blackened_mushroom",
+            new FlowerPotBlock(BLACKENED_MUSHROOM, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM)));
+    public static final Block POTTED_CHARRED_FUNGUS = registerBlockWithoutBlockItem("potted_charred_fungus",
+            new FlowerPotBlock(CHARRED_FUNGUS, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM)));
 
     public static final Block ACIDIC_PITCHER_CROP = registerBlock("acidic_pitcher_crop",
             new AcidicPitcherCropBlock(FabricBlockSettings.copyOf(Blocks.PITCHER_CROP)));

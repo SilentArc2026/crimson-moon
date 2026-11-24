@@ -22,12 +22,18 @@ public enum ModArmorMaterials implements ArmorMaterial {
         map.put(ArmorItem.Type.CHESTPLATE, 9);
         map.put(ArmorItem.Type.HELMET, 4);
     }), 24, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.0F, 0.2F, () -> Ingredient.ofItems(ModItems.Crimsonite_Ingot)),
-    SOLARIUM("solarium", 60, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+    DARKSTEEL("darksteel", 50, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 5);
         map.put(ArmorItem.Type.LEGGINGS, 8);
         map.put(ArmorItem.Type.CHESTPLATE, 10);
         map.put(ArmorItem.Type.HELMET, 5);
-    }), 48, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 5.0F, 0.5F, () -> Ingredient.ofItems(ModItems.SOLARIUM_INGOT)),
+    }), 30, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 5.0F, 0.3F, () -> Ingredient.ofItems(ModItems.DARKSTEEL_INGOT)),
+    SOLARIUM("solarium", 60, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+        map.put(ArmorItem.Type.BOOTS, 6);
+        map.put(ArmorItem.Type.LEGGINGS, 9);
+        map.put(ArmorItem.Type.CHESTPLATE, 11);
+        map.put(ArmorItem.Type.HELMET, 6);
+    }), 48, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 6.0F, 0.5F, () -> Ingredient.ofItems(ModItems.SOLARIUM_INGOT)),
     VAMPYRITE("vampyrite", 35, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 3);
         map.put(ArmorItem.Type.LEGGINGS, 5);

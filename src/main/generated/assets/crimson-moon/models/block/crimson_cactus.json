@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cactus",
+  "textures": {
+    "bottom": "crimson-moon:block/crimson_cactus_bottom",
+    "particle": "crimson-moon:block/crimson_cactus_side",
+    "side": "crimson-moon:block/crimson_cactus_side",
+    "top": "crimson-moon:block/crimson_cactus_top"
+  }
+}

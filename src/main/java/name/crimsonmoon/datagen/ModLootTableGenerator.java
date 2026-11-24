@@ -14,10 +14,15 @@ import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.condition.MatchToolLootCondition;
+import net.minecraft.loot.condition.SurvivesExplosionLootCondition;
 import net.minecraft.loot.entry.AlternativeEntry;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
+import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.state.property.Properties;
 
 public class ModLootTableGenerator extends FabricBlockLootTableProvider {
@@ -52,6 +57,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CORRUPTED_FENCE);
         addDrop(ModBlocks.CORRUPTED_FENCE_GATE);
         addDrop(ModBlocks.ACIDIC_TRAPDOOR);
+        addDrop(ModBlocks.DARKSTEEL_TRAPDOOR);
         addDrop(ModBlocks.CORRUPTED_TRAPDOOR);
         addDrop(ModBlocks.CORRUPTED_DIRT);
         addDrop(ModBlocks.ACIDIC_DIRT);
@@ -91,6 +97,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CHARRED_DOOR, doorDrops(ModBlocks.CHARRED_DOOR));
         addDrop(ModBlocks.CHARRED_SLAB, slabDrops(ModBlocks.CHARRED_SLAB));
         addDrop(ModBlocks.PALM_DOOR, doorDrops(ModBlocks.PALM_DOOR));
+        addDrop(ModBlocks.DARKSTEEL_DOOR, doorDrops(ModBlocks.DARKSTEEL_DOOR));
         addDrop(ModBlocks.PALM_SLAB, slabDrops(ModBlocks.PALM_SLAB));
         addDrop(ModBlocks.WITHERED_PALM_DOOR, doorDrops(ModBlocks.WITHERED_PALM_DOOR));
         addDrop(ModBlocks.WITHERED_PALM_SLAB, slabDrops(ModBlocks.WITHERED_PALM_SLAB));
@@ -112,6 +119,8 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CORRUPTED_CLOSED_EYEBLOSSOM);
         addDrop(ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM);
         addDrop(ModBlocks.CORRUPTED_REDSTONE_HEART);
+        addDrop(ModBlocks.CORRUPTED_MOSS_BLOCK);
+        addDrop(ModBlocks.CRIMSON_CACTUS);
         addDrop(ModBlocks.GLOOMLIGHT);
         addDrop(ModBlocks.CORRUPTED_WITHER_ROSE);
         addDrop(ModBlocks.PALM_LOG);
@@ -124,6 +133,10 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PALM_PRESSURE_PLATE);
         addDrop(ModBlocks.PALM_FENCE);
         addDrop(ModBlocks.PALM_FENCE_GATE);
+        addDrop(ModBlocks.DARKSTEEL_BARS);
+        addDrop(ModBlocks.DARKSTEEL_LANTERN);
+        addDrop(ModBlocks.DARKSTEEL_SOUL_LANTERN);
+        addDrop(ModBlocks.DARKSTEEL_CHAIN);
         addDrop(ModBlocks.PALM_TRAPDOOR);
         addDrop(ModBlocks.WITHERED_PALM_STAIRS);
         addDrop(ModBlocks.WITHERED_PALM_BUTTON);
@@ -152,6 +165,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PALM_MOSAIC_STAIRS);
         addDrop(ModBlocks.WITHERED_PALM_MOSAIC);
         addDrop(ModBlocks.WITHERED_PALM_MOSAIC_SLAB);
+        addDrop(ModBlocks.DARKSTEEL_BLOCK);
         addDrop(ModBlocks.WITHERED_PALM_MOSAIC_STAIRS);
         addDrop(ModBlocks.BLACK_SANDSTONE_WALL);
         addDrop(ModBlocks.CUT_BLACK_SANDSTONE);
@@ -187,6 +201,29 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.REDSTONE_HEART);
         addDrop(ModBlocks.CUT_BLACK_SANDSTONE_SLAB, slabDrops(ModBlocks.CUT_BLACK_SANDSTONE_SLAB));
         addDrop(ModBlocks.SMOOTH_BLACK_SANDSTONE_SLAB, slabDrops(ModBlocks.SMOOTH_BLACK_SANDSTONE_SLAB));
+        addDropWithSilkTouch(ModBlocks.BLOOD_SCULK);
+        addDropWithSilkTouch(ModBlocks.BLOOD_SCULK_CATALYST);
+        addDropWithSilkTouch(ModBlocks.BLOOD_SCULK_SENSOR);
+        addDropWithSilkTouch(ModBlocks.BLOOD_SCULK_SHRIEKER);
+
+        addDrop(ModBlocks.DEAD_BLOOD_BUSH, block -> LootTable.builder()
+                .pool(LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1.0F))
+                        .with(AlternativeEntry.builder(
+                                // 1. Drop the bush itself if broken with Shears or Silk Touch
+                                ItemEntry.builder(block)
+                                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(Items.SHEARS))
+                                                .or(WITH_SILK_TOUCH)),
+                                // 2. Otherwise, drop 0 to 2 sticks (matches vanilla dead bush behavior)
+                                ItemEntry.builder(Items.STICK)
+                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 2.0F)))
+                                        .conditionally(SurvivesExplosionLootCondition.builder())
+                        ))
+                )
+        );
+
+        // Drops 1 vein per attached face when mined with Silk Touch
+        addDrop(ModBlocks.BLOOD_SCULK_VEIN, block -> multifaceGrowthDrops(block, WITH_SILK_TOUCH));
 
         BlockStatePropertyLootCondition.Builder isMaturePitcher = BlockStatePropertyLootCondition.builder(ModBlocks.ACIDIC_PITCHER_CROP)
                 .properties(StatePredicate.Builder.create()
@@ -213,6 +250,12 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addPottedPlantDrops(ModBlocks.POTTED_CORRUPTED_POPPY);
         addPottedPlantDrops(ModBlocks.POTTED_CORRUPTED_WITHER_ROSE);
         addPottedPlantDrops(ModBlocks.POTTED_PINK_FLOWER);
+        addPottedPlantDrops(ModBlocks.POTTED_ACIDIC_MUSHROOM);
+        addPottedPlantDrops(ModBlocks.POTTED_BLACKENED_MUSHROOM);
+        addPottedPlantDrops(ModBlocks.POTTED_CORRUPTED_MUSHROOM);
+        addPottedPlantDrops(ModBlocks.POTTED_CHARRED_FUNGUS);
+        addPottedPlantDrops(ModBlocks.POTTED_DEAD_BLOOD_BUSH);
+        addPottedPlantDrops(ModBlocks.POTTED_CRIMSON_CACTUS);
 
         addDrop(ModBlocks.Vampyrite_Ore, oreDrops(ModBlocks.Vampyrite_Ore, ModItems.RAW_VAMPYRITE));
         addDrop(ModBlocks.Deepslate_Vampyrite_Ore, oreDrops(ModBlocks.Deepslate_Vampyrite_Ore, ModItems.RAW_VAMPYRITE));

@@ -348,6 +348,136 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('I', Items.IRON_INGOT)
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ACIDIC_SADDLE) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARKSTEEL_PICKAXE)
+                .pattern("DDD")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DARKSTEEL_PICKAXE) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARKSTEEL_HATCHET)
+                .pattern("DD")
+                .pattern("DS")
+                .pattern(" S")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DARKSTEEL_HATCHET) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARKSTEEL_DAGGER)
+                .pattern("D")
+                .pattern("D")
+                .pattern("S")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DARKSTEEL_DAGGER) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARKSTEEL_SPADE)
+                .pattern("D")
+                .pattern("S")
+                .pattern("S")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DARKSTEEL_SPADE) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARKSTEEL_TROWEL)
+                .pattern("DD")
+                .pattern(" S")
+                .pattern(" S")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DARKSTEEL_TROWEL) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DARKSTEEL_DOOR, 3)
+                .pattern("DD")
+                .pattern("DD")
+                .pattern("DD")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DARKSTEEL_DOOR) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DARKSTEEL_BLOCK)
+                .pattern("DDD")
+                .pattern("DDD")
+                .pattern("DDD")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DARKSTEEL_BLOCK) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARKSTEEL_HELMET)
+                .pattern("DDD")
+                .pattern("D D")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DARKSTEEL_HELMET) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARKSTEEL_CHESTPLATE)
+                .pattern("D D")
+                .pattern("DDD")
+                .pattern("DDD")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DARKSTEEL_CHESTPLATE) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARKSTEEL_LEGGINGS)
+                .pattern("DDD")
+                .pattern("D D")
+                .pattern("D D")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DARKSTEEL_LEGGINGS) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARKSTEEL_BOOTS)
+                .pattern("D D")
+                .pattern("D D")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DARKSTEEL_BOOTS) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DARKSTEEL_TRAPDOOR)
+                .pattern("DD")
+                .pattern("DD")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DARKSTEEL_TRAPDOOR) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARKSTEEL_INGOT)
+                .pattern("DDD")
+                .pattern("DDD")
+                .pattern("DDD")
+                .input('D', ModItems.DARKSTEEL_NUGGET)
+                .criterion(hasItem(ModItems.DARKSTEEL_NUGGET), conditionsFromItem(ModItems.DARKSTEEL_NUGGET))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DARKSTEEL_INGOT) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARKSTEEL_HORSE_ARMOR)
+                .pattern("D D")
+                .pattern("DDD")
+                .pattern("D D")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DARKSTEEL_HORSE_ARMOR) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DARKSTEEL_BARS, 16)
+                .pattern("DDD")
+                .pattern("DDD")
+                .input('D', ModItems.DARKSTEEL_INGOT)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DARKSTEEL_BARS) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DARKSTEEL_LANTERN)
+                .pattern("DDD")
+                .pattern("DTD")
+                .pattern("DDD")
+                .input('D', ModItems.DARKSTEEL_NUGGET)
+                .input('T', Items.TORCH)
+                .criterion(hasItem(ModItems.DARKSTEEL_NUGGET), conditionsFromItem(ModItems.DARKSTEEL_NUGGET))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DARKSTEEL_LANTERN) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DARKSTEEL_SOUL_LANTERN)
+                .pattern("DDD")
+                .pattern("DTD")
+                .pattern("DDD")
+                .input('D', ModItems.DARKSTEEL_NUGGET)
+                .input('T', Items.SOUL_TORCH)
+                .criterion(hasItem(ModItems.DARKSTEEL_NUGGET), conditionsFromItem(ModItems.DARKSTEEL_NUGGET))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DARKSTEEL_SOUL_LANTERN) + "_"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.DARKSTEEL_CHAIN)
+                .pattern("N")
+                .pattern("I")
+                .pattern("N")
+                .input('N', ModItems.DARKSTEEL_NUGGET)
+                .input('I', ModItems.DARKSTEEL_INGOT)
+                .criterion(hasItem(ModItems.DARKSTEEL_INGOT), conditionsFromItem(ModItems.DARKSTEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.DARKSTEEL_CHAIN) + "_"));
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.Crimsonite_Ingot, RecipeCategory.MISC, ModBlocks.Crimsonite_Block);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.SOLARIUM_INGOT, RecipeCategory.MISC, ModBlocks.Solarium_Block);
@@ -383,6 +513,14 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         offerSmelting(exporter, List.of(ModBlocks.BLACK_SANDSTONE), RecipeCategory.BUILDING_BLOCKS,
                 ModBlocks.SMOOTH_BLACK_SANDSTONE, 0.1f, 200, "black_sandstone");
 
+        offerBracerCraftingRecipe(exporter, ModItems.LEATHER_BRACERS, Items.LEATHER);
+        offerBracerCraftingRecipe(exporter, ModItems.CHAIN_FISHNETS, Items.CHAIN);
+        offerBracerCraftingRecipe(exporter, ModItems.IRON_BRACERS, Items.IRON_INGOT);
+        offerBracerCraftingRecipe(exporter, ModItems.GOLD_BRACERS, Items.GOLD_INGOT);
+        offerBracerCraftingRecipe(exporter, ModItems.DIAMOND_BRACERS, Items.DIAMOND);
+        offerBracerCraftingRecipe(exporter, ModItems.DARKSTEEL_BRACERS, ModItems.DARKSTEEL_INGOT);
+        offerBracerCraftingRecipe(exporter, ModItems.VAMPYRITE_BRACERS, ModItems.VAMPYRITE_INGOT);
+
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_BLACK_SANDSTONE, ModBlocks.BLACK_SANDSTONE);
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_BLACK_SANDSTONE, ModBlocks.BLACK_SANDSTONE);
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_SANDSTONE_STAIRS, ModBlocks.BLACK_SANDSTONE);
@@ -404,7 +542,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         offerFoodCookingRecipe(exporter, "smoker", RecipeSerializer.SMOKING, 100, ModItems.RAW_ACIDIC_BEEF, Items.COOKED_BEEF, 0.35f);
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
-                Ingredient.ofItems(Items.NETHERITE_SWORD),
+                Ingredient.ofItems(ModItems.TURQITE_SWORD),
                 Ingredient.ofItems(ModItems.Crimsonite_Ingot),
                 RecipeCategory.COMBAT,
                 ModItems.CRIMSON_SWORD
@@ -420,7 +558,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HEAVENLY_BLADE) + "_"));
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
-                Ingredient.ofItems(Items.NETHERITE_PICKAXE),
+                Ingredient.ofItems(ModItems.TURQITE_PICKAXE),
                 Ingredient.ofItems(ModItems.Crimsonite_Ingot),
                 RecipeCategory.TOOLS,
                 ModItems.Crimson_Pickaxe
@@ -428,7 +566,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.Crimson_Pickaxe) + "_"));
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
-                Ingredient.ofItems(Items.NETHERITE_AXE),
+                Ingredient.ofItems(ModItems.TURQITE_AXE),
                 Ingredient.ofItems(ModItems.Crimsonite_Ingot),
                 RecipeCategory.TOOLS,
                 ModItems.Crimson_Axe
@@ -436,7 +574,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.Crimson_Axe) + "_"));
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
-                Ingredient.ofItems(Items.NETHERITE_SHOVEL),
+                Ingredient.ofItems(ModItems.TURQITE_SHOVEL),
                 Ingredient.ofItems(ModItems.Crimsonite_Ingot),
                 RecipeCategory.TOOLS,
                 ModItems.Crimson_Shovel
@@ -444,7 +582,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.Crimson_Shovel) + "_"));
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
-                Ingredient.ofItems(Items.NETHERITE_HOE),
+                Ingredient.ofItems(ModItems.TURQITE_HOE),
                 Ingredient.ofItems(ModItems.Crimsonite_Ingot),
                 RecipeCategory.TOOLS,
                 ModItems.Crimson_Hoe
@@ -452,7 +590,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.Crimson_Hoe) + "_"));
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
-                Ingredient.ofItems(Items.NETHERITE_HELMET),
+                Ingredient.ofItems(ModItems.TURQITE_HELMET),
                 Ingredient.ofItems(ModItems.Crimsonite_Ingot),
                 RecipeCategory.COMBAT,
                 ModItems.CRIMSON_HELMET
@@ -460,7 +598,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.CRIMSON_HELMET) + "_"));
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
-                Ingredient.ofItems(Items.NETHERITE_CHESTPLATE),
+                Ingredient.ofItems(ModItems.TURQITE_CHESTPLATE),
                 Ingredient.ofItems(ModItems.Crimsonite_Ingot),
                 RecipeCategory.COMBAT,
                 ModItems.CRIMSON_CHESTPLATE
@@ -468,7 +606,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.CRIMSON_CHESTPLATE) + "_"));
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
-                Ingredient.ofItems(Items.NETHERITE_LEGGINGS),
+                Ingredient.ofItems(ModItems.TURQITE_LEGGINGS),
                 Ingredient.ofItems(ModItems.Crimsonite_Ingot),
                 RecipeCategory.COMBAT,
                 ModItems.CRIMSON_LEGGINGS
@@ -476,7 +614,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.CRIMSON_LEGGINGS) + "_"));
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.Crimsonite_upgrade_smithing_template),
-                Ingredient.ofItems(Items.NETHERITE_BOOTS),
+                Ingredient.ofItems(ModItems.TURQITE_BOOTS),
                 Ingredient.ofItems(ModItems.Crimsonite_Ingot),
                 RecipeCategory.COMBAT,
                 ModItems.CRIMSON_BOOTS
@@ -516,7 +654,7 @@ SmithingTransformRecipeJsonBuilder.create(
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_BOOTS) + "_"));
 SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
-                Ingredient.ofItems(ModItems.CRIMSON_SWORD),
+                Ingredient.ofItems(ModItems.DARKSTEEL_DAGGER),
                 Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
                 RecipeCategory.COMBAT,
                 ModItems.SOLARIUM_SWORD
@@ -524,7 +662,7 @@ SmithingTransformRecipeJsonBuilder.create(
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_SWORD) + "_"));
 SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
-                Ingredient.ofItems(ModItems.Crimson_Pickaxe),
+                Ingredient.ofItems(ModItems.DARKSTEEL_PICKAXE),
                 Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
                 RecipeCategory.TOOLS,
                 ModItems.SOLARIUM_PICKAXE
@@ -532,7 +670,7 @@ SmithingTransformRecipeJsonBuilder.create(
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOLARIUM_PICKAXE) + "_"));
 SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE),
-                Ingredient.ofItems(ModItems.Crimson_Axe),
+                Ingredient.ofItems(ModItems.DARKSTEEL_HATCHET),
                 Ingredient.ofItems(ModItems.SOLARIUM_INGOT),
                 RecipeCategory.TOOLS,
                 ModItems.SOLARIUM_AXE
@@ -626,7 +764,51 @@ SmithingTransformRecipeJsonBuilder.create(
                 ModItems.TURQITE_HOE
         ).criterion(hasItem(ModItems.REFINED_TURQITE), conditionsFromItem(ModItems.REFINED_TURQITE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.TURQITE_HOE) + "_"));
+offerBracerSmithingRecipe(exporter,
+                Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE,
+                ModItems.DIAMOND_BRACERS,
+                Items.NETHERITE_INGOT,
+                ModItems.NETHERITE_BRACERS,
+                "netherite_bracers_smithing");
+offerBracerSmithingRecipe(exporter,
+                ModItems.SOLARIUM_UPGRADE_SMITHING_TEMPLATE,
+                ModItems.DARKSTEEL_BRACERS,
+                ModItems.SOLARIUM_INGOT,
+                ModItems.SOLARIUM_BRACERS,
+                "solarium_bracers_smithing");
+offerBracerSmithingRecipe(exporter,
+                ModItems.TURQITE_UPGRADE_SMITHING_TEMPLATE,
+                ModItems.VAMPYRITE_BRACERS,
+                ModItems.REFINED_TURQITE,
+                ModItems.TURQITE_BRACERS,
+                "turqite_bracers_smithing");
+offerBracerSmithingRecipe(exporter,
+                ModItems.Crimsonite_upgrade_smithing_template,  // Replace with your template item
+                ModItems.TURQITE_BRACERS,                   // Replace with the base bracer required for Crimson
+                ModItems.Crimsonite_Ingot,                     // Replace with your Crimson ingot/gem item
+                ModItems.CRIMSON_BRACERS,
+                "crimson_bracers_smithing");
 
+    }
+
+    private static void offerBracerCraftingRecipe(Consumer<RecipeJsonProvider> exporter, Item result, Item material) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, result)
+                .pattern("M M")
+                .pattern("M M")
+                .input('M', material)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter);
+    }
+
+    private static void offerBracerSmithingRecipe(Consumer<RecipeJsonProvider> exporter, Item template, Item base, Item addition, Item result, String recipeName) {
+        SmithingTransformRecipeJsonBuilder.create(
+                        Ingredient.ofItems(template),
+                        Ingredient.ofItems(base),
+                        Ingredient.ofItems(addition),
+                        RecipeCategory.COMBAT,
+                        result)
+                .criterion(hasItem(addition), conditionsFromItem(addition))
+                .offerTo(exporter, new Identifier("crimson-moon", recipeName));
     }
     private void generateWoodSetRecipes(
             Consumer<RecipeJsonProvider> exporter,

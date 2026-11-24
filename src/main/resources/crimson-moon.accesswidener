@@ -1,0 +1,8 @@
+accessWidener v2 named
+
+accessible class net/minecraft/client/gui/screen/ingame/CreativeInventoryScreen$CreativeSlot
+accessible method net/minecraft/client/gui/screen/ingame/CreativeInventoryScreen$CreativeSlot <init> (Lnet/minecraft/screen/slot/Slot;III)V
+accessible class net/minecraft/client/gui/screen/ingame/CreativeInventoryScreen$CreativeSlot
+accessible field net/minecraft/client/gui/screen/ingame/CreativeInventoryScreen$CreativeSlot slot Lnet/minecraft/screen/slot/Slot;
+mutable field net/minecraft/screen/slot/Slot x I
+mutable field net/minecraft/screen/slot/Slot y I

@@ -24,13 +24,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.CORRUPTED_REDSTONE_HEART, ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Vampyrite_Block, ModBlocks.Vampyrite_Ore, ModBlocks.Budding_Crystalized_Turqite_Block, ModBlocks.Crystalized_Turqite_Block, ModBlocks.Refined_Turqite_Block, ModBlocks.Smooth_Basalt_Turqite_Ore, ModBlocks.Turqite_Bricks, ModBlocks.Turqite_Crystal_Block, ModBlocks.Turqite_Cluster, ModBlocks.BLACK_SANDSTONE, ModBlocks.CUT_BLACK_SANDSTONE, ModBlocks.CHISELED_BLACK_SANDSTONE, ModBlocks.SMOOTH_BLACK_SANDSTONE, ModBlocks.BLACK_SANDSTONE_STAIRS, ModBlocks.BLACK_SANDSTONE_SLAB, ModBlocks.BLACK_SANDSTONE_WALL, ModBlocks.CUT_BLACK_SANDSTONE_SLAB, ModBlocks.CUT_BLACK_SANDSTONE_STAIRS, ModBlocks.SMOOTH_BLACK_SANDSTONE_SLAB, ModBlocks.SMOOTH_BLACK_SANDSTONE_STAIRS);
+                .add(ModBlocks.DARKSTEEL_CHAIN, ModBlocks.DARKSTEEL_LANTERN, ModBlocks.DARKSTEEL_SOUL_LANTERN, ModBlocks.DARKSTEEL_BARS, ModBlocks.CORRUPTED_REDSTONE_HEART, ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Vampyrite_Block, ModBlocks.Vampyrite_Ore, ModBlocks.Budding_Crystalized_Turqite_Block, ModBlocks.Crystalized_Turqite_Block, ModBlocks.Refined_Turqite_Block, ModBlocks.Smooth_Basalt_Turqite_Ore, ModBlocks.Turqite_Bricks, ModBlocks.Turqite_Crystal_Block, ModBlocks.Turqite_Cluster, ModBlocks.BLACK_SANDSTONE, ModBlocks.CUT_BLACK_SANDSTONE, ModBlocks.CHISELED_BLACK_SANDSTONE, ModBlocks.SMOOTH_BLACK_SANDSTONE, ModBlocks.BLACK_SANDSTONE_STAIRS, ModBlocks.BLACK_SANDSTONE_SLAB, ModBlocks.BLACK_SANDSTONE_WALL, ModBlocks.CUT_BLACK_SANDSTONE_SLAB, ModBlocks.CUT_BLACK_SANDSTONE_STAIRS, ModBlocks.SMOOTH_BLACK_SANDSTONE_SLAB, ModBlocks.SMOOTH_BLACK_SANDSTONE_STAIRS);
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block, ModBlocks.CORRUPTED_REDSTONE_HEART);
+                .add(ModBlocks.Crimsonite_Block, ModBlocks.Solarium_Block, ModBlocks.CORRUPTED_REDSTONE_HEART, ModBlocks.DARKSTEEL_BLOCK, ModBlocks.DARKSTEEL_DOOR, ModBlocks.DARKSTEEL_TRAPDOOR);
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.Vampyrite_Ore, ModBlocks.Vampyrite_Block, ModBlocks.Raw_Vampyrite_Block, ModBlocks.Deepslate_Vampyrite_Ore, ModBlocks.Budding_Crystalized_Turqite_Block, ModBlocks.Crystalized_Turqite_Block, ModBlocks.Refined_Turqite_Block, ModBlocks.Smooth_Basalt_Turqite_Ore, ModBlocks.Turqite_Bricks, ModBlocks.Turqite_Crystal_Block, ModBlocks.Turqite_Cluster);
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.DOLOMITE, ModBlocks.POLISHED_DOLOMITE, ModBlocks.DOLOMITE_BRICKS);
+                .add(ModBlocks.DOLOMITE, ModBlocks.POLISHED_DOLOMITE, ModBlocks.DOLOMITE_BRICKS, ModBlocks.DARKSTEEL_BARS);
         getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES)
                 .add(ModBlocks.WITHERED_PALM_PRESSURE_PLATE, ModBlocks.PALM_PRESSURE_PLATE, ModBlocks.CHARRED_PRESSURE_PLATE, ModBlocks.ACIDIC_PRESSURE_PLATE, ModBlocks.ACIDIC_PRESSURE_PLATE, ModBlocks.ACIDIC_TRAPPED_RUG);
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
@@ -54,17 +54,23 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(FabricMineableTags.SHEARS_MINEABLE)
                 .add(ModBlocks.ACIDIC_TRAPPED_RUG);
         getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
-                .add(ModBlocks.FIRE_FLOWER, ModBlocks.ACID_FLOWER, ModBlocks.CORRUPTED_POPPY, ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM, ModBlocks.CORRUPTED_WITHER_ROSE, ModBlocks.PINK_FLOWER);
+                .add(ModBlocks.DEAD_BLOOD_BUSH, ModBlocks.FIRE_FLOWER, ModBlocks.ACID_FLOWER, ModBlocks.CORRUPTED_POPPY, ModBlocks.CORRUPTED_OPEN_EYEBLOSSOM, ModBlocks.CORRUPTED_WITHER_ROSE, ModBlocks.PINK_FLOWER);
         getOrCreateTagBuilder(BlockTags.CLIMBABLE)
                 .add(ModBlocks.CHARRED_VINES, ModBlocks.CHARRED_VINES_PLANT);
         getOrCreateTagBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.ACIDIC_LEAVES, ModBlocks.CORRUPTED_LEAVES, ModBlocks.PALM_LEAVES, ModBlocks.WITHERED_PALM_LEAVES);
         getOrCreateTagBuilder(BlockTags.REPLACEABLE)
-                .add(ModBlocks.WEEDS, ModBlocks.WILD_BUSH, ModBlocks.BUSH, ModBlocks.CAT_TAILS, ModBlocks.WITHERED_BUSH, ModBlocks.WITHERED_WILD_BUSH, ModBlocks.WITHERED_WEEDS, ModBlocks.WITHERED_CAT_TAILS);
+                .add(ModBlocks.DEAD_BLOOD_BUSH, ModBlocks.WEEDS, ModBlocks.WILD_BUSH, ModBlocks.BUSH, ModBlocks.CAT_TAILS, ModBlocks.WITHERED_BUSH, ModBlocks.WITHERED_WILD_BUSH, ModBlocks.WITHERED_WEEDS, ModBlocks.WITHERED_CAT_TAILS);
         getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
                 .add(ModBlocks.BUSH, ModBlocks.WILD_BUSH, ModBlocks.WEEDS, ModBlocks.CAT_TAILS, ModBlocks.WITHERED_BUSH, ModBlocks.WITHERED_WILD_BUSH, ModBlocks.WITHERED_WEEDS, ModBlocks.WITHERED_CAT_TAILS);
         getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(ModBlocks.BLACK_SANDSTONE_WALL);
+        getOrCreateTagBuilder(BlockTags.DAMPENS_VIBRATIONS)
+                .add(ModBlocks.BLOOD_SCULK_SENSOR);
+        getOrCreateTagBuilder(BlockTags.SAND)
+                .add(ModBlocks.BLACK_SAND, ModBlocks.WET_SAND, ModBlocks.WET_RED_SAND, ModBlocks.WET_BLACK_SAND);
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+                .add(ModBlocks.BLOOD_SCULK, ModBlocks.BLOOD_SCULK_CATALYST, ModBlocks.BLOOD_SCULK_SENSOR, ModBlocks.BLOOD_SCULK_SHRIEKER, ModBlocks.BLOOD_SCULK_VEIN);
 
         //Tag for Custom Tool Material for Crimson
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric","needs_tool_level_5")))

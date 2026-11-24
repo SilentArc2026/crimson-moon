@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/sculk_vein",
+  "textures": {
+    "particle": "crimson-moon:block/blood_sculk_vein",
+    "sculk_vein": "crimson-moon:block/blood_sculk_vein"
+  }
+}

@@ -3,6 +3,9 @@
   "values": [
     "crimson-moon:crimsonite_block",
     "crimson-moon:solarium_block",
-    "crimson-moon:corrupted_redstone_heart"
+    "crimson-moon:corrupted_redstone_heart",
+    "crimson-moon:darksteel_block",
+    "crimson-moon:darksteel_door",
+    "crimson-moon:darksteel_trapdoor"
   ]
 }

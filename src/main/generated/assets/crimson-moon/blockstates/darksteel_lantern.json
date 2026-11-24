@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "crimson-moon:block/darksteel_lantern"
+    },
+    "hanging=true": {
+      "model": "crimson-moon:block/darksteel_lantern_hanging"
+    }
+  }
+}

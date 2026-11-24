@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "crimson-moon:item/corrupted_mushroom"
+    "layer0": "crimson-moon:block/corrupted_mushroom"
   }
 }

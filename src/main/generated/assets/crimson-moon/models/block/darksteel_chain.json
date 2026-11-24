@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/chain",
+  "textures": {
+    "all": "crimson-moon:block/darksteel_chain",
+    "particle": "crimson-moon:block/darksteel_chain"
+  }
+}

@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
+    "crimson-moon:darksteel_chain",
+    "crimson-moon:darksteel_lantern",
+    "crimson-moon:darksteel_soul_lantern",
+    "crimson-moon:darksteel_bars",
     "crimson-moon:corrupted_redstone_heart",
     "crimson-moon:crimsonite_block",
     "crimson-moon:solarium_block",

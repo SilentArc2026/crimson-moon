@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "crimson-moon:darksteel_ingot"
+    }
+  },
+  "pattern": [
+    "DDD",
+    "DDD"
+  ],
+  "result": {
+    "count": 16,
+    "item": "crimson-moon:darksteel_bars"
+  },
+  "show_notification": true
+}

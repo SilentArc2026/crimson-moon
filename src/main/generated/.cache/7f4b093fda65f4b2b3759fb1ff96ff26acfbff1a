@@ -1,6 +1,7 @@
-// 1.20.1	2026-11-23T02:30:49.5250873	Crimson Moon/Tags for minecraft:item
+// 1.20.1	2026-11-24T01:59:10.5562008	Crimson Moon/Tags for minecraft:item
+d9a914bbb13c532af717247db82e350f1387cf5d data\minecraft\tags\items\dampens_vibrations.json
 8387066a0d4c2881802497f2971997d3f6ca1cd3 data\minecraft\tags\items\logs_that_burn.json
-393a2d7078ce93199a491b34943b04d449993892 data\minecraft\tags\items\trimmable_armor.json
+26cda95be9a7f552ccc76ab143be852bd87884fe data\minecraft\tags\items\trimmable_armor.json
 be0a233515922e9eac9257c1853a45b27b525b41 data\minecraft\tags\items\wooden_slabs.json
-d89af7328d367057aa664dd0c745c75801d77f02 data\minecraft\tags\items\small_flowers.json
+ebcf4836a5abd284768c0109525bb54f9b6f6955 data\minecraft\tags\items\small_flowers.json
 3a9d754427005d1634ec4523b2d605066ec18235 data\minecraft\tags\items\planks.json

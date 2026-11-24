@@ -83,5 +83,10 @@ public class CrimsonMoon implements ModInitializer {
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.FIRE_FLOWER, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ModItems.GLOOM_BERRIES, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ModItems.ACIDIC_PITCHER_POD, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ModBlocks.ACIDIC_MUSHROOM, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ModBlocks.CORRUPTED_MUSHROOM, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ModBlocks.BLACKENED_MUSHROOM, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ModBlocks.CHARRED_FUNGUS, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(ModBlocks.DEAD_BLOOD_BUSH, 0.3f);
 	}
 }

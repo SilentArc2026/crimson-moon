@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "can_summon=false": {
+      "model": "crimson-moon:block/blood_sculk_shrieker"
+    },
+    "can_summon=true": {
+      "model": "crimson-moon:block/blood_sculk_shrieker_can_summon"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "crimson-moon:crimsonite_ingot"
+  },
+  "base": {
+    "item": "crimson-moon:turqite_bracers"
+  },
+  "result": {
+    "item": "crimson-moon:crimson_bracers"
+  },
+  "template": {
+    "item": "crimson-moon:crimsonite_upgrade_smithing_template"
+  }
+}

@@ -4,9 +4,11 @@ import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import name.crimsonmoon.CrimsonMoon;
 import name.crimsonmoon.block.ModBlocks;
 import name.crimsonmoon.entity.ModBoats;
+import name.crimsonmoon.item.custom.BracerItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -15,10 +17,26 @@ import net.minecraft.util.Identifier;
 public class ModItems {
     public static final Item ACIDIC_LEATHER = registerItem("acidic_leather",
             new Item(new FabricItemSettings()));
+    public static final Item DARKSTEEL_INGOT = registerItem("darksteel_ingot",
+            new Item(new FabricItemSettings().fireproof()));
+    public static final Item DARKSTEEL_NUGGET = registerItem("darksteel_nugget",
+            new Item(new FabricItemSettings().fireproof()));
+    public static final Item DARKSTEEL_DAGGER = registerItem("darksteel_dagger",
+            new SwordItem(ModToolMaterial.DARKSTEEL, 6, 2, new FabricItemSettings().fireproof()));
+    public static final Item DARKSTEEL_PICKAXE = registerItem("darksteel_pickaxe",
+            new PickaxeItem(ModToolMaterial.DARKSTEEL, 4, 0, new FabricItemSettings().fireproof()));
+    public static final Item DARKSTEEL_HATCHET = registerItem("darksteel_hatchet",
+            new AxeItem(ModToolMaterial.DARKSTEEL, 8, 1, new FabricItemSettings().fireproof()));
+    public static final Item DARKSTEEL_SPADE = registerItem("darksteel_spade",
+            new ShovelItem(ModToolMaterial.DARKSTEEL, 3, 1, new FabricItemSettings().fireproof()));
+    public static final Item DARKSTEEL_TROWEL = registerItem("darksteel_trowel",
+            new HoeItem(ModToolMaterial.DARKSTEEL, 2, 1, new FabricItemSettings().fireproof()));
     public static final Item THE_BEHEMOTHS_HORN = registerItem("the_behemoths_horn",
             new GoatHornItem(new FabricItemSettings().maxCount(1), ModInstruments.BEHEMOTH_HORNS));
     public static final Item ACIDIC_LEATHER_HORSE_ARMOR = registerItem("acidic_leather_horse_armor",
             new HorseArmorItem(3, "acidic_leather", new FabricItemSettings()));
+    public static final Item DARKSTEEL_HORSE_ARMOR = registerItem("darksteel_horse_armor",
+            new HorseArmorItem(5, "darksteel", new FabricItemSettings()));
     public static final Item ACIDIC_SADDLE = registerItem("acidic_saddle",
             new SaddleItem(new FabricItemSettings().maxCount(1)));
     public static final Item CORRUPTED_STAR = registerItem("corrupted_star",
@@ -121,6 +139,14 @@ public class ModItems {
             new ArmorItem(ModArmorMaterials.SOLARIUM, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final Item SOLARIUM_BOOTS = registerItem("solarium_boots",
             new ArmorItem(ModArmorMaterials.SOLARIUM, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
+    public static final Item DARKSTEEL_HELMET = registerItem("darksteel_helmet",
+            new ArmorItem(ModArmorMaterials.DARKSTEEL, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
+    public static final Item DARKSTEEL_CHESTPLATE = registerItem("darksteel_chestplate",
+            new ArmorItem(ModArmorMaterials.DARKSTEEL, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
+    public static final Item DARKSTEEL_LEGGINGS = registerItem("darksteel_leggings",
+            new ArmorItem(ModArmorMaterials.DARKSTEEL, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
+    public static final Item DARKSTEEL_BOOTS = registerItem("darksteel_boots",
+            new ArmorItem(ModArmorMaterials.DARKSTEEL, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     public static final Item VAMPYRITE_SWORD = registerItem("vampyrite_sword",
             new SwordItem(ModToolMaterial.VAMPYRITE, 4, 2, new FabricItemSettings()));
     public static final Item TURQITE_SWORD = registerItem("turqite_sword",
@@ -172,6 +198,29 @@ public class ModItems {
     public static final Item CORRUPTED_TORCHFLOWER_SEEDS = registerItem("corrupted_torchflower_seeds",
             new AliasedBlockItem(ModBlocks.CORRUPTED_TORCHFLOWER_CROP, new FabricItemSettings()));
 
+    public static final Item CHAIN_FISHNETS = registerItem("chain_fishnets",
+            new BracerItem(ArmorMaterials.CHAIN, 1, 2, new FabricItemSettings()));
+    public static final Item CRIMSON_BRACERS = registerItem("crimson_bracers",
+            new BracerItem(ModArmorMaterials.CRIMSON, 3, 4, new FabricItemSettings().fireproof()));
+    public static final Item DARKSTEEL_BRACERS = registerItem("darksteel_bracers",
+            new BracerItem(ModArmorMaterials.DARKSTEEL, 4, 5, new FabricItemSettings().fireproof()));
+    public static final Item DIAMOND_BRACERS = registerItem("diamond_bracers",
+            new BracerItem(ArmorMaterials.DIAMOND, 3, 3, new FabricItemSettings()));
+    public static final Item GOLD_BRACERS = registerItem("gold_bracers",
+            new BracerItem(ArmorMaterials.GOLD, 2, 1, new FabricItemSettings()));
+    public static final Item IRON_BRACERS = registerItem("iron_bracers",
+            new BracerItem(ArmorMaterials.IRON, 2, 2, new FabricItemSettings()));
+    public static final Item LEATHER_BRACERS = registerItem("leather_bracers",
+            new BracerItem(ArmorMaterials.LEATHER, 1, 1, new FabricItemSettings()));
+    public static final Item NETHERITE_BRACERS = registerItem("netherite_bracers",
+            new BracerItem(ArmorMaterials.NETHERITE, 4, 4, new FabricItemSettings().fireproof()));
+    public static final Item SOLARIUM_BRACERS = registerItem("solarium_bracers",
+            new BracerItem(ModArmorMaterials.SOLARIUM, 5, 6, new FabricItemSettings().fireproof()));
+    public static final Item TURQITE_BRACERS = registerItem("turqite_bracers",
+            new BracerItem(ModArmorMaterials.TURQITE, 3, 3, new FabricItemSettings()));
+    public static final Item VAMPYRITE_BRACERS = registerItem("vampyrite_bracers",
+            new BracerItem(ModArmorMaterials.VAMPYRITE, 2, 2, new FabricItemSettings()));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(CrimsonMoon.MOD_ID, name), item);
     }
@@ -184,5 +233,13 @@ public class ModItems {
         CrimsonMoon.LOGGER.info("Registering Mod Items for " + CrimsonMoon.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::itemGroupIngredients);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+            entries.add(LEATHER_BRACERS);
+            entries.add(CHAIN_FISHNETS);
+            entries.add(IRON_BRACERS);
+            entries.add(GOLD_BRACERS);
+            entries.add(DIAMOND_BRACERS);
+            entries.add(NETHERITE_BRACERS);
+        });
     }
 }

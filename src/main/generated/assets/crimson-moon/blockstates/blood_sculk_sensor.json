@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "sculk_sensor_phase=active": {
+      "model": "crimson-moon:block/blood_sculk_sensor_active"
+    },
+    "sculk_sensor_phase=cooldown": {
+      "model": "crimson-moon:block/blood_sculk_sensor"
+    },
+    "sculk_sensor_phase=inactive": {
+      "model": "crimson-moon:block/blood_sculk_sensor"
+    }
+  }
+}

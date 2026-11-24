@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/sculk_sensor_inactive",
+  "textures": {
+    "bottom": "crimson-moon:block/blood_sculk_sensor_bottom",
+    "side": "crimson-moon:block/blood_sculk_sensor_side",
+    "tendrils": "crimson-moon:block/blood_sculk_sensor_tendril_inactive",
+    "top": "crimson-moon:block/blood_sculk_sensor_top"
+  }
+}

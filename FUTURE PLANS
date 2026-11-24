@@ -1,7 +1,5 @@
 Clean up Code Including The ModItemGroups so It is organized on minecraft creative menu
-Implement Any Biome Specific Blocks
-Learn how to implement Entities
-Learn how to build and implement Biomes
+Learn how to implement Entities and Spawn Eggs
 Learn how to build and Implement Geodes
 Implement all above topics
 Make Remaining Items Survival Friendly
@@ -11,6 +9,7 @@ Bug Test
 Fix Bugs if any
 Push 0.2 ALPHA to public databases
 Start Branch 0.2.1
+Learn how to build and implement Biomes
 Start Natural Generation of Biomes
 Learn how to generate Structures
 Implement Structure Generation into Biomes

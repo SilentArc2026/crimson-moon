@@ -3,22 +3,43 @@ package name.crimsonmoon;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import name.crimsonmoon.block.ModBlocks;
 import name.crimsonmoon.block.entity.ModBlockEntities;
+import name.crimsonmoon.client.model.BracerModel;
+import name.crimsonmoon.client.render.BracerFeatureRenderer;
 import name.crimsonmoon.entity.ModBoats;
 import name.crimsonmoon.item.ModItems;
 import name.crimsonmoon.util.ModWoodTypes;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRendererRegistrationCallback;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.block.entity.HangingSignBlockEntityRenderer;
 import net.minecraft.client.render.block.entity.SignBlockEntityRenderer;
+import net.minecraft.client.render.entity.PlayerEntityRenderer;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
 public class CrimsonMoonModClient implements ClientModInitializer {
+
+    public static final EntityModelLayer BRACER_LAYER =
+            new EntityModelLayer(new Identifier("crimson_moon", "bracer"), "main");
     @Override
     public void onInitializeClient() {
+
+        EntityModelLayerRegistry.registerModelLayer(BRACER_LAYER, BracerModel::getTexturedModelData);
+
+        LivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper, context) -> {
+            if (entityRenderer instanceof PlayerEntityRenderer playerRenderer) {
+                registrationHelper.register(new BracerFeatureRenderer<>(
+                        playerRenderer,
+                        new BracerModel<>(context.getPart(BRACER_LAYER))
+                ));
+            }
+        });
+
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.Turqite_Cluster, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SMALL_TURQITE_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MEDIUM_TURQITE_BUD, RenderLayer.getCutout());
@@ -79,6 +100,24 @@ public class CrimsonMoonModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ACIDIC_MUSHROOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORRUPTED_MUSHROOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLACKENED_MUSHROOM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLOOD_SCULK_VEIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLOOD_SCULK_SENSOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLOOD_SCULK_SHRIEKER, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_ACIDIC_MUSHROOM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_CHARRED_FUNGUS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_CORRUPTED_MUSHROOM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BLACKENED_MUSHROOM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_DEAD_BLOOD_BUSH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DEAD_BLOOD_BUSH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_CRIMSON_CACTUS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CRIMSON_CACTUS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DARKSTEEL_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DARKSTEEL_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DARKSTEEL_BARS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DARKSTEEL_LANTERN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DARKSTEEL_SOUL_LANTERN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DARKSTEEL_CHAIN, RenderLayer.getCutout());
+
 
         TexturedRenderLayers.SIGN_TYPE_TEXTURES.put(ModWoodTypes.ACIDIC, TexturedRenderLayers.getSignTextureId(ModWoodTypes.ACIDIC));
         TexturedRenderLayers.SIGN_TYPE_TEXTURES.put(ModWoodTypes.CORRUPTED, TexturedRenderLayers.getSignTextureId(ModWoodTypes.CORRUPTED));
@@ -98,5 +137,10 @@ public class CrimsonMoonModClient implements ClientModInitializer {
         ModelPredicateProviderRegistry.register(
                 ModItems.THE_BEHEMOTHS_HORN,
                 new Identifier("tooting"),
-                (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F);}
+                (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F);
+
+
+    }
+
+
 }

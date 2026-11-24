@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "crimson-moon:darksteel_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "DD",
+    "DS",
+    " S"
+  ],
+  "result": {
+    "item": "crimson-moon:darksteel_hatchet"
+  },
+  "show_notification": true
+}
